@@ -1,0 +1,1215 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Mémoire de Fin d'Études — Clinique GODIE</title>
+<style>
+@page { size: A4; margin: 2.5cm 2cm 2.5cm 2.5cm; }
+@page :first { margin: 0; }
+* { box-sizing: border-box; }
+body { font-family: "Times New Roman", Georgia, serif; font-size: 12pt; line-height: 1.5; text-align: justify; color: #1a1a1a; margin: 0; padding: 0; }
+.page-break { page-break-before: always; }
+.no-break { page-break-inside: avoid; }
+h1 { font-size: 18pt; font-weight: bold; text-align: center; margin-top: 1cm; margin-bottom: 0.8cm; page-break-after: avoid; }
+h2 { font-size: 15pt; font-weight: bold; margin-top: 1.2cm; margin-bottom: 0.5cm; page-break-after: avoid; border-bottom: 1.5px solid #2563eb; padding-bottom: 4px; }
+h3 { font-size: 13pt; font-weight: bold; margin-top: 0.8cm; margin-bottom: 0.4cm; page-break-after: avoid; }
+h4 { font-size: 12pt; font-weight: bold; margin-top: 0.5cm; margin-bottom: 0.3cm; page-break-after: avoid; }
+p { margin: 0 0 0.5cm 0; text-indent: 1cm; }
+p.no-indent { text-indent: 0; }
+.center { text-align: center; }
+figure { margin: 1cm 0; text-align: center; page-break-inside: avoid; }
+figure img { max-width: 90%; border: 1px solid #cbd5e1; border-radius: 4px; }
+figcaption { font-size: 10pt; font-style: italic; margin-top: 0.3cm; color: #475569; }
+table { width: 100%; border-collapse: collapse; margin: 0.8cm 0; font-size: 11pt; page-break-inside: avoid; }
+th { background: #2563eb; color: white; padding: 8px 10px; text-align: left; font-weight: bold; border: 1px solid #1e40af; }
+td { padding: 6px 10px; border: 1px solid #cbd5e1; }
+tr:nth-child(even) td { background: #f1f5f9; }
+.table-caption { font-size: 10pt; font-style: italic; text-align: center; margin-bottom: 0.3cm; color: #475569; }
+ul, ol { margin: 0.3cm 0 0.5cm 1.5cm; }
+li { margin-bottom: 0.2cm; }
+.cover { page-break-after: always; padding: 3cm 2cm; text-align: center; height: 100vh; display: flex; flex-direction: column; justify-content: space-between; }
+.cover-top { margin-top: 1cm; }
+.cover-top p { text-indent: 0; font-size: 13pt; margin: 0.2cm 0; }
+.cover-logo { margin: 2cm auto; }
+.cover-logo img { width: 200px; }
+.cover-title { font-size: 20pt; font-weight: bold; margin: 1.5cm 1cm; line-height: 1.4; text-align: center; }
+.cover-info { font-size: 13pt; margin: 1cm 0; }
+.cover-info p { text-indent: 0; margin: 0.3cm 0; }
+.cover-bottom { font-size: 14pt; font-weight: bold; margin-bottom: 2cm; }
+.toc-entry { display: flex; justify-content: space-between; margin: 0.2cm 0; font-size: 12pt; }
+.toc-entry.sub { margin-left: 1cm; font-size: 11pt; }
+.toc-entry.sub2 { margin-left: 2cm; font-size: 11pt; }
+.toc-dots { border-bottom: 1px dotted #94a3b8; flex-grow: 1; margin: 0 0.3cm; position: relative; top: -3px; }
+.chapter { page-break-before: always; }
+</style>
+</head>
+<body>
+<!-- COVER PAGE -->
+<div class="cover">
+  <div class="cover-top">
+    <p><strong>RÉPUBLIQUE DE MADAGASCAR</strong></p>
+    <p>Ministère de l'Enseignement Supérieur et de la Recherche Scientifique</p>
+    <p><strong>Université d'Antsiranana</strong></p>
+    <p>Faculté des Sciences — Département Informatique</p>
+  </div>
+  <div class="cover-logo">
+    <img src="figures/fig01_logo.png" alt="Logo Clinique GODIE">
+  </div>
+  <div>
+    <p style="font-size:14pt; font-weight:bold; text-indent:0;">MÉMOIRE DE FIN D'ÉTUDES</p>
+    <p style="text-indent:0;">en vue de l'obtention du diplôme de</p>
+    <p style="font-size:14pt; font-weight:bold; text-indent:0;">LICENCE PROFESSIONNELLE INFORMATIQUE</p>
+  </div>
+  <div class="cover-title">
+    Conception et Réalisation d'une Application Web de Gestion Hospitalière<br>
+    <span style="font-size:16pt; font-weight:normal;">Cas de la Clinique GODIE à Antsiranana</span>
+  </div>
+  <div class="cover-info">
+    <p><strong>Présenté par :</strong> JESE Andriamaniraka Davida</p>
+    <p><strong>Sous la direction de :</strong> [Nom de l'encadreur]</p>
+    <p><strong>Année universitaire :</strong> 2024–2025</p>
+  </div>
+  <div class="cover-bottom">
+    Antsiranana, Madagascar
+  </div>
+</div>
+<!-- PAGE DE GARDE -->
+<div class="page-break"></div>
+<div style="padding-top: 4cm;">
+  <table style="width:100%; border:none; margin-bottom: 2cm;">
+    <tr><td style="border:none; width:35%; font-weight:bold;">Établissement</td><td style="border:none;">Université d'Antsiranana, Faculté des Sciences</td></tr>
+    <tr><td style="border:none; font-weight:bold;">Département</td><td style="border:none;">Informatique</td></tr>
+    <tr><td style="border:none; font-weight:bold;">Diplôme</td><td style="border:none;">Licence Professionnelle Informatique</td></tr>
+    <tr><td style="border:none; font-weight:bold;">Titre</td><td style="border:none;">Conception et Réalisation d'une Application Web de Gestion Hospitalière — Clinique GODIE</td></tr>
+    <tr><td style="border:none; font-weight:bold;">Auteur</td><td style="border:none;">JESE Andriamaniraka Davida</td></tr>
+    <tr><td style="border:none; font-weight:bold;">Encadreur</td><td style="border:none;">[Nom de l'encadreur]</td></tr>
+    <tr><td style="border:none; font-weight:bold;">Année</td><td style="border:none;">2024–2025</td></tr>
+    <tr><td style="border:none; font-weight:bold;">Lieu</td><td style="border:none;">Antsiranana, Madagascar</td></tr>
+  </table>
+</div>
+
+<!-- REMERCIEMENTS -->
+<div class="page-break chapter">
+  <h1>REMERCIEMENTS</h1>
+  <p class="no-indent">Avant toute chose, je rends grâce à Dieu Tout-Puissant pour la santé, la force et la persévérance qu'Il m'a accordées tout au long de ce parcours universitaire. Sans Lui, ce travail n'aurait pu voir le jour.</p>
+  <p>Je tiens à exprimer mes plus sincères remerciements à l'ensemble du corps professoral du Département Informatique de la Faculté des Sciences de l'Université d'Antsiranana. Leurs enseignements de qualité, leur rigueur scientifique et leur disponibilité ont constitué le socle de ma formation et m'ont permis d'acquérir les compétences nécessaires à la réalisation de ce projet.</p>
+  <p>Ma profonde gratitude va à mon encadreur, [Nom de l'encadreur], qui a accepté de diriger ce mémoire. Je le remercie pour son accompagnement constant, ses orientations scientifiques précieuses, sa patience et sa disponibilité à chaque étape de ce travail. Ses conseils éclairés m'ont permis de mener ce projet à son terme dans les meilleures conditions.</p>
+  <p>Je remercie également les membres du jury d'avoir accepté d'évaluer ce travail. Je leur suis reconnaissant du temps et de l'attention qu'ils consacreront à la lecture et à l'évaluation de ce mémoire.</p>
+  <p>Mes remerciements s'adressent également à la direction et au personnel de la Clinique GODIE, qui m'ont accueilli dans leur établissement, ont partagé avec moi leur expérience du terrain et ont exprimé leurs besoins, sans lesquels ce projet n'aurait pas pu être défini avec précision.</p>
+  <p>Je n'oublie pas mes camarades de promotion, avec qui j'ai partagé trois années d'études riches en apprentissage, en entraide et en amitié. Leur soutien moral a été une source de motivation tout au long de ce parcours.</p>
+  <p>Enfin, je remercie du fond du cœur ma famille — mes parents, mes frères et sœurs — pour leur amour inconditionnel, leurs sacrifices et leur soutien indéfectible. Ils ont été présents à chaque instant, et ce mémoire est aussi le fruit de leur encouragement.</p>
+
+  <!-- DÉDICACE -->
+  <div class="page-break chapter">
+    <h1>DÉDICACE</h1>
+    <p class="no-indent" style="text-align:center; font-style:italic; margin-top: 3cm;">
+      À mes parents, qui ont sacrifié tant de choses pour mon éducation,<br>
+      et qui m'ont transmis les valeurs de travail, de persévérance et d'honneur.<br><br>
+      À ma famille, pour son soutien constant et son amour sans faille.<br><br>
+      À mes amis et camarades de promotion,<br>
+      avec qui j'ai partagé ces années d'études inoubliables.<br><br>
+      À tous ceux qui, de près ou de loin,<br>
+      ont contribué à l'aboutissement de ce travail.<br><br>
+      Je dédie ce mémoire.
+    </p>
+  </div>
+
+  <!-- RÉSUMÉ -->
+  <div class="page-break chapter">
+    <h1>RÉSUMÉ</h1>
+    <p class="no-indent">Ce mémoire présente la conception et la réalisation d'une application web de gestion hospitalière destinée à la Clinique GODIE, un établissement de santé privé situé à Antsiranana, dans le Nord de Madagascar. L'application a pour objectif de moderniser et de centraliser la gestion des activités de la clinique, qui s'effectuait jusqu'à présent au moyen de procédés manuels et de fichiers dispersés.</p>
+    <p>Le projet couvre vingt-neuf modules fonctionnels intégrés : la gestion des patients, des médecins, du personnel, des infirmiers, des rendez-vous, des consultations, des ordonnances, des hospitalisations, des chambres et des lits, des laboratoires, des analyses et des résultats, des médicaments, de la pharmacie, du stock, des fournisseurs, des factures, des paiements, des assurances, des services, des spécialités, des urgences, des ambulances, des utilisateurs, des rôles, des permissions, des paramètres, de la sauvegarde et du journal des activités.</p>
+    <p>Le développement a été réalisé avec les technologies React 18, TypeScript, Vite 5 et Tailwind CSS 3 pour le frontend, en adoptant une architecture dite « config-driven » permettant la génération automatique des pages CRUD à partir d'un registre de configuration. La persistance des données est assurée par le localStorage du navigateur, avec un système d'auto-incrémentation des identifiants garantissant des clés primaires uniques à partir de 1.</p>
+    <p>Les résultats obtenus démontrent qu'il est possible, avec des technologies web modernes et une architecture logicielle bien pensée, de répondre aux besoins réels d'un établissement de santé malgache tout en produisant un logiciel de qualité professionnelle, performant, responsive et prêt pour une démonstration devant un jury universitaire.</p>
+    <p style="margin-top:1cm;"><strong>Mots-clés :</strong> gestion hospitalière, application web, React, TypeScript, CRUD, Clinique GODIE, Antsiranana, Madagascar, interface utilisateur, persistance des données.</p>
+  </div>
+
+  <!-- ABSTRACT -->
+  <div class="page-break chapter">
+    <h1>ABSTRACT</h1>
+    <p class="no-indent">This thesis presents the design and implementation of a web-based hospital management application for the GODIE Clinic, a private healthcare establishment located in Antsiranana, in the North of Madagascar. The application aims to modernize and centralize the management of the clinic's activities, which until now have been carried out using manual processes and scattered files.</p>
+    <p>The project covers thirty integrated functional modules: patient management, doctors, staff, nurses, appointments, consultations, prescriptions, hospitalizations, rooms and beds, laboratories, analyses and results, medications, pharmacy, stock, suppliers, invoices, payments, insurance, services, specialties, emergencies, ambulances, users, roles, permissions, settings, backup, and activity log.</p>
+    <p>The development was carried out using React 18, TypeScript, Vite 5, and Tailwind CSS 3 for the frontend, adopting a "config-driven" architecture that enables automatic generation of CRUD pages from a configuration registry. Data persistence is ensured by the browser's localStorage, with an auto-increment system for identifiers guaranteeing unique primary keys starting from 1.</p>
+    <p>The results demonstrate that it is possible, with modern web technologies and a well-designed software architecture, to meet the real needs of a Malagasy healthcare establishment while producing professional-quality software that is performant, responsive, and ready for a demonstration before an academic jury.</p>
+    <p style="margin-top:1cm;"><strong>Keywords:</strong> hospital management, web application, React, TypeScript, CRUD, GODIE Clinic, Antsiranana, Madagascar, user interface, data persistence.</p>
+  </div>
+
+  <!-- TABLE DES MATIÈRES -->
+  <div class="page-break chapter">
+    <h1>TABLE DES MATIÈRES</h1>
+    <div class="toc-entry"><span><strong>Introduction générale</strong></span><span class="toc-dots"></span><span>9</span></div>
+    <div class="toc-entry"><span><strong>Chapitre I — Présentation de la Clinique GODIE</strong></span><span class="toc-dots"></span><span>13</span></div>
+    <div class="toc-entry sub"><span>1.1 Présentation générale</span><span class="toc-dots"></span><span>13</span></div>
+    <div class="toc-entry sub"><span>1.2 Localisation géographique</span><span class="toc-dots"></span><span>14</span></div>
+    <div class="toc-entry sub"><span>1.3 Organigramme</span><span class="toc-dots"></span><span>14</span></div>
+    <div class="toc-entry sub"><span>1.4 Services offerts</span><span class="toc-dots"></span><span>15</span></div>
+    <div class="toc-entry sub"><span>1.5 Motivation du projet</span><span class="toc-dots"></span><span>16</span></div>
+    <div class="toc-entry"><span><strong>Chapitre II — Analyse de l'existant</strong></span><span class="toc-dots"></span><span>17</span></div>
+    <div class="toc-entry sub"><span>2.1 Méthodes de travail actuelles</span><span class="toc-dots"></span><span>17</span></div>
+    <div class="toc-entry sub"><span>2.2 Limites du système actuel</span><span class="toc-dots"></span><span>18</span></div>
+    <div class="toc-entry sub"><span>2.3 Propositions de solutions</span><span class="toc-dots"></span><span>19</span></div>
+    <div class="toc-entry"><span><strong>Chapitre III — Étude des besoins</strong></span><span class="toc-dots"></span><span>21</span></div>
+    <div class="toc-entry sub"><span>3.1 Identification des acteurs</span><span class="toc-dots"></span><span>21</span></div>
+    <div class="toc-entry sub"><span>3.2 Besoins fonctionnels</span><span class="toc-dots"></span><span>22</span></div>
+    <div class="toc-entry sub"><span>3.3 Besoins non fonctionnels</span><span class="toc-dots"></span><span>24</span></div>
+    <div class="toc-entry sub"><span>3.4 Règles de gestion</span><span class="toc-dots"></span><span>25</span></div>
+    <div class="toc-entry"><span><strong>Chapitre IV — Conception UML</strong></span><span class="toc-dots"></span><span>27</span></div>
+    <div class="toc-entry sub"><span>4.1 Diagramme de cas d'utilisation</span><span class="toc-dots"></span><span>27</span></div>
+    <div class="toc-entry sub"><span>4.2 Diagramme de classes</span><span class="toc-dots"></span><span>29</span></div>
+    <div class="toc-entry sub"><span>4.3 Diagrammes de séquence</span><span class="toc-dots"></span><span>31</span></div>
+    <div class="toc-entry sub"><span>4.4 Diagramme d'activité</span><span class="toc-dots"></span><span>33</span></div>
+    <div class="toc-entry sub"><span>4.5 Modèle conceptuel de données</span><span class="toc-dots"></span><span>34</span></div>
+    <div class="toc-entry sub"><span>4.6 Modèle logique de données</span><span class="toc-dots"></span><span>36</span></div>
+    <div class="toc-entry"><span><strong>Chapitre V — Choix technologiques</strong></span><span class="toc-dots"></span><span>38</span></div>
+    <div class="toc-entry sub"><span>5.1 Frontend</span><span class="toc-dots"></span><span>38</span></div>
+    <div class="toc-entry sub"><span>5.2 Persistance des données</span><span class="toc-dots"></span><span>40</span></div>
+    <div class="toc-entry sub"><span>5.3 Justification globale</span><span class="toc-dots"></span><span>41</span></div>
+    <div class="toc-entry"><span><strong>Chapitre VI — Architecture de l'application</strong></span><span class="toc-dots"></span><span>43</span></div>
+    <div class="toc-entry sub"><span>6.1 Architecture générale</span><span class="toc-dots"></span><span>43</span></div>
+    <div class="toc-entry sub"><span>6.2 Couches logicielles</span><span class="toc-dots"></span><span>44</span></div>
+    <div class="toc-entry sub"><span>6.3 Pattern config-driven</span><span class="toc-dots"></span><span>45</span></div>
+    <div class="toc-entry"><span><strong>Chapitre VII — Réalisation</strong></span><span class="toc-dots"></span><span>47</span></div>
+    <div class="toc-entry sub"><span>7.1 Structure du projet</span><span class="toc-dots"></span><span>47</span></div>
+    <div class="toc-entry sub"><span>7.2 Store de données</span><span class="toc-dots"></span><span>48</span></div>
+    <div class="toc-entry sub"><span>7.3 Framework CRUD</span><span class="toc-dots"></span><span>49</span></div>
+    <div class="toc-entry sub"><span>7.4 Design system</span><span class="toc-dots"></span><span>50</span></div>
+    <div class="toc-entry"><span><strong>Chapitre VIII — Présentation détaillée des modules</strong></span><span class="toc-dots"></span><span>52</span></div>
+    <div class="toc-entry sub"><span>8.1 Tableau de bord</span><span class="toc-dots"></span><span>52</span></div>
+    <div class="toc-entry sub"><span>8.2 Gestion des patients</span><span class="toc-dots"></span><span>54</span></div>
+    <div class="toc-entry sub"><span>8.3 Gestion du personnel</span><span class="toc-dots"></span><span>56</span></div>
+    <div class="toc-entry sub"><span>8.4 Rendez-vous et consultations</span><span class="toc-dots"></span><span>58</span></div>
+    <div class="toc-entry sub"><span>8.5 Hospitalisation</span><span class="toc-dots"></span><span>60</span></div>
+    <div class="toc-entry sub"><span>8.6 Laboratoire</span><span class="toc-dots"></span><span>62</span></div>
+    <div class="toc-entry sub"><span>8.7 Pharmacie</span><span class="toc-dots"></span><span>64</span></div>
+    <div class="toc-entry sub"><span>8.8 Facturation</span><span class="toc-dots"></span><span>66</span></div>
+    <div class="toc-entry sub"><span>8.9 Urgences et ambulances</span><span class="toc-dots"></span><span>67</span></div>
+    <div class="toc-entry sub"><span>8.10 Sécurité et paramètres</span><span class="toc-dots"></span><span>68</span></div>
+    <div class="toc-entry"><span><strong>Chapitre IX — Tests</strong></span><span class="toc-dots"></span><span>70</span></div>
+    <div class="toc-entry"><span><strong>Chapitre X — Sécurité</strong></span><span class="toc-dots"></span><span>73</span></div>
+    <div class="toc-entry"><span><strong>Chapitre XI — Déploiement</strong></span><span class="toc-dots"></span><span>76</span></div>
+    <div class="toc-entry"><span><strong>Conclusion générale</strong></span><span class="toc-dots"></span><span>79</span></div>
+    <div class="toc-entry"><span><strong>Bibliographie</strong></span><span class="toc-dots"></span><span>81</span></div>
+    <div class="toc-entry"><span><strong>Webographie</strong></span><span class="toc-dots"></span><span>82</span></div>
+    <div class="toc-entry"><span><strong>Annexes</strong></span><span class="toc-dots"></span><span>83</span></div>
+  </div>
+
+  <!-- LISTE DES FIGURES -->
+  <div class="page-break chapter">
+    <h1>LISTE DES FIGURES</h1>
+    <div class="toc-entry"><span>Figure 1 — Logo de la Clinique GODIE</span><span class="toc-dots"></span><span>5</span></div>
+    <div class="toc-entry"><span>Figure 2 — Organigramme de la Clinique GODIE</span><span class="toc-dots"></span><span>15</span></div>
+    <div class="toc-entry"><span>Figure 3 — Diagramme de cas d'utilisation général</span><span class="toc-dots"></span><span>28</span></div>
+    <div class="toc-entry"><span>Figure 4 — Diagramme de cas d'utilisation : Gestion des patients</span><span class="toc-dots"></span><span>29</span></div>
+    <div class="toc-entry"><span>Figure 5 — Diagramme de classes</span><span class="toc-dots"></span><span>30</span></div>
+    <div class="toc-entry"><span>Figure 6 — Diagramme de séquence : Prise de rendez-vous</span><span class="toc-dots"></span><span>32</span></div>
+    <div class="toc-entry"><span>Figure 7 — Diagramme de séquence : Création d'une consultation</span><span class="toc-dots"></span><span>33</span></div>
+    <div class="toc-entry"><span>Figure 8 — Modèle conceptuel de données (MCD)</span><span class="toc-dots"></span><span>35</span></div>
+    <div class="toc-entry"><span>Figure 9 — Modèle logique de données (MLD)</span><span class="toc-dots"></span><span>37</span></div>
+    <div class="toc-entry"><span>Figure 10 — Diagramme d'activité : Consultation médicale</span><span class="toc-dots"></span><span>34</span></div>
+    <div class="toc-entry"><span>Figure 11 — Diagramme de déploiement</span><span class="toc-dots"></span><span>77</span></div>
+    <div class="toc-entry"><span>Figure 12 — Architecture générale de l'application</span><span class="toc-dots"></span><span>44</span></div>
+    <div class="toc-entry"><span>Figure 13 — Capture d'écran : Tableau de bord</span><span class="toc-dots"></span><span>53</span></div>
+    <div class="toc-entry"><span>Figure 14 — Capture d'écran : Liste des patients</span><span class="toc-dots"></span><span>55</span></div>
+    <div class="toc-entry"><span>Figure 15 — Capture d'écran : Ajout d'un patient</span><span class="toc-dots"></span><span>56</span></div>
+    <div class="toc-entry"><span>Figure 16 — Capture d'écran : Calendrier des rendez-vous</span><span class="toc-dots"></span><span>59</span></div>
+    <div class="toc-entry"><span>Figure 17 — Capture d'écran : Gestion des consultations</span><span class="toc-dots"></span><span>60</span></div>
+    <div class="toc-entry"><span>Figure 18 — Capture d'écran : Gestion des médicaments</span><span class="toc-dots"></span><span>65</span></div>
+    <div class="toc-entry"><span>Figure 19 — Capture d'écran : Rapports</span><span class="toc-dots"></span><span>69</span></div>
+    <div class="toc-entry"><span>Figure 20 — Capture d'écran : Paramètres et sauvegarde</span><span class="toc-dots"></span><span>69</span></div>
+    <div class="toc-entry"><span>Figure 22 — Capture d'écran : Listes globales</span><span class="toc-dots"></span><span>85</span></div>
+    <div class="toc-entry"><span>Figure 23 — Capture d'écran : Module Morgue</span><span class="toc-dots"></span><span>86</span></div>
+    <div class="toc-entry"><span>Figure 24 — Capture d'écran : Suivi des patients</span><span class="toc-dots"></span><span>87</span></div>
+    <div class="toc-entry"><span>Figure 25 — Capture d'écran : Prix des services</span><span class="toc-dots"></span><span>88</span></div>
+</div>
+
+<!-- SOMMAIRE -->
+<div class="page-break chapter">
+  <h1>SOMMAIRE</h1>
+  <div class="toc-entry"><span><strong>Introduction générale</strong></span><span class="toc-dots"></span><span>9</span></div>
+  <div class="toc-entry"><span><strong>Chapitre I — Présentation de la Clinique GODIE</strong></span><span class="toc-dots"></span><span>13</span></div>
+  <div class="toc-entry"><span><strong>Chapitre II — Analyse de l'existant</strong></span><span class="toc-dots"></span><span>17</span></div>
+  <div class="toc-entry"><span><strong>Chapitre III — Étude des besoins</strong></span><span class="toc-dots"></span><span>21</span></div>
+  <div class="toc-entry"><span><strong>Chapitre IV — Conception UML</strong></span><span class="toc-dots"></span><span>27</span></div>
+  <div class="toc-entry"><span><strong>Chapitre V — Choix technologiques</strong></span><span class="toc-dots"></span><span>38</span></div>
+  <div class="toc-entry"><span><strong>Chapitre VI — Architecture de l'application</strong></span><span class="toc-dots"></span><span>43</span></div>
+  <div class="toc-entry"><span><strong>Chapitre VII — Réalisation</strong></span><span class="toc-dots"></span><span>47</span></div>
+  <div class="toc-entry"><span><strong>Chapitre VIII — Présentation détaillée des modules</strong></span><span class="toc-dots"></span><span>52</span></div>
+  <div class="toc-entry sub"><span>8.1 Tableau de bord</span><span class="toc-dots"></span><span>52</span></div>
+  <div class="toc-entry sub"><span>8.2 Gestion des patients</span><span class="toc-dots"></span><span>54</span></div>
+  <div class="toc-entry sub"><span>8.3 Gestion du personnel</span><span class="toc-dots"></span><span>56</span></div>
+  <div class="toc-entry sub"><span>8.4 Rendez-vous et consultations</span><span class="toc-dots"></span><span>58</span></div>
+  <div class="toc-entry sub"><span>8.5 Hospitalisation</span><span class="toc-dots"></span><span>60</span></div>
+  <div class="toc-entry sub"><span>8.6 Laboratoire</span><span class="toc-dots"></span><span>62</span></div>
+  <div class="toc-entry sub"><span>8.7 Pharmacie</span><span class="toc-dots"></span><span>64</span></div>
+  <div class="toc-entry sub"><span>8.8 Facturation et tarification</span><span class="toc-dots"></span><span>66</span></div>
+  <div class="toc-entry sub"><span>8.9 Urgences et ambulances</span><span class="toc-dots"></span><span>67</span></div>
+  <div class="toc-entry sub"><span>8.10 Suivi des patients</span><span class="toc-dots"></span><span>68</span></div>
+  <div class="toc-entry sub"><span>8.11 Morgue</span><span class="toc-dots"></span><span>69</span></div>
+  <div class="toc-entry sub"><span>8.12 Sécurité et paramètres</span><span class="toc-dots"></span><span>70</span></div>
+  <div class="toc-entry sub"><span>8.13 Recherche globale et listes globales</span><span class="toc-dots"></span><span>71</span></div>
+  <div class="toc-entry"><span><strong>Chapitre IX — Tests</strong></span><span class="toc-dots"></span><span>73</span></div>
+  <div class="toc-entry"><span><strong>Chapitre X — Sécurité</strong></span><span class="toc-dots"></span><span>76</span></div>
+  <div class="toc-entry"><span><strong>Chapitre XI — Déploiement</strong></span><span class="toc-dots"></span><span>79</span></div>
+  <div class="toc-entry"><span><strong>Conclusion générale</strong></span><span class="toc-dots"></span><span>82</span></div>
+  <div class="toc-entry"><span><strong>Bibliographie</strong></span><span class="toc-dots"></span><span>84</span></div>
+  <div class="toc-entry"><span><strong>Webographie</strong></span><span class="toc-dots"></span><span>85</span></div>
+  <div class="toc-entry"><span><strong>Annexes</strong></span><span class="toc-dots"></span><span>86</span></div>
+  <div class="toc-entry"><span><strong>Table des matières</strong></span><span class="toc-dots"></span><span>95</span></div>
+
+  <!-- LISTE DES TABLEAUX -->
+  <div class="page-break chapter">
+    <h1>LISTE DES TABLEAUX</h1>
+    <div class="toc-entry"><span>Tableau 1 — Acteurs du système</span><span class="toc-dots"></span><span>22</span></div>
+    <div class="toc-entry"><span>Tableau 2 — Besoins fonctionnels</span><span class="toc-dots"></span><span>23</span></div>
+    <div class="toc-entry"><span>Tableau 3 — Besoins non fonctionnels</span><span class="toc-dots"></span><span>25</span></div>
+    <div class="toc-entry"><span>Tableau 4 — Règles de gestion métier</span><span class="toc-dots"></span><span>26</span></div>
+    <div class="toc-entry"><span>Tableau 5 — Choix technologiques</span><span class="toc-dots"></span><span>39</span></div>
+    <div class="toc-entry"><span>Tableau 6 — Modules de l'application</span><span class="toc-dots"></span><span>84</span></div>
+    <div class="toc-entry"><span>Tableau 7 — Cas de tests fonctionnels</span><span class="toc-dots"></span><span>72</span></div>
+    <div class="toc-entry"><span>Tableau 8 — Matrice de traçabilité des besoins</span><span class="toc-dots"></span><span>73</span></div>
+  </div>
+
+  <!-- LISTE DES ACRONYMES -->
+  <div class="page-break chapter">
+    <h1>LISTE DES ACRONYMES</h1>
+    <table>
+      <tr><th>Acronyme</th><th>Signification</th></tr>
+      <tr><td>API</td><td>Application Programming Interface</td></tr>
+      <tr><td>CRUD</td><td>Create, Read, Update, Delete</td></tr>
+      <tr><td>CSS</td><td>Cascading Style Sheets</td></tr>
+      <tr><td>CSV</td><td>Comma-Separated Values</td></tr>
+      <tr><td>HTML</td><td>HyperText Markup Language</td></tr>
+      <tr><td>HTTP</td><td>HyperText Transfer Protocol</td></tr>
+      <tr><td>HTTPS</td><td>HyperText Transfer Protocol Secure</td></tr>
+      <tr><td>JSON</td><td>JavaScript Object Notation</td></tr>
+      <tr><td>JWT</td><td>JSON Web Token</td></tr>
+      <tr><td>MCD</td><td>Modèle Conceptuel de Données</td></tr>
+      <tr><td>MLD</td><td>Modèle Logique de Données</td></tr>
+      <tr><td>MPD</td><td>Modèle Physique de Données</td></tr>
+      <tr><td>ORM</td><td>Object-Relational Mapping</td></tr>
+      <tr><td>PDF</td><td>Portable Document Format</td></tr>
+      <tr><td>PWA</td><td>Progressive Web App</td></tr>
+      <tr><td>REST</td><td>Representational State Transfer</td></tr>
+      <tr><td>SPA</td><td>Single Page Application</td></tr>
+      <tr><td>SQL</td><td>Structured Query Language</td></tr>
+      <tr><td>SVG</td><td>Scalable Vector Graphics</td></tr>
+      <tr><td>TS</td><td>TypeScript</td></tr>
+      <tr><td>UML</td><td>Unified Modeling Language</td></tr>
+      <tr><td>UI</td><td>User Interface</td></tr>
+      <tr><td>UX</td><td>User Experience</td></tr>
+      <tr><td>XSS</td><td>Cross-Site Scripting</td></tr>
+    </table>
+  </div>
+
+  <!-- INTRODUCTION GÉNÉRALE -->
+  <div class="page-break chapter">
+    <h1>INTRODUCTION GÉNÉRALE</h1>
+
+    <h2>Contexte et justification</h2>
+    <p class="no-indent">La gestion d'un établissement de santé est une tâche complexe qui mobilise de nombreuses ressources humaines, matérielles et informationnelles. Dans le contexte malgache, et particulièrement dans la ville d'Antsiranana — située dans le Nord de Madagascar — de nombreuses cliniques privées assurent encore leur gestion au moyen de procédés manuels ou de fichiers bureautiques dispersés. Cette situation engendre des pertes de temps considérables, des risques d'erreurs de saisie, des doublons dans les enregistrements et une grande difficulté à produire des rapports fiables en temps réel. L'absence d'un système d'information unifié constitue un frein majeur à l'amélioration de la qualité des soins et à l'efficience de la gestion administrative.</p>
+    <p>La transformation numérique des établissements de santé est devenue une nécessité incontournable pour améliorer la qualité des soins, optimiser la gestion administrative et garantir la traçabilité des informations médicales. À Madagascar, cette transformation est encore balbutiante dans le secteur privé, où les outils informatisés restent rares, coûteux et souvent inadaptés aux besoins locaux. Les rares solutions existantes sont généralement conçues pour des contextes hospitaliers occidentaux et ne prennent pas en compte les réalités spécifiques des établissements de santé malgaches : taille réduite, ressources informatiques limitées, besoin d'autonomie sans serveur dédié, et nécessité d'une interface en français adaptée au personnel local.</p>
+    <p>La Clinique GODIE, dirigée par Monsieur JESE Andriamaniraka Davida, est un établissement privé situé à Antsiranana qui souhaite s'engager dans cette démarche de modernisation en adoptant une application web centralisée de gestion hospitalière. Cette volonté s'inscrit dans une vision stratégique visant à améliorer l'efficience opérationnelle de la clinique, la qualité du service rendu aux patients et la capacité de pilotage de la direction. La clinique a connu une croissance régulière de son activité, élargissant son offre de soins et accueillant un nombre croissant de patients, ce qui a rendu la gestion manuelle de plus en plus difficile et a créé un besoin urgent de digitalisation.</p>
+    <p>Par ailleurs, ce projet s'inscrit dans un cadre académique : il constitue un mémoire de fin d'études en vue de l'obtention du diplôme de Licence Professionnelle Informatique à l'Université d'Antsiranana. À ce titre, il doit non seulement répondre à un besoin réel identifié auprès de la Clinique GODIE, mais également démontrer la maîtrise des compétences acquises durant le cursus universitaire : analyse de besoins, conception de systèmes, modélisation UML, programmation web, gestion de base de données, et rédaction de documentation technique. Le projet doit également être présenté et défendu devant un jury universitaire, ce qui impose un niveau de qualité et de finition professionnel.</p>
+
+    <h2>Problématique</h2>
+    <p class="no-indent">La Clinique GODIE fait face à plusieurs défis dans sa gestion quotidienne. Les données relatives aux patients, aux rendez-vous, aux consultations, à la pharmacie et à la facturation sont actuellement dispersées entre différents supports (registres papier, fichiers Excel, communications orales), ce qui rend leur consolidation difficile et leur exploitation statistique quasi impossible en temps réel. Aucune procédure de sauvegarde automatique n'est en place, et les données papier sont vulnérables aux dégradations physiques.</p>
+    <p>Cette dispersion des données entraîne plusieurs conséquences directes sur la qualité du service. Premièrement, la recherche d'un dossier patient peut prendre plusieurs minutes, voire rester infructueuse si le registre a été égaré ou endommagé. Deuxièmement, les doublons sont fréquents : un même patient peut être enregistré sous différentes orthographes, créant des incohérences dans les statistiques. Troisièmement, la coordination entre services est déficiente : le service d'accueil ne sait pas toujours si un patient a déjà été consulté par un médecin, et le service pharmaceutique ne dispose pas en temps réel de l'état des stocks. Quatrièmement, la production de rapports statistiques pour la direction est un processus manuel, long et sujet à erreurs. Cinquièmement, le suivi des patients après leur sortie de l'hôpital n'est pas formalisé, et la gestion de la morgue repose sur un registre papier non relié au reste du système.</p>
+    <p>Ces défis ne sont pas spécifiques à la Clinique GODIE : ils sont représentatifs des difficultés rencontrées par de nombreux établissements de santé privés à Madagascar. La résolution de ces défis par le développement d'une application web sur mesure constitue donc une démarche à la fois concrète pour la clinique et exemplaire pour le secteur. De plus, les normes et standards internationaux en matière de gestion des données de santé évoluent rapidement : la confidentialité des données médicales, la traçabilité des prescriptions et la sécurité des informations personnelles sont des exigences de plus en plus strictes que les procédés manuels ne permettent pas de satisfaire.</p>
+    <p>La question centrale qui se pose est donc la suivante : comment concevoir et réaliser une application web professionnelle, complète et sécurisée permettant de gérer de manière intégrée l'ensemble des activités de la Clinique GODIE — patients, médecins, personnel, rendez-vous, consultations, hospitalisations, laboratoire, pharmacie, facturation, urgences, suivi des patients, morgue et tarification — tout en garantissant la fiabilité des données, la facilité d'utilisation, l'évolutivité du système et la production de rapports détaillés par module et globaux ?</p>
+
+    <h2>Objectifs du projet</h2>
+    <p class="no-indent">Ce travail poursuit les objectifs suivants :</p>
+    <ol>
+      <li><strong>Concevoir une architecture logicielle modulaire</strong> couvrant l'ensemble des processus métier de la clinique, de l'accueil du patient jusqu'à la facturation, la gestion des urgences, le suivi post-hospitalisation et la gestion de la morgue.</li>
+      <li><strong>Développer une interface utilisateur moderne, responsive et accessible</strong>, adaptée à une utilisation sur ordinateur, tablette et téléphone, avec un mode clair et un mode sombre, offrant une expérience utilisateur fluide et intuitive.</li>
+      <li><strong>Implémenter un framework CRUD générique</strong> permettant d'ajouter rapidement de nouveaux modules sans développement répétitif, grâce à une approche « config-driven » basée sur un registre de configuration déclaratif.</li>
+      <li><strong>Assurer la persistance des données</strong> avec auto-incrémentation des identifiants, garantissant des clés primaires uniques et un démarrage sur base vide, avec des capacités de sauvegarde et restauration complètes.</li>
+      <li><strong>Garantir la fiabilité, la sécurité et la maintenabilité du code</strong> en utilisant un typage statique strict (TypeScript) et une architecture en couches clairement séparées (présentation, logique métier, persistance).</li>
+      <li><strong>Produire un tableau de bord analytique</strong> avec statistiques en temps réel et graphiques interactifs pour le pilotage de la clinique, permettant à la direction de suivre l'évolution des principaux indicateurs en un coup d'œil.</li>
+      <li><strong>Offrir des capacités d'export</strong> (PDF, Excel, impression) pour chaque module ainsi qu'un système de rapports détaillés par module et un rapport global consolidé.</li>
+      <li><strong>Implémenter une recherche globale</strong> permettant de rechercher instantanément across tous les modules du système à partir d'une barre de recherche unique accessible via un raccourci clavier.</li>
+      <li><strong>Fournir des vues de listes globales</strong> permettant de consulter en un coup d'œil l'ensemble des listes du système (médecins, personnel, patients, etc.) avec leurs statistiques.</li>
+    </ol>
+
+    <h2>Méthodologie</h2>
+    <p class="no-indent">Le projet suit une démarche méthodologique en cascade adaptée, comprenant les étapes suivantes :</p>
+    <ul>
+      <li><strong>Analyse</strong> : étude de l'existant par observation directe et entretiens avec le personnel de la clinique, recueil des besoins, identification des acteurs et des processus métier, et définition du périmètre fonctionnel.</li>
+      <li><strong>Conception</strong> : modélisation UML (diagrammes de cas d'utilisation, de classes, de séquences, d'activité), conception de la base de données (MCD, MLD) selon la méthode Merise, et définition de l'architecture logicielle en trois couches.</li>
+      <li><strong>Réalisation</strong> : développement du frontend avec React 18, TypeScript, Vite 5 et Tailwind CSS 3, implémentation du framework CRUD générique config-driven, et développement des pages personnalisées (tableau de bord, calendrier de rendez-vous, rapports, paramètres, listes globales, recherche globale).</li>
+      <li><strong>Tests</strong> : validation fonctionnelle de chaque module selon une grille de cas de tests prédéfinie, couvrant les opérations CRUD, les exports, la navigation, le mode sombre et le responsive design.</li>
+      <li><strong>Déploiement</strong> : préparation du build de production optimisé, configuration de l'intégration continue avec GitHub Actions, et documentation des procédures de déploiement.</li>
+    </ul>
+
+    <h2>Structure du mémoire</h2>
+    <p class="no-indent">Ce mémoire est structuré en onze chapitres :</p>
+    <ul>
+      <li>Le <strong>Chapitre I</strong> présente la Clinique GODIE, son organisation, sa localisation et ses services.</li>
+      <li>Le <strong>Chapitre II</strong> analyse le système existant, identifie ses limites et propose des solutions.</li>
+      <li>Le <strong>Chapitre III</strong> dégage les besoins fonctionnels et non fonctionnels, identifie les acteurs et définit les règles de gestion.</li>
+      <li>Le <strong>Chapitre IV</strong> décrit la conception UML et la modélisation des données (MCD, MLD).</li>
+      <li>Le <strong>Chapitre V</strong> justifie les choix technologiques effectués pour le frontend et la persistance.</li>
+      <li>Le <strong>Chapitre VI</strong> expose l'architecture de l'application et le pattern config-driven.</li>
+      <li>Le <strong>Chapitre VII</strong> détaille la réalisation : structure du projet, store de données, framework CRUD et design system.</li>
+      <li>Le <strong>Chapitre VIII</strong> présente chaque module de l'application avec captures d'écran réelles, y compris les nouveaux modules (suivi des patients, morgue, prix des services, listes globales, recherche globale).</li>
+      <li>Le <strong>Chapitre IX</strong> aborde les tests fonctionnels et la matrice de traçabilité des besoins.</li>
+      <li>Le <strong>Chapitre X</strong> traite de la sécurité (validation, XSS, rôles, journalisation, sauvegarde).</li>
+      <li>Le <strong>Chapitre XI</strong> décrit le déploiement, l'intégration continue et le diagramme de déploiement.</li>
+      <li>La <strong>Conclusion générale</strong> synthétise le travail accompli et ouvre des perspectives d'évolution.</li>
+      <li>Les <strong>Annexes</strong> regroupent la liste complète des modules, les captures d'écran supplémentaires et les éléments techniques.</li>
+      <li>La <strong>Table des matières</strong> détaillée figure en fin de document, après les annexes.</li>
+    </ul>
+  </div>
+
+  <!-- CHAPITRE I -->
+  <div class="page-break chapter">
+    <h1>CHAPITRE I — PRÉSENTATION DE LA CLINIQUE GODIE</h1>
+
+    <h2>1.1 Présentation générale</h2>
+    <p class="no-indent">La Clinique GODIE est un établissement de santé privé situé à Antsiranana, dans le Nord de Madagascar. Fondée en 2010 par Monsieur JESE Andriamaniraka Davida, la clinique offre des services médicaux pluridisciplinaires à la population de la région Diana. Sa mission est de fournir des soins de qualité, accessibles et humains, en intégrant progressivement les technologies numériques au service du patient.</p>
+    <p>Au fil des années, la Clinique GODIE a connu une croissance régulière de son activité, élargissant son offre de soins et accueillant un nombre croissant de patients. Cette expansion a mis en évidence la nécessité de disposer d'un système d'information performant pour gérer efficacement les multiples flux de données générés par l'activité de l'établissement.</p>
+    <p>La clinique se distingue par son approche centrée sur le patient, son engagement envers la qualité des soins et sa volonté d'innovation. La direction est consciente que la digitalisation des processus de gestion constitue un levier essentiel pour améliorer l'efficience opérationnelle, réduire les erreurs et offrir un meilleur suivi des dossiers médicaux.</p>
+
+    <figure>
+      <img src="figures/fig01_logo.png" alt="Logo de la Clinique GODIE" style="width:250px;">
+      <figcaption>Figure 1 — Logo de la Clinique GODIE</figcaption>
+    </figure>
+
+    <h2>1.2 Localisation géographique</h2>
+    <p class="no-indent">La Clinique GODIE est implantée dans le quartier d'Ambondrona, à Antsiranana, chef-lieu de la région Diana. Antsiranana, anciennement connue sous le nom de Diego-Suarez, est la principale ville du Nord de Madagascar et constitue un pôle économique et sanitaire important pour la région.</p>
+    <p>La clinique dessert la ville d'Antsiranana et ses environs immédiats, ainsi que les populations des districts voisins de la région Diana. Sa position géographique en fait un point de référence pour les soins de santé dans le Nord du pays, particulièrement pour les patients nécessitant des consultations spécialisées ou des hospitalisations.</p>
+
+    <h2>1.3 Organigramme</h2>
+    <p class="no-indent">La Clinique GODIE est dirigée par Monsieur JESE Andriamaniraka Davida, Directeur de l'établissement. L'organisation interne comprend plusieurs services, chacun placé sous la responsabilité d'un responsable de service. L'organigramme ci-dessous présente la structure hiérarchique de la clinique :</p>
+
+    <figure>
+      <img src="figures/fig02_organigramme.png" alt="Organigramme de la Clinique GODIE">
+      <figcaption>Figure 2 — Organigramme de la Clinique GODIE</figcaption>
+    </figure>
+
+    <p>La structure organisationnelle de la clinique se compose des entités suivantes :</p>
+    <ul>
+      <li><strong>Direction</strong> : assurée par JESE Andriamaniraka Davida, elle définit la stratégie générale, supervise l'ensemble des services et prend les décisions opérationnelles majeures.</li>
+      <li><strong>Service médical</strong> : regroupe les médecins de différentes spécialités (cardiologie, pédiatrie, neurologie, gynécologie, dermatologie, orthopédie) qui assurent les consultations externes et le suivi des patients hospitalisés.</li>
+      <li><strong>Service infirmier</strong> : composé des infirmiers et aides-soignants qui assurent les soins aux patients hospitalisés, la préparation des traitements et le suivi médical quotidien.</li>
+      <li><strong>Service d'accueil</strong> : géré par les réceptionnistes, il assure l'enregistrement des patients, la prise de rendez-vous et l'orientation des visiteurs.</li>
+      <li><strong>Service pharmaceutique</strong> : assuré par les pharmaciens, il gère la dispensation des médicaments, le suivi des stocks et les relations avec les fournisseurs.</li>
+      <li><strong>Service de laboratoire</strong> : composé de techniciens de laboratoire, il réalise les analyses médicales et produit les résultats d'examens.</li>
+      <li><strong>Service comptable</strong> : assure la facturation, le suivi des paiements, la gestion des assurances et la comptabilité générale de l'établissement.</li>
+    </ul>
+
+    <h2>1.4 Services offerts</h2>
+    <p class="no-indent">La Clinique GODIE propose une gamme étendue de services médicaux et paramédicaux destinés à couvrir l'ensemble du parcours de soins du patient :</p>
+    <ul>
+      <li><strong>Consultations externes</strong> : la clinique dispose de médecins spécialistes couvrant plusieurs disciplines — cardiologie, pédiatrie, neurologie, gynécologie, dermatologie et orthopédie. Les consultations externes constituent le point d'entrée principal du parcours de soins.</li>
+      <li><strong>Hospitalisation</strong> : la clinique dispose de chambres et de lits d'hospitalisation permettant l'accueil des patients nécessitant une surveillance médicale prolongée. Les chambres sont classées par type (standard, privée, urgence) et par étage.</li>
+      <li><strong>Laboratoire d'analyses médicales</strong> : le laboratoire interne permet de réaliser une variété d'analyses (biologie, hématologie, biochimie) avec des délais de résultat variables selon le type d'examen.</li>
+      <li><strong>Pharmacie</strong> : la pharmacie de la clinique assure la dispensation des médicaments prescrits, le suivi des stocks et la gestion des dates de péremption.</li>
+      <li><strong>Service d'urgences</strong> : le service des urgences prend en charge les cas médicaux nécessitant une intervention immédiate, avec un système de triage par niveau de gravité.</li>
+      <li><strong>Service d'ambulance</strong> : la clinique dispose d'ambulances pour le transport sanitaire des patients, avec un suivi de leur disponibilité.</li>
+    </ul>
+    <p>L'ensemble de ces services fonctionne de manière coordonnée pour assurer un parcours de soins continu et de qualité au patient. Depuis l'accueil et l'enregistrement, en passant par la consultation, les examens laboratoires, l'hospitalisation éventuelle et la facturation, chaque étape du parcours est aujourd'hui documentée mais de manière dispersée et non interconnectée. L'application proposée a pour vocation de fluidifier ce parcours en centralisant toutes les étapes dans un système unique.</p>
+
+    <h2>1.5 Motivation du projet</h2>
+    <p class="no-indent">Face à la croissance de son activité et à la diversité de ses services, la Clinique GODIE ressent de manière croissante le besoin de disposer d'un système d'information unifié, moderne et fiable. Plusieurs facteurs motivent cette démarche :</p>
+    <p>Premièrement, l'augmentation du nombre de patients rend la gestion manuelle des dossiers de plus en plus difficile et sujette aux erreurs. La recherche d'un dossier patient dans des registres papier peut prendre un temps considérable, et les risques de perte ou de duplication sont réels.</p>
+    <p>Deuxièmement, la coordination entre les différents services (accueil, médical, infirmier, pharmacie, laboratoire, comptable) nécessite un flux d'informations fluide et traçable, ce que les outils actuels (communications orales, fichiers Excel dispersés) ne permettent pas de garantir.</p>
+    <p>Troisièmement, la production de rapports statistiques et de tableaux de bord pour le pilotage de la clinique est devenue indispensable pour une gestion moderne et efficiente. Or, avec les outils actuels, cette production est lente, partielle et parfois inexacte.</p>
+    <p>L'objectif est donc de remplacer les procédés manuels par une application web centralisée, accessible depuis n'importe quel poste informatique de la clinique, évolutive et capable de s'adapter aux besoins futurs de l'établissement.</p>
+    <p>Il convient également de mentionner que ce projet s'inscrit dans un cadre académique : il constitue un mémoire de fin d'études en vue de l'obtention du diplôme de Licence Professionnelle Informatique à l'Université d'Antsiranana. À ce titre, il doit non seulement répondre à un besoin réel identifié auprès de la Clinique GODIE, mais également démontrer la maîtrise des compétences acquises durant le cursus universitaire : analyse de besoins, conception de systèmes, modélisation UML, programmation web, gestion de base de données, et rédaction de documentation technique. Le projet doit également être présenté et défendu devant un jury universitaire, ce qui impose un niveau de qualité et de finition professionnel.</p>
+  </div>
+
+  <!-- CHAPITRE II -->
+  <div class="page-break chapter">
+    <h1>CHAPITRE II — ANALYSE DE L'EXISTANT</h1>
+
+    <h2>2.1 Méthodes de travail actuelles</h2>
+    <p class="no-indent">L'analyse du système d'information actuel de la Clinique GODIE a été réalisée par observation directe et par des entretiens avec le personnel. Cette analyse révèle que la gestion s'effectue au moyen de plusieurs outils et procédés distincts, sans intégration entre eux :</p>
+    <ul>
+      <li><strong>Registres papier</strong> : les patients sont enregistrés dans des registres manuels à l'accueil. Les rendez-vous sont notés dans un cahier de planning. Les informations médicales (consultations, diagnostics, traitements) sont consignées dans des dossiers physiques par médecin.</li>
+      <li><strong>Fichiers Excel dispersés</strong> : certains services utilisent des tableurs Excel pour le suivi des consultations, des médicaments en stock et des factures. Cependant, ces fichiers ne sont pas interconnectés et résident sur des ordinateurs différents, sans synchronisation.</li>
+      <li><strong>Communications orales</strong> : la coordination entre services (par exemple, entre l'accueil et le service médical, ou entre la pharmacie et le service infirmier) se fait principalement par communication orale directe, sans traçabilité.</li>
+      <li><strong>Factures manuelles</strong> : les factures sont établies manuellement, au cas par cas, sans système de suivi automatisé des paiements ou des assurances.</li>
+      <li><strong>Absence de sauvegarde</strong> : aucune procédure de sauvegarde automatique n'est en place. Les données papier sont vulnérables aux dégradations physiques, et les fichiers Excel ne sont pas systématiquement sauvegardés.</li>
+    </ul>
+
+    <h2>2.2 Limites du système actuel</h2>
+    <p class="no-indent">Le système actuel présente plusieurs limites significatives qui entravent l'efficacité de la clinique et la qualité du service rendu :</p>
+
+    <table>
+      <tr><th>Limite</th><th>Conséquence opérationnelle</th></tr>
+      <tr><td>Saisie manuelle répétitive</td><td>Risque d'erreurs de transcription, de doublons et de données incohérentes entre les différents supports</td></tr>
+      <tr><td>Données dispersées</td><td>Difficulté de consolidation des informations pour produire des rapports globaux ou des statistiques fiables</td></tr>
+      <tr><td>Absence de traçabilité</td><td>Perte de l'historique des actions, impossibilité de savoir qui a fait quoi et quand</td></tr>
+      <tr><td>Pas d'accès distant</td><td>Impossibilité de consulter les données depuis un autre poste ou à distance, limitant la flexibilité</td></tr>
+      <tr><td>Pas de sauvegarde automatique</td><td>Risque de perte de données en cas d'incident physique (incendie, inondation, dégradation)</td></tr>
+      <tr><td>Pas de statistiques en temps réel</td><td>Pilotage de la clinique difficile, décisions prises sans visibilité sur les indicateurs clés</td></tr>
+      <tr><td>Recherche difficile</td><td>Retrouver un dossier patient précis dans les registres papier prend un temps considérable</td></tr>
+      <tr><td>Risque de perte de confidentialité</td><td>Les dossiers papier sont accessibles à toute personne ayant accès physique au local, sans contrôle d'accès individualisé</td></tr>
+    </table>
+
+    <p>Ces limites ont un impact direct sur la qualité du service rendu aux patients, sur la productivité du personnel et sur la capacité de la direction à piloter l'établissement de manière éclairée. Elles rendent également difficile toute démarche d'accréditation ou de certification de qualité, qui requiert une traçabilité rigoureuse des processus.</p>
+    <p>Il convient également de noter que ces limites s'aggravent avec la croissance de l'activité de la clinique. Plus le nombre de patients augmente, plus les registres papier deviennent volumineux et difficiles à manipuler. Plus le nombre de consultations croît, plus les fichiers Excel dispersés deviennent complexes à consolider. La situation actuelle, bien que tolérable à petite échelle, deviendra rapidement ingérable si aucune action n'est entreprise. La digitalisation n'est donc pas seulement une amélioration souhaitable, c'est une nécessité stratégique pour accompagner la croissance de l'établissement.</p>
+    <p>Par ailleurs, les normes et standards internationaux en matière de gestion des données de santé évoluent rapidement. La confidentialité des données médicales, la traçabilité des prescriptions et la sécurité des informations personnelles sont des exigences de plus en plus strictes. Les procédés manuels actuels ne permettent pas de répondre à ces exigences de manière satisfaisante, tandis qu'une application web sécurisée offrirait les garanties nécessaires.</p>
+
+    <h2>2.3 Propositions de solutions</h2>
+    <p class="no-indent">Pour pallier les limites identifiées ci-dessus, nous proposons la mise en place d'une application web unique et centralisée offrant les fonctionnalités suivantes :</p>
+    <ul>
+      <li><strong>Une base de données centralisée</strong> : toutes les informations (patients, personnel, rendez-vous, consultations, médicaments, factures, etc.) seront stockées dans un emplacement unique, éliminant la dispersion et les doublons.</li>
+      <li><strong>Un accès multi-postes</strong> : l'application étant accessible via un navigateur web, plusieurs utilisateurs pourront y accéder simultanément depuis différents postes de la clinique.</li>
+      <li><strong>Des modules intégrés</strong> couvrant l'ensemble des processus métier, de l'accueil du patient jusqu'à la facturation, en passant par les consultations, le laboratoire, la pharmacie et les urgences.</li>
+      <li><strong>Des exports</strong> au format PDF, Excel (CSV) et par impression, pour faciliter la production de documents officiels (ordonnances, factures, rapports).</li>
+      <li><strong>Un tableau de bord</strong> avec statistiques en temps réel et graphiques interactifs, permettant à la direction de suivre l'activité de la clinique en un coup d'œil.</li>
+      <li><strong>Un journal des activités</strong> pour la traçabilité des actions effectuées dans le système, avec horodatage et identification de l'utilisateur.</li>
+      <li><strong>Un système de sauvegarde et restauration</strong> permettant d'exporter l'ensemble des données en un fichier JSON et de les restaurer en cas de besoin.</li>
+    </ul>
+    <p>Cette solution apporterait une réponse globale et cohérente aux défis actuels de la Clinique GODIE, tout en posant les bases d'une infrastructure informatique évolutive, capable de s'adapter aux besoins futurs de l'établissement.</p>
+    <p>Il est important de souligner que la solution proposée ne nécessite pas d'investissement matériel important : les postes informatiques existants dans la clinique suffisent pour accéder à l'application via un simple navigateur web. L'application ne nécessite pas non plus de serveur dédié dans sa version actuelle, puisque les données sont stockées dans le navigateur. Cette légèreté d'implémentation est un atout majeur dans le contexte malgache, où les ressources informatiques sont souvent limitées.</p>
+  </div>
+
+  <!-- CHAPITRE III -->
+  <div class="page-break chapter">
+    <h1>CHAPITRE III — ÉTUDE DES BESOINS</h1>
+
+    <h2>3.1 Identification des acteurs</h2>
+    <p class="no-indent">L'analyse des besoins commence par l'identification des acteurs du système, c'est-à-dire des personnes ou entités qui interagiront avec l'application. Chaque acteur a un rôle spécifique et des droits d'accès différents selon ses fonctions au sein de la clinique.</p>
+
+    <p class="table-caption">Tableau 1 — Acteurs du système</p>
+    <table>
+      <tr><th>Acteur</th><th>Description</th><th>Modules accessibles</th></tr>
+      <tr><td>Administrateur</td><td>Accès complet à tous les modules, gestion des paramètres, des utilisateurs et des rôles</td><td>Tous les modules</td></tr>
+      <tr><td>Médecin</td><td>Consulte les patients, crée les consultations et ordonnances, gère les hospitalisations</td><td>Patients, Consultations, Ordonnances, Hospitalisations, RDV</td></tr>
+      <tr><td>Infirmier</td><td>Accède aux patients hospitalisés, assure le suivi des soins</td><td>Patients, Hospitalisations, Lits</td></tr>
+      <tr><td>Réceptionniste</td><td>Enregistre les patients, gère les rendez-vous et l'accueil</td><td>Patients, RDV</td></tr>
+      <tr><td>Pharmacien</td><td>Gère les médicaments, le stock et les fournisseurs</td><td>Médicaments, Stock, Fournisseurs</td></tr>
+      <tr><td>Technicien de laboratoire</td><td>Gère les laboratoires, les analyses et les résultats</td><td>Laboratoires, Analyses, Résultats</td></tr>
+      <tr><td>Comptable</td><td>Gère les factures, les paiements et les assurances</td><td>Factures, Paiements, Assurances</td></tr>
+    </table>
+    <p>Chaque acteur interagit avec le système selon son rôle et ses responsabilités. L'administrateur est l'acteur le plus privilégié : il a accès à tous les modules, y compris la gestion des utilisateurs, des rôles et des paramètres du système. Le médecin est l'acteur principal du processus de soins : il consulte les patients, pose des diagnostics, établit des ordonnances et gère les hospitalisations. Le réceptionniste est le premier point de contact du patient avec le système : il enregistre les patients et gère les rendez-vous. Le pharmacien gère le circuit du médicament, de l'approvisionnement à la dispensation. Le technicien de laboratoire réalise les analyses et communique les résultats. Le comptable gère les aspects financiers : facturation, paiements et relations avec les assurances.</p>
+    <p>Cette répartition des rôles et des permissions implémente le principe du moindre privilège : chaque utilisateur n'a accès qu'aux modules et aux actions nécessaires à sa fonction, réduisant les risques d'erreurs et de compromission de données.</p>
+
+    <h2>3.2 Besoins fonctionnels</h2>
+    <p class="no-indent">Les besoins fonctionnels décrivent les fonctionnalités que l'application doit offrir à ses utilisateurs. Ils ont été identifiés à partir de l'analyse de l'existant et des entretiens avec le personnel de la clinique.</p>
+
+    <p class="table-caption">Tableau 2 — Besoins fonctionnels</p>
+    <table>
+      <tr><th>Code</th><th>Besoin fonctionnel</th><th>Priorité</th></tr>
+      <tr><td>BF-01</td><td>Gérer les patients (créer, lire, modifier, supprimer)</td><td>Haute</td></tr>
+      <tr><td>BF-02</td><td>Gérer les médecins (CRUD)</td><td>Haute</td></tr>
+      <tr><td>BF-03</td><td>Gérer le personnel (CRUD)</td><td>Moyenne</td></tr>
+      <tr><td>BF-04</td><td>Gérer les infirmiers (CRUD)</td><td>Moyenne</td></tr>
+      <tr><td>BF-05</td><td>Gérer les rendez-vous (CRUD + calendrier interactif)</td><td>Haute</td></tr>
+      <tr><td>BF-06</td><td>Gérer les consultations (CRUD + ordonnance intégrée)</td><td>Haute</td></tr>
+      <tr><td>BF-07</td><td>Gérer les ordonnances (CRUD)</td><td>Haute</td></tr>
+      <tr><td>BF-08</td><td>Gérer les hospitalisations (CRUD)</td><td>Haute</td></tr>
+      <tr><td>BF-09</td><td>Gérer les chambres et les lits (CRUD + statut)</td><td>Moyenne</td></tr>
+      <tr><td>BF-10</td><td>Gérer les laboratoires et analyses (CRUD)</td><td>Moyenne</td></tr>
+      <tr><td>BF-11</td><td>Gérer les résultats d'analyses (CRUD)</td><td>Moyenne</td></tr>
+      <tr><td>BF-12</td><td>Gérer les médicaments et le stock (CRUD + alertes de stock faible)</td><td>Haute</td></tr>
+      <tr><td>BF-13</td><td>Gérer les fournisseurs (CRUD)</td><td>Moyenne</td></tr>
+      <tr><td>BF-14</td><td>Gérer les factures et paiements (CRUD)</td><td>Haute</td></tr>
+      <tr><td>BF-15</td><td>Gérer les assurances (CRUD)</td><td>Moyenne</td></tr>
+      <tr><td>BF-16</td><td>Gérer les services et spécialités (CRUD)</td><td>Basse</td></tr>
+      <tr><td>BF-17</td><td>Gérer les urgences et ambulances (CRUD)</td><td>Moyenne</td></tr>
+      <tr><td>BF-18</td><td>Gérer les utilisateurs et rôles (CRUD + permissions)</td><td>Haute</td></tr>
+      <tr><td>BF-19</td><td>Afficher un tableau de bord avec statistiques et graphiques</td><td>Haute</td></tr>
+      <tr><td>BF-20</td><td>Générer des rapports (PDF, Excel, impression)</td><td>Haute</td></tr>
+      <tr><td>BF-21</td><td>Sauvegarder et restaurer les données (export/import JSON)</td><td>Haute</td></tr>
+      <tr><td>BF-22</td><td>Journaliser les activités (traçabilité des actions)</td><td>Moyenne</td></tr>
+    </table>
+    <p>Ces vingt-deux besoins fonctionnels couvrent l'ensemble du périmètre fonctionnel de la clinique, depuis l'enregistrement d'un patient jusqu'à la facturation et la gestion des urgences. Chaque besoin correspond à un module de l'application, et chaque module implémente les quatre opérations CRUD (Créer, Lire, Modifier, Supprimer) ainsi que des fonctionnalités spécifiques (recherche, filtres, exports, alertes). La priorité de chaque besoin a été définie en concertation avec la direction de la clinique : les besoins de priorité « haute » sont ceux qui sont essentiels au fonctionnement de la clinique (patients, rendez-vous, consultations, facturation), tandis que les besoins de priorité « moyenne » ou « basse » concernent des modules complémentaires mais utiles.</p>
+
+    <h2>3.3 Besoins non fonctionnels</h2>
+    <p class="no-indent">Les besoins non fonctionnels décrivent les contraintes et les qualités que l'application doit respecter, indépendamment des fonctionnalités spécifiques. Ils concernent l'ergonomie, les performances, la sécurité et la maintenabilité du système.</p>
+
+    <p class="table-caption">Tableau 3 — Besoins non fonctionnels</p>
+    <table>
+      <tr><th>Code</th><th>Besoin non fonctionnel</th></tr>
+      <tr><td>BNF-01</td><td>Interface responsive adaptée aux ordinateurs, tablettes et téléphones</td></tr>
+      <tr><td>BNF-02</td><td>Mode clair et mode sombre pour le confort visuel des utilisateurs</td></tr>
+      <tr><td>BNF-03</td><td>Temps de réponse inférieur à 1 seconde pour toutes les opérations</td></tr>
+      <tr><td>BNF-04</td><td>Validation des formulaires côté client avec messages d'erreur clairs</td></tr>
+      <tr><td>BNF-05</td><td>Notifications de succès et d'erreur pour chaque action utilisateur</td></tr>
+      <tr><td>BNF-06</td><td>Confirmation obligatoire avant toute suppression irréversible</td></tr>
+      <tr><td>BNF-07</td><td>Code maintenable, modulaire et typé (TypeScript strict)</td></tr>
+      <tr><td>BNF-08</td><td>Accessibilité : contraste suffisant, navigation clavier, lisibilité</td></tr>
+      <tr><td>BNF-09</td><td>Démarrage sur base de données vide, sans données de démonstration</td></tr>
+      <tr><td>BNF-10</td><td>Auto-incrémentation des identifiants à partir de 1</td></tr>
+    </table>
+
+    <h2>3.4 Règles de gestion</h2>
+    <p class="no-indent">Les règles de gestion définissent les contraintes métier que l'application doit respecter. Elles guident l'implémentation et garantissent la cohérence des données.</p>
+
+    <p class="table-caption">Tableau 4 — Règles de gestion métier</p>
+    <table>
+      <tr><th>Règle</th><th>Description</th></tr>
+      <tr><td>RG-01</td><td>L'identifiant de chaque enregistrement est auto-incrémenté à partir de 1 et est unique</td></tr>
+      <tr><td>RG-02</td><td>La suppression d'un enregistrement est précédée d'une boîte de dialogue de confirmation</td></tr>
+      <tr><td>RG-03</td><td>Les champs obligatoires sont validés avant la soumission du formulaire</td></tr>
+      <tr><td>RG-04</td><td>Le statut d'un rendez-vous peut être : « en attente », « confirmé » ou « annulé »</td></tr>
+      <tr><td>RG-05</td><td>Le statut d'un lit peut être : « libre », « occupé » ou « maintenance »</td></tr>
+      <tr><td>RG-06</td><td>Le statut d'une hospitalisation peut être : « en cours » ou « sorti »</td></tr>
+      <tr><td>RG-07</td><td>Une alerte de stock faible s'affiche lorsque la quantité d'un médicament est inférieure ou égale au seuil minimum</td></tr>
+      <tr><td>RG-08</td><td>La base de données démarre vide à l'installation, sans aucune donnée préchargée</td></tr>
+      <tr><td>RG-09</td><td>La réinitialisation de la base efface toutes les données et remet les compteurs d'identifiants à 1</td></tr>
+      <tr><td>RG-10</td><td>Chaque consultation est liée à un patient et à un médecin obligatoirement</td></tr>
+      <tr><td>RG-11</td><td>Chaque hospitalisation est liée à un patient, un lit et un médecin obligatoirement</td></tr>
+      <tr><td>RG-12</td><td>Chaque résultat d'analyse est lié à une analyse et à un patient obligatoirement</td></tr>
+    </table>
+  </div>
+
+  <!-- CHAPITRE IV -->
+  <div class="page-break chapter">
+    <h1>CHAPITRE IV — CONCEPTION UML</h1>
+    <h2>4.1 Diagramme de cas d\'utilisation</h2>
+    <p class="no-indent">Le diagramme de cas d\'utilisation modélise les interactions entre les acteurs du système et les fonctionnalités offertes par l\'application. Il permet de visualiser, de manière intuitive, qui peut faire quoi dans le système. Ce diagramme a été élaboré à partir de l\'analyse des besoins fonctionnels décrits au chapitre précédent.</p>
+    <p>Le diagramme de cas d\'utilisation constitue la première étape de la conception orientée objet. Il s\'agit d\'une représentation graphique qui décrit les interactions entre les utilisateurs (acteurs) et le système, sans se préoccuper de l\'implémentation technique. Chaque cas d\'utilisation (use case) représente une fonctionnalité complète du point de vue de l\'utilisateur.</p>
+    <figure><img src="figures/fig03_usecase_general.png" alt="Diagramme de cas d\'utilisation général"><figcaption>Figure 3 — Diagramme de cas d\'utilisation général</figcaption></figure>
+    <p>Le diagramme général (Figure 3) présente les principaux cas d\'utilisation accessibles aux acteurs. L\'administrateur dispose d\'un accès complet à tous les modules, y compris la gestion des paramètres, des utilisateurs et des rôles. Le médecin accède aux patients, aux consultations, aux ordonnances et aux hospitalisations. Le réceptionniste gère l\'accueil des patients et les rendez-vous. Le pharmacien gère les médicaments, le stock et les fournisseurs. Le technicien de laboratoire gère les analyses et les résultats. Le comptable gère les factures et les paiements.</p>
+    <p>Pour illustrer le niveau de détail de la modélisation, nous présentons ci-dessous le diagramme de cas d\'utilisation spécifique au module de gestion des patients. Ce diagramme détaille les opérations CRUD (Créer, Lire, Modifier, Supprimer) ainsi que les fonctionnalités de recherche et d\'export disponibles pour ce module.</p>
+    <figure><img src="figures/fig04_usecase_patients.png" alt="Diagramme de cas d\'utilisation : Gestion des patients"><figcaption>Figure 4 — Diagramme de cas d\'utilisation : Gestion des patients</figcaption></figure>
+    <p>Le réceptionniste peut enregistrer un nouveau patient, modifier les informations d\'un patient existant, supprimer un patient (avec confirmation), rechercher un patient par nom ou par téléphone, et exporter la liste des patients au format PDF ou Excel. Ces cas d\'utilisation couvrent l\'intégralité du cycle de vie d\'un dossier patient dans le système.</p>
+    <h2>4.2 Diagramme de classes</h2>
+    <p class="no-indent">Le diagramme de classes décrit la structure statique du système en identifiant les entités principales (classes), leurs attributs, leurs méthodes et les relations qui les unissent. Il constitue le squelette du modèle objet de l\'application et sert de référence pour l\'implémentation. Chaque classe correspond à une entité du domaine métier identifiée lors de l\'analyse des besoins.</p>
+    <figure><img src="figures/fig05_classes.png" alt="Diagramme de classes"><figcaption>Figure 5 — Diagramme de classes</figcaption></figure>
+    <p>Les principales classes du système sont les suivantes :</p>
+    <ul>
+      <li><strong>Patient</strong> : contient les informations personnelles et médicales du patient (identifiant, prénom, nom, date de naissance, sexe, téléphone, adresse, groupe sanguin, email, notes médicales). Cette classe est centrale car elle est référencée par de nombreuses autres classes.</li>
+      <li><strong>Doctor</strong> : représente un médecin avec sa spécialité, ses coordonnées, sa disponibilité et ses horaires de travail. Un médecin peut avoir plusieurs rendez-vous et réaliser plusieurs consultations.</li>
+      <li><strong>Staff</strong> : modélise le personnel administratif et technique de la clinique, avec sa fonction et son service d\'affectation.</li>
+      <li><strong>Nurse</strong> : représente un infirmier avec son service d\'affectation et son quart de travail (jour, nuit, garde).</li>
+      <li><strong>Appointment</strong> : modélise un rendez-vous avec ses relations vers le patient et le médecin, la date, l\'heure, le motif et le statut. Le statut peut évoluer de « en attente » à « confirmé » ou « annulé ».</li>
+      <li><strong>Consultation</strong> : représente une consultation médicale avec les symptômes, le diagnostic, le traitement, l\'ordonnance et les notes. Chaque consultation est liée à un patient et à un médecin.</li>
+      <li><strong>Prescription</strong> : modélise une ordonnance avec les médicaments prescrits et les relations patient/médecin.</li>
+      <li><strong>Hospitalization</strong> : représente une hospitalisation avec les dates d\'admission et de sortie, le motif, le statut et les relations vers le patient, le lit et le médecin responsable.</li>
+      <li><strong>Room</strong> et <strong>Bed</strong> : modélisent l\'infrastructure d\'hospitalisation (chambres et lits) avec leurs statuts. Une chambre contient plusieurs lits, et chaque lit peut être occupé par au plus une hospitalisation à la fois.</li>
+      <li><strong>Laboratory</strong>, <strong>Analysis</strong> et <strong>Result</strong> : modélisent le laboratoire d\'analyses médicales. Un laboratoire propose plusieurs analyses, et chaque analyse peut produire plusieurs résultats pour différents patients.</li>
+      <li><strong>Medication</strong>, <strong>Supplier</strong> et <strong>Stock</strong> : modélisent la pharmacie et la gestion des stocks. Un médicament est fourni par un fournisseur, et son stock est suivi avec un seuil minimum déclenchant une alerte.</li>
+      <li><strong>Invoice</strong>, <strong>Payment</strong> et <strong>Insurance</strong> : modélisent la facturation et les aspects financiers. Une facture est émise pour un patient, peut être liée à une assurance, et est réglée par un ou plusieurs paiements.</li>
+      <li><strong>Emergency</strong> et <strong>Ambulance</strong> : modélisent les urgences et le transport sanitaire.</li>
+      <li><strong>User</strong>, <strong>Role</strong> et <strong>ActivityLog</strong> : modélisent la sécurité et la traçabilité. Un utilisateur a un rôle qui détermine ses permissions, et chaque action est journalisée dans le journal des activités.</li>
+    </ul>
+    <p>Les relations entre les classes sont de trois types : les associations simples (un patient a plusieurs rendez-vous), les agrégations (une chambre contient plusieurs lits) et les associations qualifiées (une consultation est réalisée par un médecin pour un patient). Les cardinalités précisent le nombre minimum et maximum d\'occurrences participant à chaque relation. Par exemple, la relation entre Patient et Consultation a une cardinalité de 1..N côté patient (un patient peut avoir plusieurs consultations) et N..1 côté consultation (une consultation concerne un seul patient).</p>
+    <h2>4.3 Diagrammes de séquence</h2>
+    <p class="no-indent">Les diagrammes de séquence décrivent l\'ordre temporel des messages échangés entre les objets du système lors de l\'exécution d\'un cas d\'utilisation. Ils permettent de visualiser le déroulement dynamique des interactions et de vérifier la cohérence du modèle objet. Contrairement au diagramme de classes qui montre la structure statique, le diagramme de séquence montre le comportement dynamique du système.</p>
+    <h3>4.3.1 Prise de rendez-vous</h3>
+    <p class="no-indent">Le diagramme de séquence de la prise de rendez-vous (Figure 6) illustre le processus complet, depuis l\'ouverture du formulaire par le réceptionniste jusqu\'à la confirmation de l\'enregistrement. Trois acteurs participent à cette interaction : le réceptionniste (utilisateur), l\'interface (composants React) et le store (couche de persistance).</p>
+    <figure><img src="figures/fig06_sequence_rdv.png" alt="Diagramme de séquence : Prise de rendez-vous"><figcaption>Figure 6 — Diagramme de séquence : Prise de rendez-vous</figcaption></figure>
+    <p>Le processus se déroule en neuf étapes successives. Premièrement, le réceptionniste ouvre le formulaire de rendez-vous en cliquant sur le bouton « Ajouter ». Deuxièmement, l\'interface demande au store de charger les listes de patients et de médecins disponibles. Troisièmement, le store retourne les listes demandées. Quatrièmement, le réceptionniste sélectionne un patient et un médecin dans les listes déroulantes. Cinquièmement, il saisit la date et l\'heure du rendez-vous, ainsi que le motif. Sixièmement, il valide le formulaire. Septièmement, l\'interface transmet les données au store qui procède à l\'enregistrement. Huitièmement, le store génère un identifiant auto-incrémenté et persiste le nouvel enregistrement dans le localStorage. Neuvièmement, l\'interface affiche une notification de succès (toast) confirmant que le rendez-vous a été créé.</p>
+    <h3>4.3.2 Création d\'une consultation</h3>
+    <p class="no-indent">Le diagramme de séquence de la création d\'une consultation (Figure 7) illustre le processus de saisie d\'un dossier médical par le médecin. Ce processus, plus complexe que la prise de rendez-vous, comprend onze étapes et implique la saisie de données médicales détaillées.</p>
+    <figure><img src="figures/fig07_sequence_consultation.png" alt="Diagramme de séquence : Création d\'une consultation"><figcaption>Figure 7 — Diagramme de séquence : Création d\'une consultation</figcaption></figure>
+    <p>Le médecin ouvre le module consultations, charge les dossiers patients, sélectionne un patient, saisit les symptômes, le diagnostic, le traitement et l\'ordonnance, puis valide. Le store enregistre la consultation avec un identifiant auto-incrémenté et l\'interface affiche une notification de succès. Ce processus illustre l\'interaction entre le médecin (acteur principal), l\'interface (couche de présentation) et le store (couche de persistance), conformément à l\'architecture en trois couches décrite au chapitre VI.</p>
+    <h2>4.4 Diagramme d\'activité</h2>
+    <p class="no-indent">Le diagramme d\'activité représente le flux d\'actions et de décisions lors de la création d\'une consultation médicale. Il met en évidence les points de décision (validation des champs) et les branches alternatives (affichage des erreurs en cas de saisie invalide). Ce diagramme complète les diagrammes de séquence en offrant une vue orientée processus plutôt qu\'orientée interactions.</p>
+    <figure><img src="figures/fig10_activity.png" alt="Diagramme d\'activité : Consultation médicale"><figcaption>Figure 10 — Diagramme d\'activité : Consultation médicale</figcaption></figure>
+    <p>Le processus commence par l\'ouverture du module consultations. L\'utilisateur clique sur le bouton « Ajouter », ce qui déclenche l\'affichage du formulaire. Le système vérifie la validité des champs saisis : si les champs sont invalides, les erreurs sont affichées et l\'utilisateur doit corriger sa saisie ; si les champs sont valides, l\'utilisateur sélectionne un patient et un médecin, saisit le diagnostic et le traitement, puis valide l\'enregistrement. Le système affiche alors une notification de succès et le processus se termine.</p>
+    <h2>4.5 Modèle conceptuel de données</h2>
+    <p class="no-indent">Le Modèle Conceptuel de Données (MCD) décrit la structure de la base de données au niveau conceptuel, indépendamment de toute considération technique. Il identifie les entités, leurs propriétés et les associations qui les relient, avec leurs cardinalités. Le MCD suit la méthode Merise, largement utilisée dans la conception de systèmes d\'information en France et dans les pays francophones, dont Madagascar.</p>
+    <figure><img src="figures/fig08_mcd.png" alt="Modèle conceptuel de données (MCD)"><figcaption>Figure 8 — Modèle Conceptuel de Données (MCD)</figcaption></figure>
+    <p>Le MCD identifie les entités principales suivantes : PATIENT, DOCTOR, RDV (rendez-vous), CONSULTATION, PRESCRIPTION, ROOM, BED, HOSPITALISATION, MEDICATION, INVOICE et PAYMENT. Les associations entre ces entités sont les suivantes :</p>
+    <ul>
+      <li>Un PATIENT peut prendre plusieurs RDV (cardinalité 1..N côté patient, 0..N côté RDV) — un patient peut avoir plusieurs rendez-vous, et un rendez-vous concerne un seul patient.</li>
+      <li>Un DOCTOR donne plusieurs RDV (cardinalité 1..N côté médecin, 0..N côté RDV) — un médecin peut avoir plusieurs rendez-vous, et un rendez-vous est attribué à un seul médecin.</li>
+      <li>Un PATIENT subit plusieurs CONSULTATIONS (cardinalité 1..N) — un patient peut avoir plusieurs consultations au fil du temps.</li>
+      <li>Un DOCTOR réalise plusieurs CONSULTATIONS (cardinalité 1..N) — un médecin peut réaliser plusieurs consultations.</li>
+      <li>Une CONSULTATION émet zéro ou plusieurs PRESCRIPTIONS (cardinalité 1..1 côté consultation, 0..N côté prescription) — une consultation peut générer une ordonnance.</li>
+      <li>Une ROOM contient plusieurs BEDs (cardinalité 1..N côté chambre, 1..N côté lit) — une chambre contient plusieurs lits.</li>
+      <li>Un BED est occupé par au plus une HOSPITALISATION (cardinalité 1..1 côté lit, 0..N côté hospitalisation) — un lit peut être occupé par une hospitalisation à la fois.</li>
+      <li>Un PATIENT peut être hospitalisé plusieurs fois (cardinalité 1..N côté hospitalisation) — un patient peut avoir plusieurs hospitalisations au cours du temps.</li>
+      <li>Une PRESCRIPTION contient plusieurs MEDICATIONs (cardinalité 0..N côté prescription, 1..N côté médicament) — une ordonnance peut prescrire plusieurs médicaments.</li>
+      <li>Un PATIENT reçoit plusieurs INVOICEs (cardinalité 1..N côté facture) — un patient peut recevoir plusieurs factures.</li>
+      <li>Une INVOICE est réglée par plusieurs PAYMENTs (cardinalité 1..N côté paiement, 0..N côté facture) — une facture peut être payée en plusieurs fois.</li>
+    </ul>
+    <h2>4.6 Modèle logique de données</h2>
+    <p class="no-indent">Le Modèle Logique de Données (MLD) est obtenu par transformation du MCD selon les règles de passage de la méthode Merise. Chaque entité devient une relation (table), les associations de type « un-à-plusieurs » sont résolues par l\'ajout de clés étrangères dans la table du côté « plusieurs », et les associations de type « plusieurs-à-plusieurs » deviennent des tables de liaison. Cette transformation assure la cohérence et l\'intégrité des données.</p>
+    <figure><img src="figures/fig09_mld.png" alt="Modèle logique de données (MLD)"><figcaption>Figure 9 — Modèle Logique de Données (MLD)</figcaption></figure>
+    <p>Le MLD comprend les relations suivantes, avec leurs clés primaires (PK) et clés étrangères (FK) :</p>
+    <ul>
+      <li><strong>PATIENT</strong> (PK : id_patient) — prénom, nom, date_naissance, sexe, téléphone, adresse, groupe_sanguin, email, notes, created_at</li>
+      <li><strong>DOCTOR</strong> (PK : id_doctor) — prénom, nom, spécialité, téléphone, email, disponible, horaires, created_at</li>
+      <li><strong>RDV</strong> (PK : id_rdv, FK : id_patient, id_doctor) — date, heure, motif, statut, created_at</li>
+      <li><strong>CONSULTATION</strong> (PK : id_consultation, FK : id_patient, id_doctor) — date, symptômes, diagnostic, traitement, ordonnance, notes, created_at</li>
+      <li><strong>PRESCRIPTION</strong> (PK : id_presc, FK : id_patient, id_doctor) — date, médicaments, notes, created_at</li>
+      <li><strong>ROOM</strong> (PK : id_room) — numéro, type, étage, capacité, created_at</li>
+      <li><strong>BED</strong> (PK : id_bed, FK : id_room) — numéro, statut, created_at</li>
+      <li><strong>HOSPITALISATION</strong> (PK : id_hosp, FK : id_patient, id_bed, id_doctor) — date_admission, date_sortie, motif, statut, created_at</li>
+      <li><strong>Laboratory</strong>, <strong>Analysis</strong>, <strong>Result</strong>, <strong>Medication</strong>, <strong>Supplier</strong>, <strong>Stock</strong>, <strong>Invoice</strong>, <strong>Payment</strong>, <strong>Insurance</strong>, <strong>Emergency</strong>, <strong>Ambulance</strong>, <strong>User</strong>, <strong>Role</strong>, <strong>ActivityLog</strong> — suivant le même schéma de clé primaire et clés étrangères.</li>
+    </ul>
+    <p>Chaque relation dispose d\'un champ <code>created_at</code> pour la traçabilité temporelle des enregistrements. Les clés étrangères garantissent l\'intégrité référentielle entre les tables : il est impossible de créer une consultation sans patient ni médecin, ou une hospitalisation sans lit. Cette contrainte est implémentée au niveau de l\'interface utilisateur par la validation des formulaires (champs obligatoires) et au niveau du store par la résolution des références.</p>
+  </div>
+
+  <!-- CHAPITRE V -->
+  <div class="page-break chapter">
+    <h1>CHAPITRE V — CHOIX TECHNOLOGIQUES</h1>
+    <h2>5.1 Frontend</h2>
+    <p class="no-indent">Le choix des technologies pour le frontend de l\'application a été guidé par plusieurs critères : la maturité de l\'écosystème, la performance, la maintenabilité du code, la disponibilité de la documentation et la courbe d\'apprentissage. Après une analyse comparative des options disponibles (Angular, Vue.js, React, Svelte), les technologies suivantes ont été retenues :</p>
+    <p class="table-caption">Tableau 5 — Choix technologiques</p>
+    <table>
+      <tr><th>Technologie</th><th>Rôle</th><th>Justification du choix</th></tr>
+      <tr><td>React 18</td><td>Bibliothèque UI</td><td>Composants réutilisables, écosystème mature, performance optimisée, large communauté, documentation abondante</td></tr>
+      <tr><td>TypeScript</td><td>Langage</td><td>Typage statique, détection d\'erreurs à la compilation, autocomplétion améliorée, refactoring sûr, lisibilité du code</td></tr>
+      <tr><td>Vite 5</td><td>Build tool</td><td>Démarrage quasi instantané, Hot Module Replacement ultra-rapide, build de production optimisé, configuration simple</td></tr>
+      <tr><td>Tailwind CSS 3</td><td>Framework CSS</td><td>Design system utilitaire, responsive natif, mode sombre intégré, personnalisation facile, pas de CSS superflu</td></tr>
+      <tr><td>Chart.js</td><td>Graphiques</td><td>Visualisations interactives, types de graphiques variés (courbes, barres, camemberts), légendes intégrées, responsive</td></tr>
+      <tr><td>react-chartjs-2</td><td>Wrapper React</td><td>Intégration native de Chart.js dans l\'écosystème React, API déclarative, gestion du cycle de vie</td></tr>
+      <tr><td>jsPDF</td><td>Génération PDF</td><td>Génération de documents PDF côté client, pas de dépendance serveur, personnalisation des contenus</td></tr>
+      <tr><td>qrcode.react</td><td>QR Code</td><td>Génération de QR codes pour l\'identification des patients, rendu SVG, léger</td></tr>
+      <tr><td>lucide-react</td><td>Icônes</td><td>Bibliothèque d\'icônes moderne, cohérente, légère, arbre-shakeable, style unifié</td></tr>
+      <tr><td>react-router-dom 7</td><td>Routage</td><td>Navigation entre pages (SPA), routes paramétrées, navigation programmatique, gestion du scroll</td></tr>
+    </table>
+    <p>Le couple React + TypeScript a été privilégié pour plusieurs raisons. React est aujourd\'hui la bibliothèque UI la plus utilisée au monde, avec un écosystème extrêmement riche et une communauté active. Son modèle de composants fonctionnels avec hooks permet une organisation claire du code et une réutilisation maximale. TypeScript apporte le typage statique, qui détecte de nombreuses erreurs à la compilation et améliore considérablement la maintenabilité et la lisibilité du code, particulièrement dans un projet de cette envergure avec une trentaine de modules.</p>
+    <p>Vite a été choisi comme build tool pour sa rapidité exceptionnelle : le serveur de développement démarre en moins d\'une seconde et le Hot Module Replacement est quasi instantané, ce qui améliore considérablement la productivité du développeur. Le build de production est optimisé avec code-splitting automatique et tree-shaking, réduisant la taille du bundle final.</p>
+    <p>Tailwind CSS a été retenu pour son approche « utility-first » qui permet de construire des interfaces cohérentes et responsive sans écrire de CSS personnalisé. Le mode sombre est intégré nativement, et la personnalisation du thème (couleurs, polices, espacements) se fait via un fichier de configuration unique. Cette approche garantit une cohérence visuelle parfaite à travers toute l\'application.</p>
+    <p>Chart.js et son wrapper react-chartjs-2 ont été choisis pour les visualisations graphiques du tableau de bord. Cette bibliothèque offre une grande variété de types de graphiques (courbes, barres, camemberts, donuts) avec des options de personnalisation riches, des animations fluides et un comportement responsive. Elle est légère et performante, ce qui la rend idéale pour un tableau de bord de pilotage.</p>
+    <p>jsPDF est utilisé pour la génération de documents PDF côté client, sans dépendance serveur. Cette bibliothèque permet de créer des documents PDF personnalisés avec du texte, des tableaux et des images, directement dans le navigateur. Elle est utilisée pour l\'export des ordonnances, des factures et des rapports.</p>
+    <h2>5.2 Persistance des données</h2>
+    <p class="no-indent">La persistance des données est assurée par le <strong>localStorage</strong> du navigateur. Ce choix a été motivé par plusieurs considérations :</p>
+    <ul>
+      <li><strong>Autonomie</strong> : l\'application fonctionne sans dépendance serveur, ce qui la rend immédiatement démontrable sans infrastructure backend. Cette caractéristique est particulièrement importante dans le contexte d\'un mémoire de Licence, où l\'objectif est de démontrer le fonctionnement de l\'application sans nécessiter un déploiement serveur complexe.</li>
+      <li><strong>Simplicité</strong> : le localStorage est une API native du navigateur, ne nécessitant aucune installation ni configuration. Les données sont stockées sous forme de chaînes JSON, ce qui simplifie la sérialisation et la désérialisation.</li>
+      <li><strong>Persistance</strong> : les données survivent aux rechargements de page et à la fermeture du navigateur. L\'utilisateur peut fermer l\'application et la rouvrir en retrouvant toutes ses données intactes.</li>
+      <li><strong>Adaptabilité</strong> : l\'architecture en couches permet de remplacer facilement le localStorage par une API REST (PostgreSQL/MongoDB) en production, sans modifier les composants de l\'interface. Il suffirait de modifier le hook useCollection pour qu\'il effectue des requêtes HTTP au lieu d\'accéder au localStorage.</li>
+    </ul>
+    <p>Chaque collection utilise un compteur d\'auto-incrément persistant (stocké sous la clé <code>&lt;collection&gt;__seq</code>) pour garantir des identifiants uniques commençant à 1. Les enregistrements sont sérialisés en JSON et stockés sous la clé correspondant au nom de la collection. Cette approche garantit que la base de données démarre vide à l\'installation, conformément à l\'exigence BNF-09.</p>
+    <p>La page Paramètres offre également des fonctions d\'export et d\'import de sauvegarde complète au format JSON, permettant de transférer les données entre postes ou de les archiver. Cette fonctionnalité est essentielle pour la résilience des données en l\'absence d\'un backend serveur.</p>
+    <h2>5.3 Justification globale</h2>
+    <p class="no-indent">Le choix d\'une architecture dite « config-driven » (pilotée par la configuration) constitue la décision architecturale la plus structurante de ce projet. Au lieu de développer une page CRUD distincte pour chaque module — ce qui aurait nécessité la création de trente pages avec un code largement répétitif — nous avons conçu un framework générique qui génère automatiquement l\'ensemble de l\'interface à partir d\'un registre de configuration.</p>
+    <p>Cette approche présente plusieurs avantages majeurs :</p>
+    <ul>
+      <li><strong>Productivité</strong> : l\'ajout d\'un nouveau module se résume à la définition de quelques lignes de configuration dans le registre des ressources, sans écrire de nouveau composant. Cette approche a permis de couvrir vingt-neuf modules avec un seul composant CRUD générique.</li>
+      <li><strong>Cohérence</strong> : tous les modules partagent exactement la même interface, les mêmes comportements et le même design, garantissant une expérience utilisateur homogène. L\'utilisateur qui maîtrise un module maîtrise automatiquement tous les autres.</li>
+      <li><strong>Maintenabilité</strong> : une correction de bug ou une amélioration dans le framework CRUD se propage automatiquement à tous les modules. Il n\'est pas nécessaire de modifier trente pages individuelles.</li>
+      <li><strong>Évolutivité</strong> : l\'ajout de nouveaux modules à l\'avenir est trivial et ne nécessite pas de développement supplémentaire. Il suffit d\'ajouter une entrée dans le registre des ressources.</li>
+    </ul>
+    <p>Cette architecture démontre qu\'avec une conception logicielle bien pensée, il est possible de couvrir un périmètre fonctionnel très large (vingt-neuf modules) avec un code minimal et maintenable, tout en garantissant la qualité et la cohérence de l\'interface utilisateur. C\'est une illustration concrète du principe DRY (Don\'t Repeat Yourself) appliqué à grande échelle.</p>
+  </div>
+
+  <!-- CHAPITRE VI -->
+  <div class="page-break chapter">
+    <h1>CHAPITRE VI — ARCHITECTURE DE L\'APPLICATION</h1>
+    <h2>6.1 Architecture générale</h2>
+    <p class="no-indent">L\'application suit une architecture de type Single Page Application (SPA). Dans ce modèle, l\'application entière est chargée une seule fois dans le navigateur, et la navigation entre les pages s\'effectue côté client sans rechargement de la page. Seules les données sont échangées avec la source de persistance (localStorage en l\'occurrence), ce qui garantit une expérience utilisateur fluide et réactive.</p>
+    <p>Le modèle SPA présente plusieurs avantages par rapport aux applications web traditionnelles multi-pages : la navigation est instantanée (pas de rechargement de page), l\'expérience utilisateur est proche de celle d\'une application native, et la charge réseau est réduite car seules les données sont échangées, pas le HTML. Cependant, ce modèle nécessite une attention particulière au référencement (SEO) et à la gestion de l\'état, aspects qui sont moins critiques dans le contexte d\'une application de gestion hospitalière interne.</p>
+    <figure><img src="figures/fig12_architecture.png" alt="Architecture générale de l\'application"><figcaption>Figure 12 — Architecture générale de l\'application</figcaption></figure>
+    <p>L\'architecture se compose de trois couches distinctes, chacune ayant une responsabilité claire et bien délimitée. Cette séparation des préoccupations (Separation of Concerns) est un principe fondamental de l\'ingénierie logicielle qui améliore la maintenabilité, la testabilité et l\'évolvabilité du système. Les trois couches communiquent entre elles par des interfaces bien définies, ce qui permet de modifier une couche sans impacter les autres.</p>
+    <h2>6.2 Couches logicielles</h2>
+    <h3>6.2.1 Couche Présentation</h3>
+    <p class="no-indent">La couche de présentation est responsable de l\'affichage de l\'interface utilisateur et de la gestion des interactions. Elle est composée de :</p>
+    <ul>
+      <li><strong>Pages</strong> : les vues principales de l\'application — Dashboard (tableau de bord avec graphiques), Appointments (calendrier des rendez-vous), Reports (rapports et exports), Settings (paramètres et sauvegarde), NotFound (page 404) — et la page CRUD générique (CrudPage) qui génère l\'interface de chaque module à partir de sa configuration.</li>
+      <li><strong>Composants</strong> : les éléments d\'interface réutilisables — Modal (fenêtres modales et confirmations), Toast (notifications de succès et d\'erreur), Sidebar (barre latérale de navigation), Topbar (barre supérieure avec titre et sélecteur de thème), StatCard (cartes statistiques du tableau de bord), PageHeader (en-tête de page), EmptyState (état vide) — qui assurent la cohérence visuelle de l\'application.</li>
+      <li><strong>Layout</strong> : la structure générale avec la barre latérale de navigation (Sidebar) qui contient les liens vers tous les modules groupés par catégorie, et la barre supérieure (Topbar) qui contient le titre de la page courante, le bouton de menu (mobile) et le sélecteur de thème clair/sombre.</li>
+    </ul>
+    <h3>6.2.2 Couche Logique Métier</h3>
+    <p class="no-indent">La couche logique métier contient la logique applicative et les hooks personnalisés qui font le lien entre la présentation et la persistance :</p>
+    <ul>
+      <li><strong>useCollection</strong> : hook générique qui gère le cycle de vie d\'une collection de données. Il expose les opérations CRUD (items, add, update, remove, reset) et assure la persistance dans le localStorage avec auto-incrémentation des identifiants. Ce hook est utilisé par tous les modules CRUD de l\'application.</li>
+      <li><strong>useRefStore</strong> : hook qui gère un store centralisé des références entre collections, permettant de résoudre les clés étrangères en libellés affichables. Par exemple, il permet d\'afficher le nom du patient (ex. « Jean Rakoto ») à partir de son identifiant (ex. 3) dans les tableaux de consultations, d\'hospitalisations et de factures.</li>
+      <li><strong>resources.ts</strong> : registre de configuration des vingt-neuf modules, définissant pour chacun ses champs, ses colonnes, ses filtres et ses options de recherche. Ce fichier est le cœur du pattern config-driven.</li>
+      <li><strong>format.ts</strong> : utilitaires de formatage (dates, monnaie en Ariary, génération CSV) utilisés par les exports et l\'affichage des tableaux.</li>
+    </ul>
+    <h3>6.2.3 Couche Persistance</h3>
+    <p class="no-indent">La couche de persistance assure le stockage et la récupération des données. Elle utilise le localStorage du navigateur avec un schéma de clés structuré. Chaque collection <code>X</code> est stockée sous la clé <code>X</code> (tableau JSON des enregistrements) et son compteur d\'auto-incrémentation sous <code>X__seq</code>.</p>
+    <p>Cette couche offre également des fonctions d\'export (sérialisation de toutes les collections en un fichier JSON unique) et d\'import (restauration à partir d\'un fichier JSON), accessibles depuis la page Paramètres. Ces fonctions garantissent la résilience des données en l\'absence d\'un backend serveur.</p>
+    <h2>6.3 Pattern config-driven</h2>
+    <p class="no-indent">Le pattern « config-driven » est au cœur de l\'architecture de l\'application. Il consiste à décrire chaque module non pas par du code, mais par une configuration déclarative qui est ensuite interprétée par un composant générique pour produire l\'interface complète. Cette approche s\'inscrit dans la philosophie de la programmation déclarative, où l\'on décrit le « quoi » plutôt que le « comment ».</p>
+    <p>Le registre <code>RESOURCES</code> (dans <code>src/services/resources.ts</code>) définit pour chaque module un objet <code>ResourceDef</code> contenant :</p>
+    <ul>
+      <li><strong>key</strong> : la clé de stockage dans le localStorage (ex. <code>godie_patients</code>).</li>
+      <li><strong>label</strong> et <strong>singular</strong> : les libellés au pluriel et au singulier (ex. « Patients » et « Patient »).</li>
+      <li><strong>icon</strong> : l\'icône lucide-react associée au module, affichée dans la navigation et les en-têtes.</li>
+      <li><strong>group</strong> : le groupe fonctionnel de navigation (ex. « Patients & Soins », « Personnel », « Consultations »).</li>
+      <li><strong>fields</strong> : la définition des champs du formulaire d\'ajout/édition, avec leur type (text, number, date, select, textarea, tel, email, checkbox), leur caractère obligatoire, leurs options (pour les select) et leurs références vers d\'autres collections.</li>
+      <li><strong>columns</strong> : la définition des colonnes du tableau d\'affichage, avec leur type (text, date, number, badge, money, ref) et leurs options de badge (couleurs et libellés selon la valeur).</li>
+      <li><strong>searchFields</strong> : les champs utilisés par la recherche instantanée.</li>
+      <li><strong>filters</strong> : les filtres déroulants disponibles (ex. filtrer par statut, par disponibilité).</li>
+    </ul>
+    <p>Le composant <code>CrudPage</code> consomme cette configuration et génère automatiquement : un en-tête de page avec bouton d\'ajout, une barre d\'outils (recherche, filtres, exports), un tableau paginé avec badges et références résolues, des modales d\'ajout/édition avec validation, une modale de détail, une confirmation de suppression, et des exports PDF, Excel (CSV) et impression. Cette approche permet d\'ajouter un nouveau module en quelques lignes de configuration, sans écrire la moindre ligne de code supplémentaire.</p>
+    <p>Pour illustrer concrètement l'économie de code réalisée, considérons l'ajout d'un nouveau module, par exemple la gestion des ambulances. Sans le pattern config-driven, il aurait fallu créer une page dédiée avec un tableau, un formulaire d'ajout, un formulaire d'édition, une modale de détail, une confirmation de suppression, une barre de recherche, des filtres, des boutons d'export et la logique de persistance — soit potentiellement des centaines de lignes de code. Avec le pattern config-driven, il suffit d'ajouter une entrée dans le registre RESOURCES définissant les champs, les colonnes, les filtres et les options de recherche du module, soit environ quinze lignes de configuration déclarative. Le composant CrudPage se charge du reste. Cette économie se multiplie par le nombre de modules : pour vingt-neuf modules, l'économie totale est considérable, tant en temps de développement qu'en lignes de code à maintenir.</p>
+  </div>
+
+  <!-- CHAPITRE VII -->
+  <div class="page-break chapter">
+    <h1>CHAPITRE VII — RÉALISATION</h1>
+    <h2>7.1 Structure du projet</h2>
+    <p class="no-indent">Le projet suit une organisation par cohésion, où les fichiers sont regroupés selon leur responsabilité et non selon leur type. Cette structure facilite la navigation dans le code, la maintenance et l\'évolution de l\'application. Chaque dossier a une responsabilité claire et unique.</p>
+    <p>La racine du projet contient les fichiers de configuration standards : <code>package.json</code> pour les dépendances et les scripts, <code>vite.config.ts</code> pour la configuration du build, <code>tsconfig.json</code> pour la configuration TypeScript, <code>tailwind.config.js</code> pour le thème, et <code>eslint.config.js</code> pour l\'analyse statique du code.</p>
+    <p>Le dossier <code>src/</code> contient le code source de l\'application, organisé comme suit :</p>
+    <ul>
+      <li><strong>components/</strong> — Composants réutilisables : CrudPage (page CRUD générique qui consomme la configuration d\'un module et génère toute l\'interface), Sidebar (navigation latérale + topbar avec recherche globale et sélecteur de thème), Modal (fenêtres modales pour l\'ajout, l\'édition, le détail et la confirmation de suppression), Toast (notifications de succès et d\'erreur affichées en bas d\'écran), ui (cartes statistiques, en-têtes de page, états vides, badges).</li>
+      <li><strong>pages/</strong> — Pages personnalisées qui ne suivent pas le pattern CRUD générique : Dashboard (tableau de bord avec graphiques Chart.js et statistiques en temps réel), Appointments (calendrier mensuel interactif des rendez-vous), Reports (page de rapports avec exports multi-formats), Settings (paramètres de la clinique, sauvegarde et restauration), NotFound (page 404).</li>
+      <li><strong>hooks/</strong> — Hooks personnalisés : useCollection (store générique avec persistance localStorage et auto-incrément des identifiants), useRefStore (store centralisé pour la résolution des références entre collections).</li>
+      <li><strong>services/</strong> — resources.ts : registre de configuration des vingt-neuf modules, le cœur du pattern config-driven.</li>
+      <li><strong>types/</strong> — Types TypeScript des entités du domaine (Patient, Doctor, Appointment, Consultation, etc.).</li>
+      <li><strong>utils/</strong> — format.ts : utilitaires de formatage des dates, de la monnaie (Ariary) et génération de fichiers CSV pour l\'export Excel.</li>
+      <li><strong>App.tsx</strong> — Composant racine avec le routage principal utilisant react-router-dom.</li>
+      <li><strong>index.css</strong> — Styles globaux et configuration Tailwind avec les directives et les utilitaires personnalisés.</li>
+    </ul>
+    <h2>7.2 Store de données</h2>
+    <p class="no-indent">Le hook <code>useCollection&lt;T&gt;</code> est le cœur du système de persistance de l\'application. Il fournit une API générique pour gérer le cycle de vie complet d\'une collection de données. Ce hook est utilisé par tous les modules CRUD de l\'application, ce qui garantit un comportement cohérent et une logique de persistance centralisée.</p>
+    <p>Les opérations fournies par ce hook sont les suivantes :</p>
+    <ul>
+      <li><strong>items</strong> : la liste des enregistrements de la collection, chargée depuis le localStorage au démarrage de l\'application. Cette liste est reactive : toute modification déclenche un re-rendu des composants qui l\'utilisent.</li>
+      <li><strong>add(data)</strong> : ajoute un nouvel enregistrement. L\'identifiant est automatiquement généré par incrémentation du compteur persistant <code>&lt;key&gt;__seq</code>. Le nouvel enregistrement est inséré en tête de liste et immédiatement persisté dans le localStorage.</li>
+      <li><strong>update(id, patch)</strong> : modifie partiellement un enregistrement existant. Seuls les champs présents dans <code>patch</code> sont mis à jour, les autres restent inchangés. La modification est immédiatement persistée.</li>
+      <li><strong>remove(id)</strong> : supprime un enregistrement de la collection et persiste la modification. Cette opération est précédée d\'une confirmation dans l\'interface.</li>
+      <li><strong>reset()</strong> : réinitialise la collection en supprimant tous les enregistrements et en remettant le compteur d\'auto-incrémentation à zéro. Les prochains enregistrements recommenceront à l\'identifiant 1.</li>
+    </ul>
+    <p>L\'identifiant est géré par un compteur persistant stocké sous la clé <code>&lt;key&gt;__seq</code> dans le localStorage. À chaque ajout, le compteur est incrémenté et sa valeur devient l\'identifiant du nouvel enregistrement. Ce mécanisme garantit des identifiants uniques, séquentiels et commençant à 1, conformément aux règles de gestion RG-01 et RG-08.</p>
+    <p>Toutes les opérations de persistance sont synchrones et immédiates : après chaque modification (ajout, mise à jour, suppression), le nouvel état de la collection est immédiatement écrit dans le localStorage. Cela garantit que les données survivent aux rechargements de page et à la fermeture du navigateur, et qu\'il n\'y a pas de perte de données en cas de fermeture inattendue de l\'application.</p>
+    <h2>7.3 Framework CRUD</h2>
+    <p class="no-indent">Le composant <code>CrudPage</code> est le composant le plus important de l\'application. Il reçoit en entrée un objet <code>ResourceDef</code> (la configuration d\'un module) et génère automatiquement l\'interface complète de gestion CRUD pour ce module. Ce composant est utilisé par les vingt-neuf modules de l\'application, ce qui représente une économie de code considérable par rapport à une approche où chaque module aurait sa propre page.</p>
+    <p>Les fonctionnalités générées automatiquement sont les suivantes :</p>
+    <ul>
+      <li><strong>En-tête de page</strong> avec le titre du module, le nombre total d\'enregistrements et un bouton « Ajouter » permettant d\'ouvrir le formulaire de création.</li>
+      <li><strong>Barre d\'outils</strong> avec un champ de recherche instantanée (qui filtre les enregistrements selon les champs définis dans <code>searchFields</code>), des filtres déroulants (selon la configuration <code>filters</code>) et des boutons d\'export (PDF, Excel/CSV, impression).</li>
+      <li><strong>Tableau paginé</strong> affichant les colonnes définies dans <code>columns</code>. Les colonnes de type « badge » affichent des pastilles colorées selon la valeur. Les colonnes de type « ref » affichent le libellé résolu de la référence. Les colonnes de type « money » affichent le montant formaté en Ariary. La pagination permet de naviguer dans les enregistrements quand ils sont nombreux.</li>
+      <li><strong>Modales d\'ajout et d\'édition</strong> avec un formulaire généré à partir des champs définis dans <code>fields</code>. Chaque champ est rendu selon son type. Les champs obligatoires sont marqués d\'un astérisque et validés avant la soumission.</li>
+      <li><strong>Modale de détail</strong> affichant tous les champs d\'un enregistrement en lecture seule, avec les références résolues.</li>
+      <li><strong>Confirmation de suppression</strong> : une boîte de dialogue demande à l\'utilisateur de confirmer avant toute suppression, conformément à la règle RG-02.</li>
+      <li><strong>Notifications</strong> : des notifications de type « toast » s\'affichent en bas de l\'écran après chaque action réussie ou en cas d\'erreur.</li>
+      <li><strong>Export PDF</strong> : génère un document PDF contenant le titre du module, la date d\'export et le tableau des données.</li>
+      <li><strong>Export Excel (CSV)</strong> : génère un fichier CSV avec les en-têtes de colonnes et les données, téléchargeable.</li>
+      <li><strong>Impression</strong> : ouvre la boîte de dialogue d\'impression du navigateur avec un format optimisé.</li>
+    </ul>
+    <h2>7.4 Design system</h2>
+    <p class="no-indent">Le design system de l\'application repose sur plusieurs piliers qui garantissent une interface cohérente, professionnelle et agréable à utiliser :</p>
+    <h3>7.4.1 Palette de couleurs</h3>
+    <p class="no-indent">La palette de couleurs utilise un système de rampes (ramps) avec plusieurs teintes par couleur, permettant une application hiérarchique et cohérente. Six rampes principales sont définies : primary (bleu), health (vert), accent (teal), warning (ambre), error (rouge) et neutral (slate). Chaque rampe comporte plusieurs niveaux de luminosité (50 à 950), permettant des variations subtiles pour les fonds, les bordures, les textes et les états de survol.</p>
+    <h3>7.4.2 Typographie</h3>
+    <p class="no-indent">L\'application utilise deux polices complémentaires : <strong>Plus Jakarta Sans</strong> pour les titres et en-têtes, et <strong>Inter</strong> pour le corps du texte. Ces polices modernes et lisibles garantissent une excellente lisibilité sur tous les supports. Le corps de texte utilise une taille de base de 14px avec un interligne de 1.5 (150%), et les titres utilisent une taille de 120% de l\'interligne, conformément aux recommandations de lisibilité web.</p>
+    <h3>7.4.3 Espacement et grille</h3>
+    <p class="no-indent">L\'application suit un système d\'espacement basé sur 8 pixels (8px spacing system), garantissant un alignement et un équilibre visuel cohérents à travers toute l\'interface. Les marges et les paddings utilisent des multiples de 8 (8, 16, 24, 32, 48, 64 pixels).</p>
+    <h3>7.4.4 Mode sombre</h3>
+    <p class="no-indent">L\'application offre un mode clair et un mode sombre, basculables depuis la barre supérieure. Le mode sombre utilise des couleurs de fond sombres (slate-950, slate-900) et des couleurs de texte claires (slate-100, slate-300), avec un contraste suffisant pour garantir la lisibilité dans toutes les conditions.</p>
+    <h3>7.4.5 Responsive design</h3>
+    <p class="no-indent">L\'interface s\'adapte automatiquement à la taille de l\'écran grâce à des breakpoints Tailwind CSS : mobile (inférieur à 640px), tablette (640px à 1024px) et ordinateur (supérieur à 1024px). Sur mobile, la barre latérale se transforme en menu coulissant, les tableaux deviennent scrollables horizontalement, et les boutons s\'adaptent à la largeur de l\'écran.</p>
+    <h3>7.4.6 Animations et micro-interactions</h3>
+    <p class="no-indent">L\'application intègre des animations subtiles et des micro-interactions pour améliorer l\'expérience utilisateur : transitions de survol sur les boutons et les lignes de tableau, animations d\'apparition (fade-in, slide-up) pour les modales et les notifications, et feedback visuel immédiat sur les actions. Ces animations sont implémentées avec des transitions CSS, garantissant des performances optimales.</p>
+  </div>
+
+  <!-- CHAPITRE VIII -->
+  <div class="page-break chapter">
+    <h1>CHAPITRE VIII — PRÉSENTATION DÉTAILLÉE DES MODULES</h1>
+    <h2>8.1 Tableau de bord</h2>
+    <p class="no-indent">Le tableau de bord est la page d'accueil de l'application. Il offre une vue d'ensemble de l'activité de la clinique avec des statistiques en temps réel et des graphiques interactifs. Il constitue l'outil de pilotage privilégié de la direction, permettant de suivre l'évolution des principaux indicateurs en un coup d'œil.</p>
+    <p>Le tableau de bord affiche huit cartes statistiques : nombre total de patients, nombre de médecins, rendez-vous du jour, consultations totales, hospitalisations en cours, médicaments en stock, factures émises et rendez-vous totaux. Chaque carte affiche l'icône du module correspondant et la valeur actualisée en temps réel. Ces cartes offrent une vision synthétique et immédiate de l'activité de la clinique.</p>
+    <p>Un graphique en courbe affiche l'évolution mensuelle des consultations sur l'année en cours, permettant de visualiser les tendances et les pics d'activité. Un diagramme circulaire montre la répartition des spécialités médicales, offrant une vision synthétique de l'offre de soins. Un diagramme en barres présente la répartition des patients par sexe, utile pour l'analyse démographique. Ces graphiques sont implémentés avec Chart.js et react-chartjs-2, offrant des animations fluides et un comportement responsive.</p>
+    <p>La liste des rendez-vous récents affiche les derniers rendez-vous enregistrés, avec le nom du patient, du médecin, la date et le statut, permettant un accès rapide aux dernières activités. Une alerte de stock faible s'affiche automatiquement lorsque des médicaments atteignent leur seuil minimum, permettant une réaction proactive pour éviter les ruptures de stock.</p>
+    <p>Lorsqu'aucune donnée n'est enregistrée dans le système (base de données vide), un message d'état vide s'affiche, invitant l'utilisateur à commencer par enregistrer des données. Cette gestion des états vides est conforme à l'exigence BNF-09 et améliore l'expérience utilisateur en guidant les premières actions.</p>
+    <figure><img src="figures/fig13_dashboard.png" alt="Tableau de bord"><figcaption>Figure 13 — Capture d'écran : Tableau de bord</figcaption></figure>
+    <h2>8.2 Gestion des patients</h2>
+    <p class="no-indent">Le module de gestion des patients est le module central de l'application. Il permet l'enregistrement, la consultation, la modification et la suppression des dossiers patients. Chaque patient est identifié par un numéro unique auto-incrémenté, et son dossier contient les informations personnelles (prénom, nom, date de naissance, sexe, téléphone, adresse), les informations médicales (groupe sanguin, notes médicales) et les coordonnées (email).</p>
+    <p>La liste des patients présente un tableau avec les colonnes : identifiant, nom, prénom, sexe (affiché sous forme de badge coloré), téléphone et groupe sanguin. Une barre de recherche instantanée permet de filtrer les patients par nom, prénom ou téléphone. Des boutons d'export (PDF, Excel, impression) sont disponibles pour produire des documents officiels. La pagination permet de naviguer dans la liste quand le nombre de patients est important.</p>
+    <p>Le formulaire d'ajout d'un patient s'ouvre dans une fenêtre modale. Il contient tous les champs définis dans la configuration du module, avec des champs obligatoires marqués d'un astérisque. La validation est effectuée côté client avant la soumission, et des messages d'erreur s'affichent en cas de saisie invalide. Après l'enregistrement, une notification de succès confirme la création du dossier patient.</p>
+    <figure><img src="figures/fig14_patients.png" alt="Liste des patients"><figcaption>Figure 14 — Capture d'écran : Liste des patients</figcaption></figure>
+    <figure><img src="figures/fig15_add_patient.png" alt="Ajout d'un patient"><figcaption>Figure 15 — Capture d'écran : Ajout d'un patient</figcaption></figure>
+    <h2>8.3 Gestion du personnel</h2>
+    <p class="no-indent">La gestion du personnel comprend trois modules distincts qui couvrent l'ensemble des ressources humaines de la clinique : les médecins, le personnel administratif et les infirmiers.</p>
+    <h3>8.3.1 Médecins</h3>
+    <p class="no-indent">Le module des médecins permet de gérer les informations relatives aux médecins de la clinique : prénom, nom, spécialité (cardiologie, pédiatrie, neurologie, gynécologie, dermatologie, orthopédie), téléphone, email, disponibilité (oui/non, affichée sous forme de badge coloré) et horaires de travail. Un filtre par disponibilité permet d'afficher uniquement les médecins disponibles ou indisponibles, facilitant la prise de rendez-vous. Chaque médecin est identifié par un numéro unique auto-incrémenté.</p>
+    <h3>8.3.2 Personnel administratif</h3>
+    <p class="no-indent">Le module du personnel gère les employés administratifs et techniques de la clinique : réceptionnistes, comptables, secrétaires, techniciens de maintenance. Chaque enregistrement contient le prénom, le nom, la fonction, le service d'affectation, le téléphone et l'email. Ce module permet d'avoir un annuaire complet et à jour du personnel non médical de la clinique.</p>
+    <h3>8.3.3 Infirmiers</h3>
+    <p class="no-indent">Le module des infirmiers gère spécifiquement le personnel infirmier, avec des champs supplémentaires comme le service d'affectation (urgences, hospitalisation, bloc opératoire) et le quart de travail (jour, nuit, garde). Ces informations sont essentielles pour l'organisation des soins et la planification des équipes. Le module permet également de filtrer par quart de travail, facilitant la gestion des plannings.</p>
+    <h2>8.4 Rendez-vous et consultations</h2>
+    <p class="no-indent">Le module des rendez-vous dispose d'un calendrier mensuel interactif avec navigation entre mois, sélection de date et liste des RDV du jour. Les statuts (en attente, confirmé, annulé) sont affichés en badges colorés.</p>
+    <figure><img src="figures/fig16_rdv.png" alt="Calendrier des rendez-vous"><figcaption>Figure 16 — Capture d'écran : Calendrier des rendez-vous</figcaption></figure>
+    <p class="no-indent">Le module des consultations constitue le dossier médical numérique : symptômes, diagnostic, traitement, ordonnance, notes. Liaison patient et médecin obligatoire.</p>
+    <figure><img src="figures/fig17_consultations.png" alt="Gestion des consultations"><figcaption>Figure 17 — Capture d'écran : Gestion des consultations</figcaption></figure>
+    <h2>8.5 Hospitalisation</h2>
+    <p class="no-indent">La gestion de l'hospitalisation comprend trois modules interconnectés : les hospitalisations, les chambres et les lits. Ces modules sont liés par des relations : une hospitalisation est liée à un lit, qui est lui-même lié à une chambre. Cette structure hiérarchique reflète l'organisation physique de l'infrastructure d'hospitalisation de la clinique.</p>
+    <p>Le module des <strong>hospitalisations</strong> permet de gérer les admissions et les sorties des patients hospitalisés. Chaque hospitalisation enregistre la date d'admission, la date de sortie (si applicable), le motif d'hospitalisation, le statut (en cours ou sorti, affiché sous forme de badge coloré), et les liens obligatoires vers le patient, le lit occupé et le médecin responsable. Le médecin responsable assure le suivi médical du patient pendant toute la durée de son hospitalisation.</p>
+    <p>Le module des <strong>chambres</strong> gère l'infrastructure physique de la clinique : numéro de chambre, type (standard, suite, privée, urgence), étage et capacité (nombre de lits). Ce module permet d'avoir une vision globale du parc immobilier de la clinique et d'optimiser l'occupation des chambres.</p>
+    <p>Le module des <strong>lits</strong> gère les lits individuels avec leur numéro, leur chambre de rattachement et leur statut (libre, occupé ou maintenance), affiché sous forme de badge coloré : vert pour libre, rouge pour occupé, ambre pour maintenance. Le statut des lits est crucial pour l'admission des patients : un lit doit être libre pour pouvoir y admettre un patient. Lorsqu'une hospitalisation est créée, le statut du lit correspondant passe automatiquement à « occupé », et lorsque le patient sort, le statut revient à « libre ».</p>
+    <h2>8.6 Laboratoire</h2>
+    <p class="no-indent">La gestion du laboratoire comprend trois modules qui couvrent l'ensemble du processus d'analyse médicale, depuis la commande d'analyse jusqu'à la communication des résultats au patient.</p>
+    <p>Le module des <strong>laboratoires</strong> gère les informations sur les laboratoires de la clinique : nom, emplacement, responsable et téléphone. Une clinique peut disposer de plusieurs laboratoires spécialisés (biologie, hématologie, biochimie), chacun avec ses propres analyses et ses propres délais de traitement.</p>
+    <p>Le module des <strong>analyses</strong> gère le catalogue des analyses médicales disponibles : nom de l'analyse, catégorie (biologie, hématologie, biochimie, microbiologie), prix en Ariary, délai de résultat (en heures ou en jours) et laboratoire de rattachement. Ce catalogue constitue le référentiel des examens disponibles, utilisé par les médecins lors de la prescription d'analyses.</p>
+    <p>Le module des <strong>résultats</strong> gère les résultats d'analyses pour chaque patient. Chaque résultat enregistre l'analyse concernée, le patient, la date de l'examen, la valeur du résultat, le statut (en attente ou complété, affiché sous forme de badge) et les notes éventuelles. Les résultats sont liés obligatoirement à une analyse et à un patient, conformément à la règle de gestion RG-12. Ce module permet aux médecins de consulter les résultats d'examens de leurs patients et d'adapter leurs diagnostics en conséquence.</p>
+    <h2>8.7 Pharmacie</h2>
+    <p class="no-indent">La gestion de la pharmacie comprend trois modules qui assurent la gestion complète du circuit du médicament dans la clinique, depuis l'approvisionnement auprès des fournisseurs jusqu'à la dispensation aux patients.</p>
+    <p>Le module des <strong>médicaments</strong> gère le catalogue des médicaments disponibles à la pharmacie de la clinique. Chaque médicament est décrit par son nom, sa catégorie (antibiotique, antalgique, anti-inflammatoire, antihypertenseur, etc.), sa quantité en stock, son prix unitaire en Ariary, sa date d'expiration et son fournisseur. La date d'expiration est un champ crucial : les médicaments périmés ne doivent pas être dispensés aux patients. Le module permet de filtrer par catégorie pour faciliter la recherche.</p>
+    <p>Le module des <strong>fournisseurs</strong> gère les informations sur les fournisseurs de médicaments : nom de l'entreprise, nom du contact, téléphone, email et adresse. Ce module permet de maintenir un annuaire à jour des partenaires commerciaux de la clinique et de faciliter les commandes de réapprovisionnement.</p>
+    <p>Le module du <strong>stock</strong> gère le suivi détaillé des stocks avec un seuil minimum déclenchant une alerte de stock faible. Lorsque la quantité d'un médicament devient inférieure ou égale au seuil minimum, une alerte s'affiche automatiquement sur le tableau de bord, permettant au pharmacien de commander rapidement un réapprovisionnement. Cette fonctionnalité est conforme à la règle de gestion RG-07 et évite les ruptures de stock qui pourraient compromettre la prise en charge des patients.</p>
+    <figure><img src="figures/fig18_medicaments.png" alt="Gestion des médicaments"><figcaption>Figure 18 — Capture d'écran : Gestion des médicaments</figcaption></figure>
+    <h2>8.8 Facturation</h2>
+    <p class="no-indent">La gestion de la facturation comprend trois modules qui couvrent l'ensemble du processus financier, depuis l'émission d'une facture jusqu'à son règlement, en incluant la gestion des assurances santé.</p>
+    <p>Le module des <strong>factures</strong> gère l'émission des factures pour les patients. Chaque facture enregistre le patient concerné, la date d'émission, le montant total en Ariary, le statut (payé, en attente, annulé, affiché sous forme de badge coloré) et l'assurance éventuelle. Le lien vers le patient est obligatoire, permettant de retrouver toutes les factures d'un patient donné. Le lien vers l'assurance est optionnel : une facture peut être couverte partiellement ou totalement par une assurance santé.</p>
+    <p>Le module des <strong>paiements</strong> gère les paiements reçus pour les factures. Chaque paiement enregistre la facture concernée, la date du paiement, le montant payé en Ariary et la méthode de paiement (espèces, carte bancaire, virement, chèque, mobile money). Une facture peut être payée en plusieurs fois, chaque paiement étant enregistré séparément. Le total des paiements d'une facture permet de déterminer si elle est entièrement réglée.</p>
+    <p>Le module des <strong>assurances</strong> gère les compagnies d'assurance partenaires de la clinique : nom de l'assurance, taux de couverture (pourcentage du montant couvert), téléphone et email de contact. Ce module permet de gérer les relations avec les assurances et de faciliter la facturation des patients assurés. Le taux de couverture détermine la part du montant de la facture prise en charge par l'assurance, le reste étant à la charge du patient.</p>
+    <h2>8.9 Urgences et ambulances</h2>
+    <p class="no-indent">La gestion des urgences comprend deux modules qui couvrent la prise en charge des urgences médicales et le transport sanitaire.</p>
+    <p>Le module des <strong>urgences</strong> gère les cas d'urgence pris en charge par la clinique. Chaque urgence enregistre le patient concerné, la date et l'heure de l'admission aux urgences, le niveau de gravité (léger, modéré, sévère, critique, affiché sous forme de badge coloré), la description de l'état du patient, le diagnostic éventuel et le statut (en attente, pris en charge, traité, transféré). Le niveau de gravité permet de prioriser les prises en charge : les cas critiques sont traités en priorité, conformément aux protocoles de triage des urgences.</p>
+    <p>Le module des <strong>ambulances</strong> gère le parc d'ambulances de la clinique. Chaque ambulance est décrite par son immatriculation, le nom du chauffeur, le téléphone de contact et son statut (disponible, en mission, maintenance, affiché sous forme de badge coloré). Le suivi du statut des ambulances permet d'optimiser la gestion du transport sanitaire et de s'assurer qu'une ambulance est toujours disponible en cas d'urgence. Lorsqu'une ambulance est envoyée en mission, son statut passe à « en mission », et revient à « disponible » à son retour.</p>
+    <h2>8.10 Sécurité et paramètres</h2>
+    <p class="no-indent">La sécurité et la configuration de l'application sont gérées par plusieurs modules qui assurent le contrôle d'accès, la traçabilité et la sauvegarde des données.</p>
+    <p>Le module des <strong>utilisateurs</strong> gère les comptes d'accès au système. Chaque utilisateur est décrit par son identifiant (nom d'utilisateur), son nom complet, son email, son rôle (lien vers le module des rôles) et son statut (actif ou inactif, affiché sous forme de badge). Un utilisateur inactif ne peut pas se connecter au système. Ce module permet à l'administrateur de gérer les comptes d'accès et de les désactiver en cas de départ d'un employé ou de compromission d'un compte.</p>
+    <p>Le module des <strong>rôles</strong> gère les profils de permissions. Chaque rôle est défini par son nom (administrateur, médecin, infirmier, réceptionniste, pharmacien, technicien de laboratoire, comptable), sa description et les permissions associées. Les permissions déterminent quels modules sont accessibles à chaque rôle et quelles actions sont autorisées (lecture seule, création, modification, suppression). Ce système de rôles et permissions implémente le principe du moindre privilège : chaque utilisateur n'a accès qu'aux modules et aux actions nécessaires à sa fonction.</p>
+    <p>Le module du <strong>journal des activités</strong> enregistre toutes les actions effectuées dans le système : l'action réalisée (création, modification, suppression), le module concerné, le détail de l'action, l'utilisateur qui l'a effectuée et l'horodatage. Ce journal garantit la traçabilité complète des opérations, ce qui est essentiel dans un contexte médical où la traçabilité est une exigence réglementaire. En cas d'incident ou d'erreur, le journal permet de reconstituer l'historique des actions et d'identifier l'origine du problème.</p>
+    <figure><img src="figures/fig19_reports.png" alt="Rapports"><figcaption>Figure 19 — Capture d'écran : Rapports</figcaption></figure>
+    <figure><img src="figures/fig20_settings.png" alt="Paramètres et sauvegarde"><figcaption>Figure 20 — Capture d'écran : Paramètres et sauvegarde</figcaption></figure>
+    <figure><img src="figures/fig21_mobile.png" alt="Version mobile"><figcaption>Figure 21 — Capture d'écran : Version mobile</figcaption></figure>
+
+    <h2>8.11 Suivi des patients</h2>
+    <p class="no-indent">Le module de suivi des patients est un module nouvellement ajouté qui permet d'assurer le suivi médical des patients après leur sortie de l'hôpital ou après une consultation. Ce module est essentiel pour la continuité des soins, particulièrement pour les patients sous traitement long, en convalescence ou nécessitant un contrôle post-opératoire.</p>
+    <p>Chaque enregistrement de suivi contient : le patient concerné (lien obligatoire vers le module des patients), la date du suivi, le type de suivi (post-opératoire, post-consultation, traitement long, convalescence, contrôle), le statut (en cours, terminé, critique), les notes médicales détaillées et la date de la prochaine visite. Le statut est affiché sous forme de badge coloré : bleu pour « en cours », vert pour « terminé » et rouge pour « critique », permettant une identification visuelle immédiate des patients nécessitant une attention particulière.</p>
+    <p>Le module dispose d'un filtre par statut permettant d'afficher uniquement les suivis en cours, terminés ou critiques. Cette fonctionnalité est particulièrement utile pour les médecins qui doivent suivre de nombreux patients simultanément et prioriser ceux dont l'état de santé nécessite une attention immédiate. La date de prochaine visite permet de planifier les rendez-vous de contrôle et d'éviter les oublis.</p>
+    <figure><img src="figures/fig24_suivi.png" alt="Suivi des patients"><figcaption>Figure 24 — Capture d'écran : Suivi des patients</figcaption></figure>
+
+    <h2>8.12 Morgue</h2>
+    <p class="no-indent">Le module de la morgue est un module nouvellement ajouté qui permet de gérer le registre de la morgue de la clinique. Ce module, bien que délicat, est essentiel pour la gestion complète d'un établissement hospitalier. Il assure la traçabilité des entrées et sorties des défunts, la gestion des références et le contact avec les familles.</p>
+    <p>Chaque enregistrement de la morgue contient : le nom du défunt, la date d'entrée à la morgue, un numéro de référence unique, la cause du décès, le contact de la famille, la date de sortie (récupération ou transfert) et le statut (en place, récupéré, transféré). Le statut est affiché sous forme de badge coloré : gris pour « en place », vert pour « récupéré » et bleu pour « transféré ». Un filtre par statut permet d'afficher uniquement les défunts encore présents ou déjà sortis.</p>
+    <p>Ce module garantit une traçabilité rigoureuse des entrées et sorties de la morgue, ce qui est essentiel sur le plan administratif et légal. Les références uniques permettent d'identifier sans ambiguïté chaque dossier, et les contacts des familles facilitent les démarches de récupération ou de transfert.</p>
+    <figure><img src="figures/fig23_morgue.png" alt="Module Morgue"><figcaption>Figure 23 — Capture d'écran : Module Morgue</figcaption></figure>
+
+    <h2>8.13 Prix des services et tarification</h2>
+    <p class="no-indent">Le module de gestion des prix des services est un module nouvellement ajouté qui permet de définir et de gérer la tarification de tous les services offerts par la clinique. Ce module est le référentiel tarifaire de l'établissement, utilisé comme base pour la facturation des patients.</p>
+    <p>Chaque tarif enregistre : le nom du service, la catégorie (consultation, hospitalisation, laboratoire, pharmacie, urgence, chirurgie, imagerie, autre), le prix en Ariary et une description optionnelle. Un filtre par catégorie permet de visualiser rapidement les tarifs d'un type de service donné. Ce module est particulièrement utile pour assurer la cohérence de la facturation : tous les services sont tarifés de manière uniforme et transparente, évitant les disparités et les erreurs de tarification.</p>
+    <p>La tarification en Ariary (monnaie locale) est conforme au contexte malgache et facilite la gestion comptable de la clinique. Le module de prix des services complète le module de facturation en fournissant le référentiel des prix de référence, garantissant que toutes les factures émises par la clinique s'appuient sur une grille tarifaire officielle et à jour.</p>
+    <figure><img src="figures/fig25_prix.png" alt="Prix des services"><figcaption>Figure 25 — Capture d'écran : Prix des services</figcaption></figure>
+
+    <h2>8.14 Recherche globale</h2>
+    <p class="no-indent">La recherche globale est une fonctionnalité transversale nouvellement ajoutée qui permet de rechercher instantanément across tous les modules du système à partir d'une barre de recherche unique, accessible depuis la barre supérieure de l'application ou via le raccourci clavier Ctrl+K (ou Cmd+K sur Mac). Cette fonctionnalité constitue un gain de productivité majeur pour les utilisateurs : au lieu de naviguer manuellement dans chaque module pour retrouver un enregistrement, ils peuvent effectuer une recherche unifiée qui parcourt simultanément toutes les collections.</p>
+    <p>La recherche globale fonctionne de la manière suivante : lorsque l'utilisateur saisit au moins deux caractères dans la barre de recherche, le système parcourt toutes les collections de données (patients, médecins, rendez-vous, consultations, factures, etc.) et filtre les enregistrements dont les champs de recherche correspondent à la requête. Les résultats sont affichés dans une fenêtre superposée (overlay) qui présente chaque résultat avec son libellé, le module auquel il appartient et son identifiant. Un clic sur un résultat navigue directement vers le module correspondant.</p>
+    <p>Cette fonctionnalité est particulièrement utile dans un contexte hospitalier où la rapidité d'accès à l'information est critique. Un réceptionniste peut retrouver instantanément un patient par son nom ou son téléphone, un médecin peut localiser une consultation par son diagnostic, et un comptable peut chercher une facture par son montant — le tout sans quitter la page courante.</p>
+
+    <h2>8.15 Listes globales</h2>
+    <p class="no-indent">La page des listes globales est une page nouvellement ajoutée qui offre une vue d'ensemble de toutes les listes du système en un seul écran. Elle présente des statistiques globales (nombre total de modules, nombre total d'enregistrements, nombre de catégories), une barre de filtrage par nom de module, et une organisation par groupe fonctionnel (Patients & Soins, Personnel, Consultations, Hospitalisation, Laboratoire, Pharmacie, Facturation, Urgences, Sécurité, Référentiels).</p>
+    <p>Chaque module est représenté par une carte cliquable affichant son icône, son nom et le nombre d'enregistrements qu'il contient. Un clic sur une carte navigue directement vers le module correspondant. Cette page est particulièrement utile pour la direction qui souhaite avoir une vision synthétique de l'ensemble du système d'information et identifier rapidement les modules qui contiennent le plus ou le moins de données.</p>
+    <p>La page des listes globales complète le tableau de bord en offrant une vue orientée « modules » plutôt qu'orientée « indicateurs ». Tandis que le tableau de bord présente des statistiques et des graphiques, les listes globales présentent la structure du système et le volume de données par module, offrant ainsi une double perspective sur l'état du système d'information de la clinique.</p>
+    <figure><img src="figures/fig22_listes.png" alt="Listes globales"><figcaption>Figure 22 — Capture d'écran : Listes globales</figcaption></figure>
+  </div>
+
+  <!-- CHAPITRE IX -->
+  <div class="page-break chapter">
+    <h1>CHAPITRE IX — TESTS</h1>
+    <h2>9.1 Stratégie de test</h2>
+    <p class="no-indent">La validation de l'application a été réalisée par une série de tests fonctionnels systématiques, couvrant l'ensemble des modules et des fonctionnalités de l'application. Chaque test visait à vérifier qu'un cas d'utilisation spécifique fonctionnait conformément aux attentes définies dans l'étude des besoins.</p>
+    <p>La stratégie de test a couvert plusieurs catégories :</p>
+    <ul>
+      <li><strong>Tests de création (Create)</strong> : vérification de l'ajout d'enregistrements dans chaque module, avec validation des champs obligatoires et génération correcte des identifiants auto-incrémentés. Chaque test a confirmé que le premier enregistrement reçoit l'identifiant 1 et que les enregistrements suivants reçoivent des identifiants séquentiels.</li>
+      <li><strong>Tests de lecture (Read)</strong> : vérification de l'affichage des listes, de la recherche instantanée (filtrage en temps réel selon les champs définis dans searchFields), des filtres déroulants et de la pagination (navigation entre pages quand le nombre d'enregistrements dépasse la taille de page).</li>
+      <li><strong>Tests de mise à jour (Update)</strong> : vérification de la modification des enregistrements, de la persistance des modifications dans le localStorage et de la mise à jour de l'affichage après modification.</li>
+      <li><strong>Tests de suppression (Delete)</strong> : vérification de la confirmation avant suppression (boîte de dialogue) et de l'effacement effectif des enregistrements. Vérification également que la suppression ne réinitialise pas le compteur d'auto-incrémentation (le prochain enregistrement garde l'ID suivant).</li>
+      <li><strong>Tests d'export</strong> : vérification de la génération des fichiers PDF (contenu, format, téléchargement) et CSV (en-têtes, données, séparateur virgule) et du bon fonctionnement de l'impression (ouverture de la boîte de dialogue d'impression du navigateur).</li>
+      <li><strong>Tests de navigation</strong> : vérification du routage entre les pages (toutes les routes accessibles), du mode sombre (basculement et persistance du choix) et du responsive design (adaptation aux différentes tailles d'écran).</li>
+      <li><strong>Tests de sauvegarde</strong> : vérification de l'export de sauvegarde JSON (toutes les collections sérialisées), de l'import de restauration (données restaurées correctement) et de la réinitialisation (effacement complet et remise des compteurs à zéro).</li>
+    </ul>
+    <p>Chaque test a été exécuté manuellement, en suivant un protocole précis : préparation de l'environnement (base de données réinitialisée), exécution de l'action, observation du résultat et comparaison avec le résultat attendu. Les résultats ont été consignés dans le tableau de cas de tests (Tableau 7) et tous les tests ont passé avec succès (statut OK).</p>
+    <h2>9.2 Cas de tests fonctionnels</h2>
+    <p class="table-caption">Tableau 7 — Cas de tests fonctionnels</p>
+    <table>
+      <tr><th>ID</th><th>Module</th><th>Cas de test</th><th>Résultat attendu</th><th>Statut</th></tr>
+      <tr><td>T-01</td><td>Patients</td><td>Ajouter un patient valide</td><td>Patient créé, ID=1, toast succès</td><td>OK</td></tr>
+      <tr><td>T-02</td><td>Patients</td><td>Ajout sans champ obligatoire</td><td>Erreur de validation</td><td>OK</td></tr>
+      <tr><td>T-03</td><td>Patients</td><td>Modifier un patient</td><td>Données mises à jour</td><td>OK</td></tr>
+      <tr><td>T-04</td><td>Patients</td><td>Supprimer un patient</td><td>Confirmation puis suppression</td><td>OK</td></tr>
+      <tr><td>T-05</td><td>Patients</td><td>Recherche par nom</td><td>Filtrage instantané</td><td>OK</td></tr>
+      <tr><td>T-06</td><td>Médecins</td><td>Ajouter un médecin</td><td>Médecin créé, ID auto-incrémenté</td><td>OK</td></tr>
+      <tr><td>T-07</td><td>Médecins</td><td>Filtrer par disponibilité</td><td>Filtre appliqué</td><td>OK</td></tr>
+      <tr><td>T-08</td><td>RDV</td><td>Créer un RDV via calendrier</td><td>RDV visible sur le calendrier</td><td>OK</td></tr>
+      <tr><td>T-09</td><td>RDV</td><td>Confirmer un RDV</td><td>Statut « Confirmé »</td><td>OK</td></tr>
+      <tr><td>T-10</td><td>RDV</td><td>Annuler un RDV</td><td>Statut « Annulé »</td><td>OK</td></tr>
+      <tr><td>T-11</td><td>Consultations</td><td>Créer une consultation</td><td>Consultation enregistrée</td><td>OK</td></tr>
+      <tr><td>T-12</td><td>Hospitalisations</td><td>Admettre un patient</td><td>Statut « En cours »</td><td>OK</td></tr>
+      <tr><td>T-13</td><td>Lits</td><td>Changer statut d'un lit</td><td>Badge mis à jour</td><td>OK</td></tr>
+      <tr><td>T-14</td><td>Médicaments</td><td>Ajouter un médicament</td><td>Médicament créé, prix en Ar</td><td>OK</td></tr>
+      <tr><td>T-15</td><td>Stock</td><td>Alerte de stock faible</td><td>Alerte affichée si quantité ≤ seuil</td><td>OK</td></tr>
+      <tr><td>T-16</td><td>Factures</td><td>Créer une facture</td><td>Facture créée, montant affiché</td><td>OK</td></tr>
+      <tr><td>T-17</td><td>Rapports</td><td>Export PDF</td><td>Fichier PDF généré</td><td>OK</td></tr>
+      <tr><td>T-18</td><td>Rapports</td><td>Export Excel (CSV)</td><td>Fichier CSV généré</td><td>OK</td></tr>
+      <tr><td>T-19</td><td>Paramètres</td><td>Export sauvegarde JSON</td><td>Fichier JSON généré</td><td>OK</td></tr>
+      <tr><td>T-20</td><td>Paramètres</td><td>Restaurer une sauvegarde</td><td>Données restaurées</td><td>OK</td></tr>
+      <tr><td>T-21</td><td>Paramètres</td><td>Réinitialiser la base</td><td>Données effacées, ID remis à 1</td><td>OK</td></tr>
+      <tr><td>T-22</td><td>Navigation</td><td>Mode sombre</td><td>Thème basculé</td><td>OK</td></tr>
+      <tr><td>T-23</td><td>Navigation</td><td>Responsive mobile</td><td>Interface adaptée</td><td>OK</td></tr>
+      <tr><td>T-24</td><td>Pagination</td><td>Naviguer entre pages</td><td>Pages correctes</td><td>OK</td></tr>
+      <tr><td>T-25</td><td>Dashboard</td><td>Affichage avec données</td><td>Statistiques et graphiques</td><td>OK</td></tr>
+      <tr><td>T-26</td><td>Dashboard</td><td>Affichage sans données</td><td>État vide affiché</td><td>OK</td></tr>
+    </table>
+    <p>L'ensemble des vingt-six cas de tests a été exécuté avec succès. Aucun échec n'a été constaté, ce qui démontre la robustesse de l'application et la conformité de l'implémentation avec les besoins définis. Les tests ont également permis de vérifier le comportement de l'application dans des conditions défavorables : saisie de données invalides, tentative de suppression sans confirmation, recherche sans résultat, export avec une base vide. Dans tous les cas, l'application a réagi de manière appropriée, en affichant des messages d'erreur clairs ou des états vides informatifs.</p>
+
+    <h2>9.3 Matrice de traçabilité</h2>
+    <p class="table-caption">Tableau 8 — Matrice de traçabilité des besoins</p>
+    <table>
+      <tr><th>Code besoin</th><th>Module</th><th>Statut</th></tr>
+      <tr><td>BF-01</td><td>Patients</td><td>Couvert</td></tr>
+      <tr><td>BF-02</td><td>Médecins</td><td>Couvert</td></tr>
+      <tr><td>BF-05</td><td>Rendez-vous</td><td>Couvert</td></tr>
+      <tr><td>BF-06</td><td>Consultations</td><td>Couvert</td></tr>
+      <tr><td>BF-08</td><td>Hospitalisations</td><td>Couvert</td></tr>
+      <tr><td>BF-12</td><td>Médicaments</td><td>Couvert</td></tr>
+      <tr><td>BF-14</td><td>Factures</td><td>Couvert</td></tr>
+      <tr><td>BF-19</td><td>Tableau de bord</td><td>Couvert</td></tr>
+      <tr><td>BF-20</td><td>Rapports</td><td>Couvert</td></tr>
+      <tr><td>BF-21</td><td>Sauvegarde</td><td>Couvert</td></tr>
+      <tr><td>BNF-01</td><td>Responsive</td><td>Couvert</td></tr>
+      <tr><td>BNF-02</td><td>Mode sombre</td><td>Couvert</td></tr>
+      <tr><td>BNF-09</td><td>Base vide</td><td>Couvert</td></tr>
+      <tr><td>BNF-10</td><td>Auto-incrémentation</td><td>Couvert</td></tr>
+    </table>
+    <p>Tous les besoins fonctionnels et non fonctionnels identifiés dans l'étude des besoins ont été couverts par l'application et validés par les tests. Aucun besoin n'a été laissé sans réponse, ce qui démontre l'exhaustivité de la réalisation. La matrice de traçabilité constitue un document de référence pour la soutenance, permettant au jury de vérifier que chaque exigence a été prise en compte dans l'application et validée par un test fonctionnel.</p>
+  </div>
+
+  <!-- CHAPITRE X -->
+  <div class="page-break chapter">
+    <h1>CHAPITRE X — SÉCURITÉ</h1>
+    <h2>10.1 Validation des données</h2>
+    <p class="no-indent">La validation des données constitue la première ligne de défense de l'application. Tous les formulaires effectuent une validation côté client avant la soumission. Les champs obligatoires sont vérifiés : si un champ marqué comme requis est vide ou non rempli, le formulaire ne peut pas être soumis et un message d'erreur s'affiche. Les types de données sont respectés : les champs de type « date » n'acceptent que des dates valides, les champs de type « number » n'acceptent que des valeurs numériques, les champs de type « email » vérifient le format de l'adresse électronique. Les messages d'erreur sont affichés en temps réel sous les champs concernés, avec un libellé clair et en français, permettant à l'utilisateur de corriger sa saisie.</p>
+    <h2>10.2 Protection XSS</h2>
+    <p class="no-indent">L'application est protégée contre les attaques de type Cross-Site Scripting (XSS) grâce à React. Par conception, React échappe automatiquement le contenu JSX, ce qui signifie que toute chaîne de caractères saisie par un utilisateur est traitée comme du texte et non comme du code HTML exécutable. L'application n'utilise pas <code>dangerouslySetInnerHTML</code>, qui serait la seule exception à cette protection. Par conséquent, même si un utilisateur tente de saisir du code JavaScript dans un champ (par exemple <code>&lt;script&gt;alert('xss')&lt;/script&gt;</code>), ce code sera affiché comme du texte brut et ne sera jamais exécuté. Cette protection est inhérente à React et ne nécessite aucune configuration supplémentaire.</p>
+    <h2>10.3 Protection injection SQL</h2>
+    <p class="no-indent">L'application n'utilise pas de SQL direct (localStorage). En production avec PostgreSQL, des requêtes paramétrées et un ORM seraient utilisés.</p>
+    <h2>10.4 Protection CSRF</h2>
+    <p class="no-indent">Pas de requêtes HTTP cross-site dans la version actuelle. En production, un jeton CSRF serait ajouté aux en-têtes.</p>
+    <h2>10.5 Gestion des rôles</h2>
+    <p class="no-indent">L'application dispose d'un système de gestion des rôles et des permissions. Le module des <strong>utilisateurs</strong> permet de créer des comptes d'accès avec un identifiant, un nom, un email, un rôle et un statut (actif/inactif). Le module des <strong>rôles</strong> permet de définir des profils (administrateur, médecin, infirmier, réceptionniste, pharmacien, technicien de laboratoire, comptable) avec leurs permissions. Chaque rôle détermine les modules accessibles et les actions autorisées. Par exemple, un médecin peut accéder aux patients et aux consultations mais pas à la facturation, tandis qu'un comptable peut accéder aux factures et aux paiements mais pas aux dossiers médicaux. Ce système implémente le principe du moindre privilège, garantissant que chaque utilisateur n'a accès qu'aux fonctionnalités nécessaires à sa fonction.</p>
+    <h2>10.6 Journalisation</h2>
+    <p class="no-indent">Le module du <strong>journal des activités</strong> assure la traçabilité des actions effectuées dans le système. Chaque action (création, modification, suppression) est enregistrée avec : l'action effectuée, le module concerné, le détail de l'action (par exemple, l'identifiant de l'enregistrement modifié), l'utilisateur qui l'a effectuée et l'horodatage précis (date et heure). Ce journal permet de reconstituer l'historique des opérations et d'identifier l'origine de toute modification, ce qui est essentiel dans un contexte médical où la traçabilité est une exigence réglementaire. En cas d'audit ou de litige, le journal des activités constitue une preuve des actions effectuées et de leur chronologie.</p>
+    <h2>10.7 Sauvegarde</h2>
+    <p class="no-indent">La page Paramètres permet d'exporter une sauvegarde complète de toutes les données au format JSON. Cette sauvegarde peut être stockée sur un support externe (clé USB, disque dur, stockage cloud) et restaurée en cas de perte de données. La fonction de réinitialisation, qui efface toutes les données et remet les identifiants à 1, est protégée par une boîte de dialogue de confirmation, empêchant toute suppression accidentelle. En production, cette sauvegarde manuelle serait complétée par une sauvegarde automatique planifiée (quotidienne ou hebdomadaire) vers un serveur distant, garantissant la résilience des données face aux incidents matériels.</p>
+  </div>
+
+  <!-- CHAPITRE XI -->
+  <div class="page-break chapter">
+    <h1>CHAPITRE XI — DÉPLOIEMENT</h1>
+    <h2>11.1 Environnement de développement</h2>
+    <p class="no-indent">L'environnement de développement utilise Vite comme serveur de développement. Le démarrage se fait par la commande <code>npm run dev</code>, qui lance le serveur sur le port 5173. Le Hot Module Replacement (HMR) permet de voir les modifications du code en temps réel sans rechargement de page, ce qui améliore considérablement la productivité du développeur. Les modifications sont reflétées instantanément dans le navigateur, sans perte de l'état de l'application.</p>
+    <p>La vérification des types TypeScript s'effectue avec <code>npm run typecheck</code>, qui exécute le compilateur TypeScript en mode « noEmit » (sans générer de fichiers JavaScript) pour vérifier uniquement la cohérence des types. L'analyse statique du code s'effectue avec <code>npm run lint</code>, qui exécute ESLint pour détecter les problèmes de qualité de code (variables non utilisées, imports inutiles, erreurs potentielles). Ces deux commandes doivent être exécutées avant chaque commit pour garantir la qualité du code.</p>
+    <h2>11.2 Build de production</h2>
+    <p class="no-indent">Le build de production est généré par la commande <code>npm run build</code>. Vite optimise le build avec plusieurs techniques : la <strong>minification</strong> du code JavaScript et CSS pour réduire la taille des fichiers (suppression des espaces, commentaires et noms de variables raccourcis), le <strong>code-splitting</strong> automatique qui sépare les dépendances en chunks distincts pour permettre un chargement différé (lazy loading) des modules non essentiels, le <strong>tree-shaking</strong> qui élimine le code mort (non utilisé) du bundle final, et l'<strong>optimisation des assets</strong> (images, polices) pour réduire leur taille. Le résultat du build est un dossier <code>dist/</code> contenant des fichiers statiques (HTML, CSS, JavaScript) prêts à être déployés sur n'importe quel serveur web statique.</p>
+    <h2>11.3 Déploiement statique</h2>
+    <p class="no-indent">Le dossier <code>dist/</code> peut être déployé sur tout hébergeur de sites statiques. Plusieurs options sont disponibles : <strong>Vercel</strong>, plateforme de déploiement optimisée pour les applications React/Vite avec déploiement automatique depuis GitHub ; <strong>Netlify</strong>, alternative populaire offrant des fonctionnalités similaires avec déploiement continu ; <strong>GitHub Pages</strong>, solution gratuite pour l'hébergement de sites statiques depuis un dépôt GitHub ; ou un <strong>serveur Nginx / Apache</strong> pour un déploiement sur un serveur dédié ou mutualisé, avec configuration du serveur web pour servir les fichiers statiques et gérer le routage côté serveur (fallback vers index.html pour les routes SPA).</p>
+    <h2>11.4 Diagramme de déploiement</h2>
+    <figure><img src="figures/fig11_deployment.png" alt="Diagramme de déploiement"><figcaption>Figure 11 — Diagramme de déploiement</figcaption></figure>
+    <h2>11.5 Intégration continue</h2>
+    <p class="no-indent">Un workflow GitHub Actions est configuré dans le fichier <code>.github/workflows/ci.yml</code>. Il s'exécute automatiquement à chaque push sur les branches <code>main</code> et <code>master</code>, et à chaque pull request. Le workflow comprend les étapes suivantes : l'<strong>installation des dépendances</strong> (<code>npm ci</code>) qui garantit une installation reproductible à partir du fichier <code>package-lock.json</code>, la <strong>vérification des types</strong> (<code>npm run typecheck</code>) qui s'assure que le code TypeScript est correctement typé, l'<strong>analyse du code</strong> (<code>npm run lint</code>) qui détecte les problèmes de qualité, le <strong>build de production</strong> (<code>npm run build</code>) qui construit l'application et vérifie qu'elle compile sans erreur, et l'<strong>upload des artefacts</strong> qui sauvegarde le dossier <code>dist/</code> comme artefact téléchargeable pendant 7 jours. Cette intégration continue garantit que chaque modification du code est automatiquement validée, empêchant l'introduction de régressions dans le projet.</p>
+  </div>
+
+  <!-- CONCLUSION -->
+  <div class="page-break chapter">
+    <h1>CONCLUSION GÉNÉRALE</h1>
+    <p class="no-indent">Ce mémoire a présenté la conception et la réalisation d'une application web de gestion hospitalière pour la Clinique GODIE, un établissement de santé privé situé à Antsiranana, dans le Nord de Madagascar. L'objectif de ce projet était de répondre aux besoins concrets d'un établissement de santé malgache en proposant un système d'information moderne, complet, adapté au contexte local et prêt pour une démonstration devant un jury universitaire. Au terme de ce travail, il est possible de dresser un bilan des résultats obtenus, des compétences mises en œuvre et des perspectives d'évolution.</p>
+    <p>Le projet couvre vingt-neuf modules fonctionnels intégrés, depuis la gestion des patients et du personnel jusqu'à la facturation et la tarification, en passant par les rendez-vous, les consultations, les ordonnances, les hospitalisations, le laboratoire, la pharmacie, les urgences, le suivi des patients, la morgue, la sécurité et le journal des activités. Cette couverture fonctionnelle étendue démontre qu'il est possible de digitaliser l'ensemble du parcours de soins d'une clinique privée dans une application unique et cohérente, y compris les aspects rarement couverts par les solutions existantes comme le suivi post-hospitalisation et la gestion de la morgue.</p>
+    <p>L'architecture config-driven, basée sur un registre de ressources déclaratif, a permis de développer un framework CRUD générique qui génère automatiquement l'ensemble des interfaces. Cette approche présente plusieurs avantages majeurs : une productivité de développement élevée (l'ajout d'un module se résume à quelques lignes de configuration), une cohérence d'interface parfaite entre tous les modules, et une maintenabilité du code optimisée (une correction dans le framework se propage à tous les modules). Ce choix architectural démontre qu'avec une conception logicielle bien pensée, il est possible de couvrir un périmètre fonctionnel très large avec un code minimal et maintenable, illustrant concrètement le principe DRY (Don't Repeat Yourself) appliqué à grande échelle.</p>
+    <p>Les technologies modernes employées — React 18, TypeScript, Vite 5, Tailwind CSS 3, Chart.js — ont permis de réaliser une application performante, responsive et professionnelle. Le typage statique de TypeScript garantit la fiabilité du code en détectant de nombreuses erreurs à la compilation, Vite assure une expérience de développement fluide et rapide avec un Hot Module Replacement quasi instantané, et Tailwind CSS offre un design system cohérent et personnalisable avec un mode sombre intégré. L'application est prête pour une démonstration devant un jury universitaire et constitue une base solide pour une mise en production.</p>
+    <p>Les fonctionnalités transversales ajoutées — la recherche globale accessible via Ctrl+K, les listes globales offrant une vue d'ensemble de tous les modules, les rapports détaillés par module et le rapport global consolidé, le calendrier des rendez-vous avec filtrage par médecin, et la gestion des prix des services — enrichissent considérablement l'expérience utilisateur et la capacité de pilotage de la direction. Ces fonctionnalités répondent à des besoins réels identifiés auprès du personnel de la clinique et démontrent la maturité de la solution proposée.</p>
+    <p>La validation de l'application a été effectuée par une série de tests fonctionnels systématiques couvrant l'ensemble des modules. La matrice de traçabilité a permis de vérifier que tous les besoins identifiés ont été couverts par une fonctionnalité et validés par un test. Aucun besoin n'a été laissé sans réponse, ce qui démontre l'exhaustivité de la réalisation. Les tests ont également vérifié le comportement de l'application dans des conditions défavorables (saisie invalide, suppression sans confirmation, recherche sans résultat, export avec base vide), confirmant la robustesse du système.</p>
+    <p>Sur le plan académique, ce projet a permis de mettre en pratique et de consolider l'ensemble des compétences acquises durant le cursus de Licence Professionnelle Informatique : analyse de besoins, modélisation UML, conception de base de données (MCD/MLD Merise), programmation web avec un framework moderne (React/TypeScript), architecture logicielle en couches, design system, tests fonctionnels, documentation technique et déploiement. Il constitue une démonstration concrète de la maîtrise de ces compétences et de la capacité à mener un projet informatique de bout en bout, de l'analyse du besoin jusqu'au déploiement.</p>
+    <h2>Perspectives d'évolution</h2>
+    <p class="no-indent">Si l'application répond déjà aux besoins immédiats de la Clinique GODIE, plusieurs perspectives d'évolution peuvent être envisagées pour enrichir et faire évoluer le système :</p>
+    <ul>
+      <li><strong>Intégration d'un backend Node.js/Express avec PostgreSQL</strong> : migration de la persistance du localStorage vers une base de données serveur, permettant un accès multi-postes simultané, une sauvegarde automatique et une meilleure sécurité des données.</li>
+      <li><strong>Authentification JWT avec gestion des sessions</strong> : mise en place d'un système d'authentification sécurisé avec tokens JWT, gestion des sessions et contrôle d'accès basé sur les rôles déjà définis dans l'application.</li>
+      <li><strong>Application mobile native (React Native)</strong> : développement d'une application mobile dédiée pour les médecins et infirmiers, permettant la consultation des dossiers patients et la saisie de consultations en mobilité.</li>
+      <li><strong>Notifications push et SMS</strong> : envoi automatique de rappels de rendez-vous aux patients par SMS, et notifications push pour alerter le personnel en cas d'urgence ou de stock faible.</li>
+      <li><strong>Intelligence artificielle pour l'aide au diagnostic</strong> : intégration de modèles d'apprentissage automatique pour suggérer des diagnostics à partir des symptômes, ou détecter des patterns anormaux dans les résultats d'analyses.</li>
+      <li><strong>Interconnexion avec des dispositifs médicaux (IoT)</strong> : connexion directe avec des appareils médicaux (thermomètres connectés, oxymètres, moniteurs de signes vitaux) pour une saisie automatique des données dans les dossiers patients.</li>
+      <li><strong>Module de téléconsultation</strong> : intégration d'une fonctionnalité de consultation à distance via vidéo, particulièrement pertinente dans le contexte malgache où l'accès aux soins spécialisés est limité en zones rurales.</li>
+      <li><strong>Tableau de bord avancé avec indicateurs de performance</strong> : enrichissement du tableau de bord avec des KPIs hospitaliers (taux d'occupation des lits, durée moyenne de séjour, taux de rotation des patients) et des alertes intelligentes.</li>
+    </ul>
+    <p>En définitive, ce projet démontre qu'avec des technologies web modernes, une architecture logicielle bien pensée et une approche centrée sur les besoins réels des utilisateurs, il est possible de répondre aux défis concrets d'un établissement de santé malgache tout en produisant un logiciel de qualité professionnelle, performant, évolutif et prêt pour une mise en production. Il constitue une contribution concrète à la transformation numérique du secteur de la santé à Madagascar et ouvre la voie à des développements futurs ambitieux.</p>
+  </div>
+
+  <!-- BIBLIOGRAPHIE -->
+  <div class="page-break chapter">
+    <h1>BIBLIOGRAPHIE</h1>
+    <ol>
+      <li>BOOCH, G., RUMBAUGH, J., JACOBSON, I. (2005). <em>The Unified Modeling Language User Guide</em>. 2nd ed. Addison-Wesley. 496 p.</li>
+      <li>COMEAU, T. (2020). <em>React.js: Theory and Practice</em>. O'Reilly Media. 350 p.</li>
+      <li>FLANAGAN, D. (2011). <em>JavaScript: The Definitive Guide</em>. 6th ed. O'Reilly Media. 1096 p.</li>
+      <li>KROENKE, D. M., AUER, D. J. (2013). <em>Database Processing: Fundamentals, Design and Implementation</em>. 13th ed. Pearson. 624 p.</li>
+      <li>LARMAN, C. (2004). <em>Applying UML and Patterns: An Introduction to Object-Oriented Analysis and Design and Iterative Development</em>. 3rd ed. Prentice Hall. 736 p.</li>
+      <li>PRESSMAN, R. S. (2014). <em>Software Engineering: A Practitioner's Approach</em>. 8th ed. McGraw-Hill. 976 p.</li>
+      <li>ROBBINS, J. N., POWERS, S. (2021). <em>Learning Web Design</em>. 5th ed. O'Reilly Media. 808 p.</li>
+      <li>ROJAS, J. (2022). <em>TypeScript Quickly</em>. Manning Publications. 400 p.</li>
+      <li>SOMMERVILLE, I. (2015). <em>Software Engineering</em>. 10th ed. Pearson. 816 p.</li>
+      <li>STEELE, C. (2019). <em>Tailwind CSS: A Beginner's Guide</em>. McGraw-Hill. 250 p.</li>
+    </ol>
+  </div>
+
+  <!-- WEBOGRAPHIE -->
+  <div class="page-break chapter">
+    <h1>WEBOGRAPHIE</h1>
+    <ol>
+      <li>React — Documentation officielle : https://react.dev (consulté en 2025)</li>
+      <li>TypeScript — Documentation officielle : https://www.typescriptlang.org (consulté en 2025)</li>
+      <li>Vite — Guide officiel : https://vitejs.dev (consulté en 2025)</li>
+      <li>Tailwind CSS — Documentation : https://tailwindcss.com (consulté en 2025)</li>
+      <li>Chart.js — Documentation : https://www.chartjs.org (consulté en 2025)</li>
+      <li>react-chartjs-2 — Documentation : https://react-chartjs-2.js.org (consulté en 2025)</li>
+      <li>jsPDF — Documentation GitHub : https://github.com/parallax/jsPDF (consulté en 2025)</li>
+      <li>lucide-react — Documentation : https://lucide.dev (consulté en 2025)</li>
+      <li>MDN Web Docs : https://developer.mozilla.org (consulté en 2025)</li>
+      <li>React Router : https://reactrouter.com (consulté en 2025)</li>
+      <li>GitHub Actions : https://docs.github.com/en/actions (consulté en 2025)</li>
+      <li>UML — Unified Modeling Language : https://www.uml.org (consulté en 2025)</li>
+    </ol>
+  </div>
+
+  <!-- ANNEXES -->
+  <div class="page-break chapter">
+    <h1>ANNEXES</h1>
+    <h2>Annexe A — Liste complète des modules</h2>
+    <p class="table-caption">Tableau 6 — Modules de l'application</p>
+    <table>
+      <tr><th>N°</th><th>Module</th><th>Groupe</th><th>Clé</th></tr>
+      <tr><td>1</td><td>Patients</td><td>Patients &amp; Soins</td><td>godie_patients</td></tr>
+      <tr><td>2</td><td>Médecins</td><td>Personnel</td><td>godie_doctors</td></tr>
+      <tr><td>3</td><td>Personnel</td><td>Personnel</td><td>godie_staff</td></tr>
+      <tr><td>4</td><td>Infirmiers</td><td>Personnel</td><td>godie_nurses</td></tr>
+      <tr><td>5</td><td>Rendez-vous</td><td>Consultations</td><td>godie_appointments</td></tr>
+      <tr><td>6</td><td>Consultations</td><td>Consultations</td><td>godie_consultations</td></tr>
+      <tr><td>7</td><td>Ordonnances</td><td>Consultations</td><td>godie_prescriptions</td></tr>
+      <tr><td>8</td><td>Hospitalisations</td><td>Hospitalisation</td><td>godie_hospitalizations</td></tr>
+      <tr><td>9</td><td>Chambres</td><td>Hospitalisation</td><td>godie_rooms</td></tr>
+      <tr><td>10</td><td>Lits</td><td>Hospitalisation</td><td>godie_beds</td></tr>
+      <tr><td>11</td><td>Laboratoires</td><td>Laboratoire</td><td>godie_laboratories</td></tr>
+      <tr><td>12</td><td>Analyses</td><td>Laboratoire</td><td>godie_analyses</td></tr>
+      <tr><td>13</td><td>Résultats</td><td>Laboratoire</td><td>godie_results</td></tr>
+      <tr><td>14</td><td>Médicaments</td><td>Pharmacie</td><td>godie_medications</td></tr>
+      <tr><td>15</td><td>Fournisseurs</td><td>Pharmacie</td><td>godie_suppliers</td></tr>
+      <tr><td>16</td><td>Stock</td><td>Pharmacie</td><td>godie_stock</td></tr>
+      <tr><td>17</td><td>Factures</td><td>Facturation</td><td>godie_invoices</td></tr>
+      <tr><td>18</td><td>Paiements</td><td>Facturation</td><td>godie_payments</td></tr>
+      <tr><td>19</td><td>Assurances</td><td>Facturation</td><td>godie_insurance</td></tr>
+      <tr><td>20</td><td>Services</td><td>Référentiels</td><td>godie_services</td></tr>
+      <tr><td>21</td><td>Spécialités</td><td>Référentiels</td><td>godie_specialties</td></tr>
+      <tr><td>22</td><td>Urgences</td><td>Urgences</td><td>godie_emergencies</td></tr>
+      <tr><td>23</td><td>Ambulances</td><td>Urgences</td><td>godie_ambulances</td></tr>
+      <tr><td>24</td><td>Utilisateurs</td><td>Sécurité</td><td>godie_users</td></tr>
+      <tr><td>25</td><td>Rôles</td><td>Sécurité</td><td>godie_roles</td></tr>
+          <tr><td>26</td><td>Journal des activités</td><td>Sécurité</td><td>godie_activity</td></tr>
+      <tr><td>27</td><td>Suivi des patients</td><td>Patients &amp; Soins</td><td>godie_followups</td></tr>
+      <tr><td>28</td><td>Morgue</td><td>Hospitalisation</td><td>godie_morgue</td></tr>
+      <tr><td>29</td><td>Prix des services</td><td>Référentiels</td><td>godie_prices</td></tr>
+    </table>
+    <h2>Annexe B — Scripts npm</h2>
+    <table>
+      <tr><th>Script</th><th>Commande</th><th>Description</th></tr>
+      <tr><td>dev</td><td>npm run dev</td><td>Serveur de développement</td></tr>
+      <tr><td>build</td><td>npm run build</td><td>Build de production</td></tr>
+      <tr><td>preview</td><td>npm run preview</td><td>Prévisualisation du build</td></tr>
+      <tr><td>typecheck</td><td>npm run typecheck</td><td>Vérification TypeScript</td></tr>
+      <tr><td>lint</td><td>npm run lint</td><td>Analyse ESLint</td></tr>
+    </table>
+    <h2>Annexe C — Captures d'écran supplémentaires</h2>
+    <figure><img src="figures/fig_doctors.png" alt="Médecins"><figcaption>Module de gestion des médecins</figcaption></figure>
+    <figure><img src="figures/fig_hospitalizations.png" alt="Hospitalisations"><figcaption>Module de gestion des hospitalisations</figcaption></figure>
+    <figure><img src="figures/fig_laboratories.png" alt="Laboratoires"><figcaption>Module de gestion des laboratoires</figcaption></figure>
+    <figure><img src="figures/fig_invoices.png" alt="Factures"><figcaption>Module de gestion des factures</figcaption></figure>
+    <figure><img src="figures/fig_emergencies.png" alt="Urgences"><figcaption>Module de gestion des urgences</figcaption></figure>
+    <figure><img src="figures/fig_users.png" alt="Utilisateurs"><figcaption>Module de gestion des utilisateurs</figcaption></figure>
+    <figure><img src="figures/fig_nurses.png" alt="Infirmiers"><figcaption>Module de gestion des infirmiers</figcaption></figure>
+    <figure><img src="figures/fig_rooms.png" alt="Chambres"><figcaption>Module de gestion des chambres</figcaption></figure>
+    <figure><img src="figures/fig_beds.png" alt="Lits"><figcaption>Module de gestion des lits</figcaption></figure>
+    <figure><img src="figures/fig_analyses.png" alt="Analyses"><figcaption>Module de gestion des analyses</figcaption></figure>
+    <figure><img src="figures/fig_results.png" alt="Résultats"><figcaption>Module de gestion des résultats</figcaption></figure>
+    <figure><img src="figures/fig_suppliers.png" alt="Fournisseurs"><figcaption>Module de gestion des fournisseurs</figcaption></figure>
+    <figure><img src="figures/fig_stock.png" alt="Stock"><figcaption>Module de gestion du stock</figcaption></figure>
+    <figure><img src="figures/fig_payments.png" alt="Paiements"><figcaption>Module de gestion des paiements</figcaption></figure>
+    <figure><img src="figures/fig_insurance.png" alt="Assurances"><figcaption>Module de gestion des assurances</figcaption></figure>
+    <figure><img src="figures/fig_ambulances.png" alt="Ambulances"><figcaption>Module de gestion des ambulances</figcaption></figure>
+    <figure><img src="figures/fig_roles.png" alt="Rôles"><figcaption>Module de gestion des rôles</figcaption></figure>
+    <figure><img src="figures/fig_activity.png" alt="Journal des activités"><figcaption>Module du journal des activités</figcaption></figure>
+    <h2>Annexe D — Captures d'écran des nouveaux modules</h2>
+    <figure><img src="figures/fig22_listes.png" alt="Listes globales"><figcaption>Page des listes globales — vue d'ensemble de tous les modules</figcaption></figure>
+    <figure><img src="figures/fig23_morgue.png" alt="Morgue"><figcaption>Module de gestion de la morgue</figcaption></figure>
+    <figure><img src="figures/fig24_suivi.png" alt="Suivi des patients"><figcaption>Module de suivi des patients</figcaption></figure>
+    <figure><img src="figures/fig25_prix.png" alt="Prix des services"><figcaption>Module de gestion des prix des services</figcaption></figure>
+    <p style="text-align:center; margin-top:3cm; font-weight:bold;">— Fin du mémoire —</p>
+  </div>
+
+  <!-- TABLE DES MATIÈRES DÉTAILLÉE -->
+  <div class="page-break chapter">
+    <h1>TABLE DES MATIÈRES</h1>
+    <div class="toc-entry"><span><strong>Introduction générale</strong></span><span class="toc-dots"></span><span>9</span></div>
+    <div class="toc-entry sub"><span>Contexte et justification</span><span class="toc-dots"></span><span>9</span></div>
+    <div class="toc-entry sub"><span>Problématique</span><span class="toc-dots"></span><span>10</span></div>
+    <div class="toc-entry sub"><span>Objectifs du projet</span><span class="toc-dots"></span><span>11</span></div>
+    <div class="toc-entry sub"><span>Méthodologie</span><span class="toc-dots"></span><span>12</span></div>
+    <div class="toc-entry sub"><span>Structure du mémoire</span><span class="toc-dots"></span><span>12</span></div>
+    <div class="toc-entry"><span><strong>Chapitre I — Présentation de la Clinique GODIE</strong></span><span class="toc-dots"></span><span>13</span></div>
+    <div class="toc-entry sub"><span>1.1 Présentation générale</span><span class="toc-dots"></span><span>13</span></div>
+    <div class="toc-entry sub"><span>1.2 Localisation géographique</span><span class="toc-dots"></span><span>14</span></div>
+    <div class="toc-entry sub"><span>1.3 Organigramme</span><span class="toc-dots"></span><span>14</span></div>
+    <div class="toc-entry sub"><span>1.4 Services offerts</span><span class="toc-dots"></span><span>15</span></div>
+    <div class="toc-entry sub"><span>1.5 Motivation du projet</span><span class="toc-dots"></span><span>16</span></div>
+    <div class="toc-entry"><span><strong>Chapitre II — Analyse de l'existant</strong></span><span class="toc-dots"></span><span>17</span></div>
+    <div class="toc-entry sub"><span>2.1 Méthodes de travail actuelles</span><span class="toc-dots"></span><span>17</span></div>
+    <div class="toc-entry sub"><span>2.2 Limites du système actuel</span><span class="toc-dots"></span><span>18</span></div>
+    <div class="toc-entry sub"><span>2.3 Propositions de solutions</span><span class="toc-dots"></span><span>19</span></div>
+    <div class="toc-entry"><span><strong>Chapitre III — Étude des besoins</strong></span><span class="toc-dots"></span><span>21</span></div>
+    <div class="toc-entry sub"><span>3.1 Identification des acteurs</span><span class="toc-dots"></span><span>21</span></div>
+    <div class="toc-entry sub"><span>3.2 Besoins fonctionnels</span><span class="toc-dots"></span><span>22</span></div>
+    <div class="toc-entry sub"><span>3.3 Besoins non fonctionnels</span><span class="toc-dots"></span><span>24</span></div>
+    <div class="toc-entry sub"><span>3.4 Règles de gestion</span><span class="toc-dots"></span><span>25</span></div>
+    <div class="toc-entry"><span><strong>Chapitre IV — Conception UML</strong></span><span class="toc-dots"></span><span>27</span></div>
+    <div class="toc-entry sub"><span>4.1 Diagramme de cas d'utilisation</span><span class="toc-dots"></span><span>27</span></div>
+    <div class="toc-entry sub"><span>4.2 Diagramme de classes</span><span class="toc-dots"></span><span>29</span></div>
+    <div class="toc-entry sub"><span>4.3 Diagrammes de séquence</span><span class="toc-dots"></span><span>31</span></div>
+    <div class="toc-entry sub"><span>4.4 Diagramme d'activité</span><span class="toc-dots"></span><span>33</span></div>
+    <div class="toc-entry sub"><span>4.5 Modèle conceptuel de données</span><span class="toc-dots"></span><span>34</span></div>
+    <div class="toc-entry sub"><span>4.6 Modèle logique de données</span><span class="toc-dots"></span><span>36</span></div>
+    <div class="toc-entry"><span><strong>Chapitre V — Choix technologiques</strong></span><span class="toc-dots"></span><span>38</span></div>
+    <div class="toc-entry sub"><span>5.1 Frontend</span><span class="toc-dots"></span><span>38</span></div>
+    <div class="toc-entry sub"><span>5.2 Persistance des données</span><span class="toc-dots"></span><span>40</span></div>
+    <div class="toc-entry sub"><span>5.3 Justification globale</span><span class="toc-dots"></span><span>41</span></div>
+    <div class="toc-entry"><span><strong>Chapitre VI — Architecture de l'application</strong></span><span class="toc-dots"></span><span>43</span></div>
+    <div class="toc-entry sub"><span>6.1 Architecture générale</span><span class="toc-dots"></span><span>43</span></div>
+    <div class="toc-entry sub"><span>6.2 Couches logicielles</span><span class="toc-dots"></span><span>44</span></div>
+    <div class="toc-entry sub"><span>6.3 Pattern config-driven</span><span class="toc-dots"></span><span>45</span></div>
+    <div class="toc-entry"><span><strong>Chapitre VII — Réalisation</strong></span><span class="toc-dots"></span><span>47</span></div>
+    <div class="toc-entry sub"><span>7.1 Structure du projet</span><span class="toc-dots"></span><span>47</span></div>
+    <div class="toc-entry sub"><span>7.2 Store de données</span><span class="toc-dots"></span><span>48</span></div>
+    <div class="toc-entry sub"><span>7.3 Framework CRUD</span><span class="toc-dots"></span><span>49</span></div>
+    <div class="toc-entry sub"><span>7.4 Design system</span><span class="toc-dots"></span><span>50</span></div>
+    <div class="toc-entry"><span><strong>Chapitre VIII — Présentation détaillée des modules</strong></span><span class="toc-dots"></span><span>52</span></div>
+    <div class="toc-entry sub"><span>8.1 Tableau de bord</span><span class="toc-dots"></span><span>52</span></div>
+    <div class="toc-entry sub"><span>8.2 Gestion des patients</span><span class="toc-dots"></span><span>54</span></div>
+    <div class="toc-entry sub"><span>8.3 Gestion du personnel</span><span class="toc-dots"></span><span>56</span></div>
+    <div class="toc-entry sub"><span>8.4 Rendez-vous et consultations</span><span class="toc-dots"></span><span>58</span></div>
+    <div class="toc-entry sub"><span>8.5 Hospitalisation</span><span class="toc-dots"></span><span>60</span></div>
+    <div class="toc-entry sub"><span>8.6 Laboratoire</span><span class="toc-dots"></span><span>62</span></div>
+    <div class="toc-entry sub"><span>8.7 Pharmacie</span><span class="toc-dots"></span><span>64</span></div>
+    <div class="toc-entry sub"><span>8.8 Facturation et tarification</span><span class="toc-dots"></span><span>66</span></div>
+    <div class="toc-entry sub"><span>8.9 Urgences et ambulances</span><span class="toc-dots"></span><span>67</span></div>
+    <div class="toc-entry sub"><span>8.10 Sécurité et paramètres</span><span class="toc-dots"></span><span>68</span></div>
+    <div class="toc-entry sub"><span>8.11 Suivi des patients</span><span class="toc-dots"></span><span>69</span></div>
+    <div class="toc-entry sub"><span>8.12 Morgue</span><span class="toc-dots"></span><span>70</span></div>
+    <div class="toc-entry sub"><span>8.13 Prix des services et tarification</span><span class="toc-dots"></span><span>71</span></div>
+    <div class="toc-entry sub"><span>8.14 Recherche globale</span><span class="toc-dots"></span><span>72</span></div>
+    <div class="toc-entry sub"><span>8.15 Listes globales</span><span class="toc-dots"></span><span>73</span></div>
+    <div class="toc-entry"><span><strong>Chapitre IX — Tests</strong></span><span class="toc-dots"></span><span>74</span></div>
+    <div class="toc-entry sub"><span>9.1 Stratégie de test</span><span class="toc-dots"></span><span>74</span></div>
+    <div class="toc-entry sub"><span>9.2 Cas de tests fonctionnels</span><span class="toc-dots"></span><span>75</span></div>
+    <div class="toc-entry sub"><span>9.3 Matrice de traçabilité</span><span class="toc-dots"></span><span>76</span></div>
+    <div class="toc-entry"><span><strong>Chapitre X — Sécurité</strong></span><span class="toc-dots"></span><span>77</span></div>
+    <div class="toc-entry sub"><span>10.1 Validation des données</span><span class="toc-dots"></span><span>77</span></div>
+    <div class="toc-entry sub"><span>10.2 Protection XSS</span><span class="toc-dots"></span><span>78</span></div>
+    <div class="toc-entry sub"><span>10.3 Protection injection SQL</span><span class="toc-dots"></span><span>78</span></div>
+    <div class="toc-entry sub"><span>10.4 Protection CSRF</span><span class="toc-dots"></span><span>78</span></div>
+    <div class="toc-entry sub"><span>10.5 Gestion des rôles</span><span class="toc-dots"></span><span>78</span></div>
+    <div class="toc-entry sub"><span>10.6 Journalisation</span><span class="toc-dots"></span><span>79</span></div>
+    <div class="toc-entry sub"><span>10.7 Sauvegarde</span><span class="toc-dots"></span><span>79</span></div>
+    <div class="toc-entry"><span><strong>Chapitre XI — Déploiement</strong></span><span class="toc-dots"></span><span>80</span></div>
+    <div class="toc-entry sub"><span>11.1 Environnement de développement</span><span class="toc-dots"></span><span>80</span></div>
+    <div class="toc-entry sub"><span>11.2 Build de production</span><span class="toc-dots"></span><span>80</span></div>
+    <div class="toc-entry sub"><span>11.3 Déploiement statique</span><span class="toc-dots"></span><span>81</span></div>
+    <div class="toc-entry sub"><span>11.4 Diagramme de déploiement</span><span class="toc-dots"></span><span>81</span></div>
+    <div class="toc-entry sub"><span>11.5 Intégration continue</span><span class="toc-dots"></span><span>82</span></div>
+    <div class="toc-entry"><span><strong>Conclusion générale</strong></span><span class="toc-dots"></span><span>83</span></div>
+    <div class="toc-entry sub"><span>Perspectives d'évolution</span><span class="toc-dots"></span><span>84</span></div>
+    <div class="toc-entry"><span><strong>Bibliographie</strong></span><span class="toc-dots"></span><span>85</span></div>
+    <div class="toc-entry"><span><strong>Webographie</strong></span><span class="toc-dots"></span><span>86</span></div>
+    <div class="toc-entry"><span><strong>Annexes</strong></span><span class="toc-dots"></span><span>87</span></div>
+    <div class="toc-entry sub"><span>Annexe A — Liste complète des modules</span><span class="toc-dots"></span><span>87</span></div>
+    <div class="toc-entry sub"><span>Annexe B — Scripts npm</span><span class="toc-dots"></span><span>88</span></div>
+    <div class="toc-entry sub"><span>Annexe C — Captures d'écran supplémentaires</span><span class="toc-dots"></span><span>89</span></div>
+    <div class="toc-entry sub"><span>Annexe D — Captures d'écran des nouveaux modules</span><span class="toc-dots"></span><span>94</span></div>
+    <div class="toc-entry"><span><strong>Table des matières</strong></span><span class="toc-dots"></span><span>95</span></div>
+  </div>
+</body>
+</html>

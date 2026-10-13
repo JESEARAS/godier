@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><style>body{margin:0;padding:0}</style></head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="560" viewBox="0 0 1000 560" font-family="Arial, sans-serif">
+  <rect width="1000" height="560" fill="white"/>
+  <text x="500" y="25" text-anchor="middle" font-size="16" font-weight="bold" fill="#1e293b">Figure 9 — Modèle Logique de Données (MLD)</text>
+  <!-- Patient -->
+  <rect x="30" y="50" width="190" height="160" fill="#eff6ff" stroke="#2563eb" stroke-width="2" rx="4"/>
+  <rect x="30" y="50" width="190" height="24" fill="#2563eb" rx="4"/>
+  <text x="125" y="67" text-anchor="middle" font-size="12" font-weight="bold" fill="white">PATIENT</text>
+  <text x="40" y="90" font-size="10" font-weight="bold" fill="#1e40af">PK  id_patient</text>
+  <text x="40" y="105" font-size="10" fill="#1e40af">     prénom</text>
+  <text x="40" y="120" font-size="10" fill="#1e40af">     nom</text>
+  <text x="40" y="135" font-size="10" fill="#1e40af">     date_naissance</text>
+  <text x="40" y="150" font-size="10" fill="#1e40af">     sexe</text>
+  <text x="40" y="165" font-size="10" fill="#1e40af">     téléphone</text>
+  <text x="40" y="180" font-size="10" fill="#1e40af">     groupe_sanguin</text>
+  <text x="40" y="195" font-size="10" fill="#1e40af">     email, notes</text>
+  <!-- Doctor -->
+  <rect x="780" y="50" width="190" height="140" fill="#f0fdf4" stroke="#16a34a" stroke-width="2" rx="4"/>
+  <rect x="780" y="50" width="190" height="24" fill="#16a34a" rx="4"/>
+  <text x="875" y="67" text-anchor="middle" font-size="12" font-weight="bold" fill="white">DOCTOR</text>
+  <text x="790" y="90" font-size="10" font-weight="bold" fill="#15803d">PK  id_doctor</text>
+  <text x="790" y="105" font-size="10" fill="#15803d">     prénom, nom</text>
+  <text x="790" y="120" font-size="10" fill="#15803d">     spécialité</text>
+  <text x="790" y="135" font-size="10" fill="#15803d">     téléphone, email</text>
+  <text x="790" y="150" font-size="10" fill="#15803d">     disponible</text>
+  <text x="790" y="165" font-size="10" fill="#15803d">     horaires</text>
+  <!-- Appointment -->
+  <rect x="380" y="50" width="240" height="140" fill="#fef3c7" stroke="#d97706" stroke-width="2" rx="4"/>
+  <rect x="380" y="50" width="240" height="24" fill="#d97706" rx="4"/>
+  <text x="500" y="67" text-anchor="middle" font-size="12" font-weight="bold" fill="white">RDV (APPOINTMENT)</text>
+  <text x="390" y="90" font-size="10" font-weight="bold" fill="#92400e">PK  id_rdv</text>
+  <text x="390" y="105" font-size="10" font-weight="bold" fill="#dc2626">FK  id_patient</text>
+  <text x="390" y="120" font-size="10" font-weight="bold" fill="#dc2626">FK  id_doctor</text>
+  <text x="390" y="135" font-size="10" fill="#92400e">     date, heure</text>
+  <text x="390" y="150" font-size="10" fill="#92400e">     motif</text>
+  <text x="390" y="165" font-size="10" fill="#92400e">     statut</text>
+  <!-- Consultation -->
+  <rect x="150" y="250" width="220" height="140" fill="#ede9fe" stroke="#7c3aed" stroke-width="2" rx="4"/>
+  <rect x="150" y="250" width="220" height="24" fill="#7c3aed" rx="4"/>
+  <text x="260" y="267" text-anchor="middle" font-size="12" font-weight="bold" fill="white">CONSULTATION</text>
+  <text x="160" y="290" font-size="10" font-weight="bold" fill="#5b21b6">PK  id_consultation</text>
+  <text x="160" y="305" font-size="10" font-weight="bold" fill="#dc2626">FK  id_patient</text>
+  <text x="160" y="320" font-size="10" font-weight="bold" fill="#dc2626">FK  id_doctor</text>
+  <text x="160" y="335" font-size="10" fill="#5b21b6">     date, symptômes</text>
+  <text x="160" y="350" font-size="10" fill="#5b21b6">     diagnostic, traitement</text>
+  <text x="160" y="365" font-size="10" fill="#5b21b6">     ordonnance, notes</text>
+  <!-- Room -->
+  <rect x="30" y="430" width="170" height="110" fill="#ccfbf1" stroke="#0d9488" stroke-width="2" rx="4"/>
+  <rect x="30" y="430" width="170" height="24" fill="#0d9488" rx="4"/>
+  <text x="115" y="447" text-anchor="middle" font-size="12" font-weight="bold" fill="white">ROOM</text>
+  <text x="40" y="470" font-size="10" font-weight="bold" fill="#115e59">PK  id_room</text>
+  <text x="40" y="485" font-size="10" fill="#115e59">     numéro, type</text>
+  <text x="40" y="500" font-size="10" fill="#115e59">     étage, capacité</text>
+  <!-- Bed -->
+  <rect x="280" y="430" width="170" height="110" fill="#fff7ed" stroke="#ea580c" stroke-width="2" rx="4"/>
+  <rect x="280" y="430" width="170" height="24" fill="#ea580c" rx="4"/>
+  <text x="365" y="447" text-anchor="middle" font-size="12" font-weight="bold" fill="white">BED</text>
+  <text x="290" y="470" font-size="10" font-weight="bold" fill="#9a3412">PK  id_bed</text>
+  <text x="290" y="485" font-size="10" font-weight="bold" fill="#dc2626">FK  id_room</text>
+  <text x="290" y="500" font-size="10" fill="#9a3412">     numéro, statut</text>
+  <line x1="200" y1="480" x2="280" y2="480" stroke="#dc2626" stroke-width="1.5"/>
+  <!-- Hospitalization -->
+  <rect x="520" y="430" width="220" height="110" fill="#dbeafe" stroke="#2563eb" stroke-width="2" rx="4"/>
+  <rect x="520" y="430" width="220" height="24" fill="#2563eb" rx="4"/>
+  <text x="630" y="447" text-anchor="middle" font-size="12" font-weight="bold" fill="white">HOSPITALISATION</text>
+  <text x="530" y="470" font-size="10" font-weight="bold" fill="#1e40af">PK  id_hosp</text>
+  <text x="530" y="485" font-size="10" font-weight="bold" fill="#dc2626">FK  id_patient, id_bed</text>
+  <text x="530" y="500" font-size="10" font-weight="bold" fill="#dc2626">FK  id_doctor</text>
+  <text x="530" y="515" font-size="10" fill="#1e40af">     dates, motif, statut</text>
+  <!-- Medication -->
+  <rect x="780" y="250" width="190" height="140" fill="#f0fdf4" stroke="#16a34a" stroke-width="2" rx="4"/>
+  <rect x="780" y="250" width="190" height="24" fill="#16a34a" rx="4"/>
+  <text x="875" y="267" text-anchor="middle" font-size="12" font-weight="bold" fill="white">MEDICATION</text>
+  <text x="790" y="290" font-size="10" font-weight="bold" fill="#15803d">PK  id_med</text>
+  <text x="790" y="305" font-size="10" font-weight="bold" fill="#dc2626">FK  id_supplier</text>
+  <text x="790" y="320" font-size="10" fill="#15803d">     nom, catégorie</text>
+  <text x="790" y="335" font-size="10" fill="#15803d">     quantité, prix</text>
+  <text x="790" y="350" font-size="10" fill="#15803d">     expiration</text>
+  <!-- Invoice -->
+  <rect x="520" y="250" width="220" height="140" fill="#fef3c7" stroke="#d97706" stroke-width="2" rx="4"/>
+  <rect x="520" y="250" width="220" height="24" fill="#d97706" rx="4"/>
+  <text x="630" y="267" text-anchor="middle" font-size="12" font-weight="bold" fill="white">INVOICE</text>
+  <text x="530" y="290" font-size="10" font-weight="bold" fill="#92400e">PK  id_invoice</text>
+  <text x="530" y="305" font-size="10" font-weight="bold" fill="#dc2626">FK  id_patient</text>
+  <text x="530" y="320" font-size="10" font-weight="bold" fill="#dc2626">FK  id_insurance</text>
+  <text x="530" y="335" font-size="10" fill="#92400e">     date, montant, statut</text>
+  <!-- FK lines -->
+  <line x1="220" y1="100" x2="380" y2="105" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <line x1="620" y1="120" x2="780" y2="100" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <line x1="125" y1="210" x2="260" y2="250" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <line x1="875" y1="190" x2="370" y2="305" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <line x1="125" y1="210" x2="630" y2="430" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <line x1="365" y1="430" x2="630" y2="480" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4,3"/>
+</svg>
+</body></html>

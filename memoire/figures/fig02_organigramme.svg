@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><style>body{margin:0;padding:0}</style></head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="420" viewBox="0 0 900 420" font-family="Arial, sans-serif">
+  <rect width="900" height="420" fill="white"/>
+  <!-- Title -->
+  <text x="450" y="30" text-anchor="middle" font-size="16" font-weight="bold" fill="#1e293b">Figure 2 — Organigramme de la Clinique GODIE</text>
+  <!-- Director -->
+  <rect x="350" y="50" width="200" height="50" rx="8" fill="#2563eb" stroke="#1e40af" stroke-width="2"/>
+  <text x="450" y="72" text-anchor="middle" font-size="13" font-weight="bold" fill="white">Directeur</text>
+  <text x="450" y="90" text-anchor="middle" font-size="11" fill="white">JESE Andriamaniraka Davida</text>
+  <!-- Lines from director -->
+  <line x1="450" y1="100" x2="450" y2="120" stroke="#64748b" stroke-width="2"/>
+  <line x1="150" y1="120" x2="750" y2="120" stroke="#64748b" stroke-width="2"/>
+  <line x1="150" y1="120" x2="150" y2="140" stroke="#64748b" stroke-width="2"/>
+  <line x1="350" y1="120" x2="350" y2="140" stroke="#64748b" stroke-width="2"/>
+  <line x1="550" y1="120" x2="550" y2="140" stroke="#64748b" stroke-width="2"/>
+  <line x1="750" y1="120" x2="750" y2="140" stroke="#64748b" stroke-width="2"/>
+  <!-- Level 2 boxes -->
+  <rect x="70" y="140" width="160" height="45" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="150" y="168" text-anchor="middle" font-size="12" fill="#1e40af">Service Médical</text>
+  <rect x="270" y="140" width="160" height="45" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="350" y="168" text-anchor="middle" font-size="12" fill="#1e40af">Service Infirmier</text>
+  <rect x="470" y="140" width="160" height="45" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="550" y="168" text-anchor="middle" font-size="12" fill="#1e40af">Service Accueil</text>
+  <rect x="670" y="140" width="160" height="45" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="750" y="168" text-anchor="middle" font-size="12" fill="#1e40af">Service Pharmacie</text>
+  <!-- Lines to level 3 -->
+  <line x1="150" y1="185" x2="150" y2="210" stroke="#94a3b8" stroke-width="1.5"/>
+  <line x1="350" y1="185" x2="350" y2="210" stroke="#94a3b8" stroke-width="1.5"/>
+  <line x1="550" y1="185" x2="550" y2="210" stroke="#94a3b8" stroke-width="1.5"/>
+  <line x1="750" y1="185" x2="750" y2="210" stroke="#94a3b8" stroke-width="1.5"/>
+  <!-- Level 3 -->
+  <rect x="80" y="210" width="140" height="40" rx="6" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="150" y="235" text-anchor="middle" font-size="11" fill="#15803d">Médecins</text>
+  <rect x="280" y="210" width="140" height="40" rx="6" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="350" y="235" text-anchor="middle" font-size="11" fill="#15803d">Infirmiers</text>
+  <rect x="480" y="210" width="140" height="40" rx="6" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="550" y="235" text-anchor="middle" font-size="11" fill="#15803d">Réceptionnistes</text>
+  <rect x="680" y="210" width="140" height="40" rx="6" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="750" y="235" text-anchor="middle" font-size="11" fill="#15803d">Pharmaciens</text>
+  <!-- Additional services -->
+  <line x1="450" y1="120" x2="450" y2="280" stroke="#64748b" stroke-width="2" stroke-dasharray="4,4"/>
+  <rect x="350" y="280" width="200" height="45" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+  <text x="450" y="308" text-anchor="middle" font-size="12" fill="#92400e">Laboratoire &amp; Analyses</text>
+  <line x1="350" y1="325" x2="350" y2="350" stroke="#94a3b8" stroke-width="1.5"/>
+  <line x1="550" y1="325" x2="550" y2="350" stroke="#94a3b8" stroke-width="1.5"/>
+  <rect x="260" y="350" width="180" height="40" rx="6" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5"/>
+  <text x="350" y="375" text-anchor="middle" font-size="11" fill="#9a3412">Techniciens de laboratoire</text>
+  <rect x="460" y="350" width="180" height="40" rx="6" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5"/>
+  <text x="550" y="375" text-anchor="middle" font-size="11" fill="#9a3412">Service Comptable</text>
+</svg>
+</body>
+</html>

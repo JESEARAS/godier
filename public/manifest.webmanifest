@@ -1,0 +1,12 @@
+{
+  "name": "Clinique GODIE — Gestion Hospitalière",
+  "short_name": "Clinique GODIE",
+  "description": "Plateforme Web de Gestion de la Clinique GODIE à Antsiranana, Madagascar",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#1a61d7",
+  "icons": [
+    { "src": "/clinic-logo.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

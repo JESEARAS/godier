@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><style>body{margin:0;padding:0}</style></head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="620" viewBox="0 0 1100 620" font-family="Arial, sans-serif">
+  <rect width="1100" height="620" fill="white"/>
+  <text x="550" y="25" text-anchor="middle" font-size="16" font-weight="bold" fill="#1e293b">Figure 5 — Diagramme de classes</text>
+  <!-- Patient -->
+  <rect x="50" y="50" width="200" height="180" fill="#eff6ff" stroke="#2563eb" stroke-width="2" rx="4"/>
+  <rect x="50" y="50" width="200" height="28" fill="#2563eb" rx="4"/>
+  <text x="150" y="69" text-anchor="middle" font-size="13" font-weight="bold" fill="white">Patient</text>
+  <text x="60" y="95" font-size="10" fill="#1e40af">- id : int</text>
+  <text x="60" y="110" font-size="10" fill="#1e40af">- firstName : string</text>
+  <text x="60" y="125" font-size="10" fill="#1e40af">- lastName : string</text>
+  <text x="60" y="140" font-size="10" fill="#1e40af">- birthDate : date</text>
+  <text x="60" y="155" font-size="10" fill="#1e40af">- gender : string</text>
+  <text x="60" y="170" font-size="10" fill="#1e40af">- phone : string</text>
+  <text x="60" y="185" font-size="10" fill="#1e40af">- bloodGroup : string</text>
+  <line x1="50" y1="195" x2="250" y2="195" stroke="#2563eb" stroke-width="1"/>
+  <text x="60" y="210" font-size="10" fill="#1e40af">+ add() : void</text>
+  <text x="60" y="225" font-size="10" fill="#1e40af">+ update() : void</text>
+  <!-- Doctor -->
+  <rect x="350" y="50" width="200" height="160" fill="#f0fdf4" stroke="#16a34a" stroke-width="2" rx="4"/>
+  <rect x="350" y="50" width="200" height="28" fill="#16a34a" rx="4"/>
+  <text x="450" y="69" text-anchor="middle" font-size="13" font-weight="bold" fill="white">Doctor</text>
+  <text x="360" y="95" font-size="10" fill="#15803d">- id : int</text>
+  <text x="360" y="110" font-size="10" fill="#15803d">- firstName : string</text>
+  <text x="360" y="125" font-size="10" fill="#15803d">- lastName : string</text>
+  <text x="360" y="140" font-size="10" fill="#15803d">- specialty : string</text>
+  <text x="360" y="155" font-size="10" fill="#15803d">- phone : string</text>
+  <text x="360" y="170" font-size="10" fill="#15803d">- available : boolean</text>
+  <line x1="350" y1="180" x2="550" y2="180" stroke="#16a34a" stroke-width="1"/>
+  <text x="360" y="195" font-size="10" fill="#15803d">+ getFullName() : string</text>
+  <!-- Appointment -->
+  <rect x="700" y="50" width="200" height="170" fill="#fef3c7" stroke="#d97706" stroke-width="2" rx="4"/>
+  <rect x="700" y="50" width="200" height="28" fill="#d97706" rx="4"/>
+  <text x="800" y="69" text-anchor="middle" font-size="13" font-weight="bold" fill="white">Appointment</text>
+  <text x="710" y="95" font-size="10" fill="#92400e">- id : int</text>
+  <text x="710" y="110" font-size="10" fill="#92400e">- patientId : int</text>
+  <text x="710" y="125" font-size="10" fill="#92400e">- doctorId : int</text>
+  <text x="710" y="140" font-size="10" fill="#92400e">- date : date</text>
+  <text x="710" y="155" font-size="10" fill="#92400e">- time : string</text>
+  <text x="710" y="170" font-size="10" fill="#92400e">- status : string</text>
+  <line x1="700" y1="180" x2="900" y2="180" stroke="#d97706" stroke-width="1"/>
+  <text x="710" y="195" font-size="10" fill="#92400e">+ confirm() : void</text>
+  <text x="710" y="210" font-size="10" fill="#92400e">+ cancel() : void</text>
+  <!-- Consultation -->
+  <rect x="200" y="290" width="200" height="180" fill="#ede9fe" stroke="#7c3aed" stroke-width="2" rx="4"/>
+  <rect x="200" y="290" width="200" height="28" fill="#7c3aed" rx="4"/>
+  <text x="300" y="309" text-anchor="middle" font-size="13" font-weight="bold" fill="white">Consultation</text>
+  <text x="210" y="335" font-size="10" fill="#5b21b6">- id : int</text>
+  <text x="210" y="350" font-size="10" fill="#5b21b6">- patientId : int</text>
+  <text x="210" y="365" font-size="10" fill="#5b21b6">- doctorId : int</text>
+  <text x="210" y="380" font-size="10" fill="#5b21b6">- date : date</text>
+  <text x="210" y="395" font-size="10" fill="#5b21b6">- symptoms : text</text>
+  <text x="210" y="410" font-size="10" fill="#5b21b6">- diagnosis : text</text>
+  <text x="210" y="425" font-size="10" fill="#5b21b6">- treatment : text</text>
+  <line x1="200" y1="435" x2="400" y2="435" stroke="#7c3aed" stroke-width="1"/>
+  <text x="210" y="450" font-size="10" fill="#5b21b6">+ create() : void</text>
+  <text x="210" y="465" font-size="10" fill="#5b21b6">+ getPrescription()</text>
+  <!-- Room -->
+  <rect x="500" y="290" width="180" height="140" fill="#fce7f3" stroke="#be185d" stroke-width="2" rx="4"/>
+  <rect x="500" y="290" width="180" height="28" fill="#be185d" rx="4"/>
+  <text x="590" y="309" text-anchor="middle" font-size="13" font-weight="bold" fill="white">Room</text>
+  <text x="510" y="335" font-size="10" fill="#9f1239">- id : int</text>
+  <text x="510" y="350" font-size="10" fill="#9f1239">- number : string</text>
+  <text x="510" y="365" font-size="10" fill="#9f1239">- type : string</text>
+  <text x="510" y="380" font-size="10" fill="#9f1239">- floor : string</text>
+  <text x="510" y="395" font-size="10" fill="#9f1239">- capacity : int</text>
+  <line x1="500" y1="405" x2="680" y2="405" stroke="#be185d" stroke-width="1"/>
+  <text x="510" y="420" font-size="10" fill="#9f1239">+ getBeds() : Bed[]</text>
+  <!-- Bed -->
+  <rect x="780" y="290" width="180" height="140" fill="#ccfbf1" stroke="#0d9488" stroke-width="2" rx="4"/>
+  <rect x="780" y="290" width="180" height="28" fill="#0d9488" rx="4"/>
+  <text x="870" y="309" text-anchor="middle" font-size="13" font-weight="bold" fill="white">Bed</text>
+  <text x="790" y="335" font-size="10" fill="#115e59">- id : int</text>
+  <text x="790" y="350" font-size="10" fill="#115e59">- roomId : int</text>
+  <text x="790" y="365" font-size="10" fill="#115e59">- number : string</text>
+  <text x="790" y="380" font-size="10" fill="#115e59">- status : string</text>
+  <line x1="780" y1="395" x2="960" y2="395" stroke="#0d9488" stroke-width="1"/>
+  <text x="790" y="410" font-size="10" fill="#115e59">+ occupy() : void</text>
+  <text x="790" y="425" font-size="10" fill="#115e59">+ release() : void</text>
+  <!-- Medication -->
+  <rect x="50" y="500" width="200" height="100" fill="#fff7ed" stroke="#ea580c" stroke-width="2" rx="4"/>
+  <rect x="50" y="500" width="200" height="28" fill="#ea580c" rx="4"/>
+  <text x="150" y="519" text-anchor="middle" font-size="13" font-weight="bold" fill="white">Medication</text>
+  <text x="60" y="545" font-size="10" fill="#9a3412">- id, name, category</text>
+  <text x="60" y="560" font-size="10" fill="#9a3412">- quantity, price</text>
+  <text x="60" y="575" font-size="10" fill="#9a3412">- expiration : date</text>
+  <!-- Invoice -->
+  <rect x="350" y="500" width="200" height="100" fill="#f0fdf4" stroke="#16a34a" stroke-width="2" rx="4"/>
+  <rect x="350" y="500" width="200" height="28" fill="#16a34a" rx="4"/>
+  <text x="450" y="519" text-anchor="middle" font-size="13" font-weight="bold" fill="white">Invoice</text>
+  <text x="360" y="545" font-size="10" fill="#15803d">- id, patientId, date</text>
+  <text x="360" y="560" font-size="10" fill="#15803d">- amount, status</text>
+  <text x="360" y="575" font-size="10" fill="#15803d">- insuranceId</text>
+  <!-- User -->
+  <rect x="700" y="500" width="200" height="100" fill="#e0e7ff" stroke="#4f46e5" stroke-width="2" rx="4"/>
+  <rect x="700" y="500" width="200" height="28" fill="#4f46e5" rx="4"/>
+  <text x="800" y="519" text-anchor="middle" font-size="13" font-weight="bold" fill="white">User</text>
+  <text x="710" y="545" font-size="10" fill="#3730a3">- id, username, email</text>
+  <text x="710" y="560" font-size="10" fill="#3730a3">- roleId, active</text>
+  <!-- Associations -->
+  <line x1="250" y1="120" x2="350" y2="120" stroke="#64748b" stroke-width="1.5"/>
+  <text x="300" y="115" text-anchor="middle" font-size="9" fill="#475569">1..*</text>
+  <text x="300" y="135" text-anchor="middle" font-size="9" fill="#475569">1..*</text>
+  <line x1="550" y1="120" x2="700" y2="120" stroke="#64748b" stroke-width="1.5"/>
+  <text x="625" y="115" text-anchor="middle" font-size="9" fill="#475569">1</text>
+  <text x="625" y="135" text-anchor="middle" font-size="9" fill="#475569">0..*</text>
+  <line x1="150" y1="230" x2="250" y2="290" stroke="#64748b" stroke-width="1.5"/>
+  <text x="180" y="265" font-size="9" fill="#475569">1..*</text>
+  <line x1="450" y1="210" x2="350" y2="290" stroke="#64748b" stroke-width="1.5"/>
+  <text x="380" y="265" font-size="9" fill="#475569">1</text>
+  <line x1="680" y1="340" x2="780" y2="340" stroke="#64748b" stroke-width="1.5"/>
+  <text x="715" y="335" text-anchor="middle" font-size="9" fill="#475569">1</text>
+  <text x="745" y="355" text-anchor="middle" font-size="9" fill="#475569">1..*</text>
+  <line x1="150" y1="230" x2="150" y2="500" stroke="#64748b" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="160" y="370" font-size="9" fill="#475569">0..*</text>
+  <line x1="300" y1="470" x2="450" y2="500" stroke="#64748b" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="370" y="492" font-size="9" fill="#475569">1..*</text>
+</svg>
+</body></html>

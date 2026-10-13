@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><style>body{margin:0;padding:0}</style></head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="680" viewBox="0 0 1000 680" font-family="Arial, sans-serif">
+  <rect width="1000" height="680" fill="white"/>
+  <text x="500" y="25" text-anchor="middle" font-size="16" font-weight="bold" fill="#1e293b">Figure 8 — Modèle Conceptuel de Données (MCD)</text>
+  <!-- Patient -->
+  <rect x="50" y="60" width="160" height="120" fill="#eff6ff" stroke="#2563eb" stroke-width="2" rx="6"/>
+  <text x="130" y="80" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e40af">PATIENT</text>
+  <text x="60" y="100" font-size="10" fill="#1e40af"># id_patient</text>
+  <text x="60" y="115" font-size="10" fill="#1e40af">  prénom, nom</text>
+  <text x="60" y="130" font-size="10" fill="#1e40af">  date_naissance</text>
+  <text x="60" y="145" font-size="10" fill="#1e40af">  sexe, téléphone</text>
+  <text x="60" y="160" font-size="10" fill="#1e40af">  groupe_sanguin</text>
+  <!-- Doctor -->
+  <rect x="800" y="60" width="160" height="100" fill="#f0fdf4" stroke="#16a34a" stroke-width="2" rx="6"/>
+  <text x="880" y="80" text-anchor="middle" font-size="12" font-weight="bold" fill="#15803d">DOCTOR</text>
+  <text x="810" y="100" font-size="10" fill="#15803d"># id_doctor</text>
+  <text x="810" y="115" font-size="10" fill="#15803d">  prénom, nom</text>
+  <text x="810" y="130" font-size="10" fill="#15803d">  spécialité</text>
+  <text x="810" y="145" font-size="10" fill="#15803d">  disponible</text>
+  <!-- Appointment -->
+  <rect x="400" y="60" width="160" height="100" fill="#fef3c7" stroke="#d97706" stroke-width="2" rx="6"/>
+  <text x="480" y="80" text-anchor="middle" font-size="12" font-weight="bold" fill="#92400e">RDV</text>
+  <text x="410" y="100" font-size="10" fill="#92400e"># id_rdv</text>
+  <text x="410" y="115" font-size="10" fill="#92400e">  date, heure</text>
+  <text x="410" y="130" font-size="10" fill="#92400e">  motif, statut</text>
+  <!-- Associations -->
+  <line x1="210" y1="110" x2="400" y2="110" stroke="#64748b" stroke-width="1.5"/>
+  <text x="250" y="105" font-size="10" fill="#475569">Prendre</text>
+  <text x="220" y="125" font-size="9" fill="#475569">1..N</text>
+  <text x="380" y="125" font-size="9" fill="#475569">0..N</text>
+  <line x1="560" y1="110" x2="800" y2="110" stroke="#64748b" stroke-width="1.5"/>
+  <text x="640" y="105" font-size="10" fill="#475569">Donner</text>
+  <text x="570" y="125" font-size="9" fill="#475569">0..N</text>
+  <text x="790" y="125" font-size="9" fill="#475569">1..N</text>
+  <!-- Consultation -->
+  <rect x="200" y="230" width="160" height="120" fill="#ede9fe" stroke="#7c3aed" stroke-width="2" rx="6"/>
+  <text x="280" y="250" text-anchor="middle" font-size="12" font-weight="bold" fill="#5b21b6">CONSULTATION</text>
+  <text x="210" y="270" font-size="10" fill="#5b21b6"># id_consult</text>
+  <text x="210" y="285" font-size="10" fill="#5b21b6">  date</text>
+  <text x="210" y="300" font-size="10" fill="#5b21b6">  symptômes</text>
+  <text x="210" y="315" font-size="10" fill="#5b21b6">  diagnostic</text>
+  <text x="210" y="330" font-size="10" fill="#5b21b6">  traitement</text>
+  <line x1="130" y1="180" x2="230" y2="230" stroke="#64748b" stroke-width="1.5"/>
+  <text x="150" y="215" font-size="10" fill="#475569">Subir</text>
+  <text x="140" y="230" font-size="9" fill="#475569">1..N</text>
+  <line x1="880" y1="160" x2="360" y2="230" stroke="#64748b" stroke-width="1.5"/>
+  <text x="600" y="215" font-size="10" fill="#475569">Réaliser</text>
+  <text x="870" y="175" font-size="9" fill="#475569">1..N</text>
+  <!-- Prescription -->
+  <rect x="500" y="230" width="160" height="100" fill="#fce7f3" stroke="#be185d" stroke-width="2" rx="6"/>
+  <text x="580" y="250" text-anchor="middle" font-size="12" font-weight="bold" fill="#9f1239">PRESCRIPTION</text>
+  <text x="510" y="270" font-size="10" fill="#9f1239"># id_presc</text>
+  <text x="510" y="285" font-size="10" fill="#9f1239">  date</text>
+  <text x="510" y="300" font-size="10" fill="#9f1239">  médicaments</text>
+  <line x1="360" y1="290" x2="500" y2="290" stroke="#64748b" stroke-width="1.5"/>
+  <text x="400" y="285" font-size="10" fill="#475569">Émettre</text>
+  <text x="370" y="305" font-size="9" fill="#475569">1..1</text>
+  <text x="490" y="305" font-size="9" fill="#475569">0..N</text>
+  <!-- Room -->
+  <rect x="50" y="400" width="140" height="100" fill="#ccfbf1" stroke="#0d9488" stroke-width="2" rx="6"/>
+  <text x="120" y="420" text-anchor="middle" font-size="12" font-weight="bold" fill="#115e59">ROOM</text>
+  <text x="60" y="440" font-size="10" fill="#115e59"># id_room</text>
+  <text x="60" y="455" font-size="10" fill="#115e59">  numéro, type</text>
+  <text x="60" y="470" font-size="10" fill="#115e59">  étage, capacité</text>
+  <!-- Bed -->
+  <rect x="300" y="400" width="140" height="100" fill="#fff7ed" stroke="#ea580c" stroke-width="2" rx="6"/>
+  <text x="370" y="420" text-anchor="middle" font-size="12" font-weight="bold" fill="#9a3412">BED</text>
+  <text x="310" y="440" font-size="10" fill="#9a3412"># id_bed</text>
+  <text x="310" y="455" font-size="10" fill="#9a3412">  numéro</text>
+  <text x="310" y="470" font-size="10" fill="#9a3412">  statut</text>
+  <line x1="190" y1="450" x2="300" y2="450" stroke="#64748b" stroke-width="1.5"/>
+  <text x="220" y="445" font-size="10" fill="#475569">Contenir</text>
+  <text x="200" y="465" font-size="9" fill="#475569">1..N</text>
+  <text x="290" y="465" font-size="9" fill="#475569">1..N</text>
+  <!-- Hospitalization -->
+  <rect x="550" y="400" width="160" height="120" fill="#dbeafe" stroke="#2563eb" stroke-width="2" rx="6"/>
+  <text x="630" y="420" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e40af">HOSPITALISATION</text>
+  <text x="560" y="440" font-size="10" fill="#1e40af"># id_hosp</text>
+  <text x="560" y="455" font-size="10" fill="#1e40af">  date_admission</text>
+  <text x="560" y="470" font-size="10" fill="#1e40af">  date_sortie</text>
+  <text x="560" y="485" font-size="10" fill="#1e40af">  motif, statut</text>
+  <line x1="440" y1="450" x2="550" y2="450" stroke="#64748b" stroke-width="1.5"/>
+  <text x="470" y="445" font-size="10" fill="#475569">Occuper</text>
+  <text x="450" y="465" font-size="9" fill="#475569">1..1</text>
+  <line x1="130" y1="180" x2="630" y2="400" stroke="#64748b" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="340" y="300" font-size="10" fill="#475569">Hospitaliser</text>
+  <!-- Medication -->
+  <rect x="800" y="230" width="160" height="100" fill="#f0fdf4" stroke="#16a34a" stroke-width="2" rx="6"/>
+  <text x="880" y="250" text-anchor="middle" font-size="12" font-weight="bold" fill="#15803d">MEDICATION</text>
+  <text x="810" y="270" font-size="10" fill="#15803d"># id_med</text>
+  <text x="810" y="285" font-size="10" fill="#15803d">  nom, catégorie</text>
+  <text x="810" y="300" font-size="10" fill="#15803d">  quantité, prix</text>
+  <line x1="660" y1="280" x2="800" y2="280" stroke="#64748b" stroke-width="1.5"/>
+  <text x="690" y="275" font-size="10" fill="#475569">Contenir</text>
+  <text x="670" y="295" font-size="9" fill="#475569">0..N</text>
+  <text x="790" y="295" font-size="9" fill="#475569">1..N</text>
+  <!-- Invoice -->
+  <rect x="200" y="560" width="160" height="100" fill="#fef3c7" stroke="#d97706" stroke-width="2" rx="6"/>
+  <text x="280" y="580" text-anchor="middle" font-size="12" font-weight="bold" fill="#92400e">INVOICE</text>
+  <text x="210" y="600" font-size="10" fill="#92400e"># id_invoice</text>
+  <text x="210" y="615" font-size="10" fill="#92400e">  date, montant</text>
+  <text x="210" y="630" font-size="10" fill="#92400e">  statut</text>
+  <line x1="130" y1="180" x2="280" y2="560" stroke="#64748b" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="170" y="380" font-size="10" fill="#475569">Facturer</text>
+  <text x="150" y="395" font-size="9" fill="#475569">1..N</text>
+  <!-- Payment -->
+  <rect x="500" y="560" width="160" height="100" fill="#ede9fe" stroke="#7c3aed" stroke-width="2" rx="6"/>
+  <text x="580" y="580" text-anchor="middle" font-size="12" font-weight="bold" fill="#5b21b6">PAYMENT</text>
+  <text x="510" y="600" font-size="10" fill="#5b21b6"># id_payment</text>
+  <text x="510" y="615" font-size="10" fill="#5b21b6">  date, montant</text>
+  <text x="510" y="630" font-size="10" fill="#5b21b6">  méthode</text>
+  <line x1="360" y1="610" x2="500" y2="610" stroke="#64748b" stroke-width="1.5"/>
+  <text x="400" y="605" font-size="10" fill="#475569">Régler</text>
+  <text x="370" y="625" font-size="9" fill="#475569">1..N</text>
+  <text x="490" y="625" font-size="9" fill="#475569">0..N</text>
+</svg>
+</body></html>
